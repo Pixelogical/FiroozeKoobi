@@ -1,0 +1,513 @@
+@font-face {
+  font-family: "IRANSansWeb";
+  src: url("../fonts/IRANSansWeb.woff2") format("woff2");
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, span, a, li {
+  font-family: "IRANSansWeb", "Microsoft JhengHei Light", serif;
+}
+
+.container {
+  font-family: "IRANSansWeb", "Microsoft JhengHei Light", serif;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+.container .fsymbol {
+  font-size: 40rem;
+  font-family: "Mf Queen Leela", serif;
+  position: absolute;
+  color: #cccccc;
+  z-index: 5;
+  left: -0.2em;
+  top: -50px;
+}
+.container .header {
+  z-index: 6;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border-bottom: solid #EEEEEE 2px;
+}
+.container .header .lang {
+  position: absolute;
+  left: 1vw;
+  height: 100%;
+  font-family: IRANSansWeb, "Lato", serif;
+  display: flex;
+  font-size: 1.4rem;
+  align-items: center;
+  padding: 0 10px;
+}
+.container .header .lang span {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.container .header .lang img {
+  width: 40px;
+  padding: 20px;
+  vertical-align: middle;
+}
+.container .header .nav {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.container .header .nav ul {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 1em;
+  padding-inline-start: 0;
+  flex-wrap: wrap;
+  padding: 5px;
+  text-align: center;
+  list-style: none;
+}
+.container .header .nav ul .shop {
+  display: flex;
+  background-color: #EEEEEE;
+  border-radius: 10px;
+}
+.container .header .nav ul .shop img {
+  height: 1.2em;
+  padding: 5px 15px;
+  vertical-align: middle;
+}
+.container .header .nav ul .shop span {
+  border-radius: 10px;
+  height: 1.2em;
+  color: white;
+  background-color: #3e3e46;
+  vertical-align: middle;
+  display: block;
+  line-height: 1.2;
+  width: 1.2em;
+  padding: 5px;
+}
+.container .header .nav ul li {
+  margin: 0 20px;
+}
+.container .portrait {
+  width: 100%;
+  height: 120vh;
+  z-index: 6;
+  background: url(../../img/tree.png) no-repeat left -20vw bottom -10vh;
+  background-size: 120vh;
+  background-color: #f8f8f8;
+  background-blend-mode: overlay;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container .portrait img {
+  padding: 10vw;
+  vertical-align: middle;
+}
+.container .portrait h2 {
+  font-size: 7rem;
+  padding: 40px;
+  font-family: IRANSansWeb, "Mf Queen Leela", serif;
+}
+.container .portrait2 {
+  width: 100%;
+  height: 800px;
+  z-index: 6;
+  background: url(../../img/flower.jpg) no-repeat left -20vw center;
+  background-size: contain;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .portrait2 img {
+  padding: 10vw;
+  vertical-align: middle;
+}
+.container .portrait2 h2 {
+  font-size: 7rem;
+  padding: 40px;
+  font-family: IRANSansWeb, "Mf Queen Leela", serif;
+}
+.container .slider {
+  height: 120vh;
+  background-color: deeppink;
+  width: 100%;
+  margin-top: 100px;
+}
+.container .categories {
+  font-family: "Segoe UI Semibold", "Lao UI", serif;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60px;
+}
+.container .categories::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.52) url(../../img/1.jpg) no-repeat left -10vw top fixed;
+  background-blend-mode: lighten;
+  transform: scale(1.5);
+  filter: blur(10px);
+}
+.container .categories .title {
+  margin-top: 100px;
+  overflow: hidden;
+  text-align: center;
+  color: #777777;
+  font-style: italic;
+}
+.container .categories .regular {
+  font-style: normal !important;
+  font-family: IRANSansWeb, "Lao UI", serif;
+  font-size: 2.2rem;
+  color: black;
+}
+.container .categories .title:before,
+.container .categories .title:after {
+  background-color: #777777;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  vertical-align: middle;
+  width: 40%;
+}
+.container .categories .title:before,
+.container .categories .title:after {
+  background-color: #EEEEEE;
+}
+.container .categories .title:before {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .categories .title:after {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.container .categories .cats-title {
+  width: 60vw;
+  margin: auto;
+}
+.container .categories .cats-title ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-inline-start: 0;
+}
+.container .categories .cats-title ul li {
+  list-style: none;
+  padding: 20px;
+}
+.container .categories .cats-title ul a {
+  color: #3e3e46;
+  font-size: 2.2rem;
+  font-family: Lato;
+  text-decoration: none;
+}
+.container .categories .cats-title ul a:hover {
+  color: #c28fb8;
+}
+.container .categories .items-wrapper {
+  display: flex;
+  margin: auto;
+  width: 80vw;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.container .categories .items-wrapper .item {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  width: 340px;
+  align-items: center;
+  margin: 25px;
+}
+.container .categories .items-wrapper .item img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  border-bottom: solid 3px #EEEEEE;
+}
+.container .categories .items-wrapper .item span {
+  padding: 5px 10px;
+  text-align: center;
+}
+.container .categories .items-wrapper .item .seemore {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.container .categories .items-wrapper .item .seemore:before,
+.container .categories .items-wrapper .item .seemore:after {
+  text-align: center;
+  background-color: #777777;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  position: relative;
+  vertical-align: middle;
+  width: 28%;
+}
+.container .categories .items-wrapper .item .seemore:before,
+.container .categories .items-wrapper .item .seemore:after {
+  background-color: #EEEEEE;
+}
+.container .categories .items-wrapper .item .seemore:before {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .categories .items-wrapper .item .seemore:after {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.container .categories .cats-wrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container .categories .cats {
+  width: 420px;
+  height: 320px;
+  border-radius: 15px;
+  margin: 10px 5px;
+  background-color: rgba(0, 0, 0, 0.67);
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+}
+.container .categories .cats .span {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.container .categories #one, .container .categories #six {
+  background-image: url(../../img/ghandoon.jpg);
+}
+.container .categories #two, .container .categories #four {
+  background-image: url("../../img/ring.jpg");
+}
+.container .categories #three, .container .categories #five {
+  background-image: url("../../img/neck.jpg");
+}
+.container .noback {
+  background: none;
+}
+.container .noback::before {
+  background: none;
+}
+.container .footer {
+  background-color: #777777;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-bottom: solid 3px #EEEEEE;
+}
+.container .footer .logo {
+  flex: 3 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .footer .logo div {
+  width: 115px;
+  height: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 15px #c3c3c8;
+  border-radius: 50%;
+  padding: 20px;
+  color: white;
+  margin: 120px 55px;
+}
+.container .footer .logo div span {
+  font-family: "Segoe UI Semibold", "Lao UI", serif;
+  font-size: 1.2rem;
+  align-items: center;
+  vertical-align: middle;
+}
+.container .footer .site-map {
+  flex: 4 1 0;
+  display: flex;
+  flex-direction: column;
+}
+.container .footer .site-map span {
+  color: white;
+  display: block;
+  padding: 50px 30px 0 0;
+  font-size: 2.1rem;
+  font-family: "Segoe UI Semibold", "Lao UI", serif;
+}
+.container .footer .site-map div {
+  display: flex;
+  flex-direction: row;
+}
+.container .footer .site-map ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 35px;
+  flex-direction: column;
+}
+.container .footer .site-map ul li {
+  width: 100%;
+  margin: 5px;
+  line-height: 1;
+  margin: 9px -5px;
+  white-space: nowrap;
+  font-size: 1.2rem;
+}
+.container .footer .site-map ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 15px;
+}
+.container .footer .site-map ul li a:hover {
+  border-radius: 15px;
+  background-color: #cccccc;
+}
+.container .footer .contact {
+  flex: 3 1 0;
+  display: flex;
+  flex-direction: column;
+}
+.container .footer .contact h2 {
+  padding: 20px 50px 0 0;
+  font-size: 2.1rem;
+  color: white;
+  margin-block-end: 0;
+}
+.container .footer .contact div {
+  padding: 2px;
+}
+.container .footer .contact div h5 {
+  font-size: 1.2rem;
+}
+.container .footer .contact div h6 {
+  font-size: 1rem;
+}
+.container .footer .contact div h5, .container .footer .contact div h6 {
+  color: #fff;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 4px 50px;
+}
+.container .footer .contact .c-logo {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 18%;
+}
+.container .footer .contact .c-logo div {
+  width: 3px;
+  height: 3px;
+  margin: 15px 12px;
+  border-radius: 50%;
+  border: 17px solid #EEEEEE;
+}
+.container .copyright {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  background-color: #3e3e46;
+}
+.container .copyright h6 {
+  font-family: "Segoe UI Semibold", "Lao UI", serif;
+  padding: 13px;
+  margin-block-end: 5px;
+  margin-block-start: 5px;
+  color: white;
+}
+
+@media all and (max-width: 1280px) {
+  .container .portrait h2, .container .portrait2 h2 {
+    font-size: 4rem;
+    overflow: hidden;
+  }
+  .container .portrait img, .container .portrait2 img {
+    width: 40vw;
+  }
+}
+@media all and (max-width: 980px) {
+  .container .fsymbol {
+    font-size: 20rem;
+  }
+  .container .header ul li {
+    font-size: 1.1rem;
+    margin: 0 15px !important;
+  }
+  .container .header .lang {
+    font-size: 0.8rem;
+  }
+  .container .header .lang img {
+    width: 30px;
+  }
+  .container .portrait h2, .container .portrait2 h2 {
+    font-size: 3rem;
+  }
+  .container .portrait img, .container .portrait2 img {
+    width: 30vw;
+  }
+}
+@media all and (max-width: 736px) {
+  .container .header {
+    justify-content: flex-end !important;
+  }
+  .container .header ul li {
+    margin: 0 5px !important;
+    color: #ce79d3;
+  }
+  .container .header .lang img {
+    width: 20px;
+  }
+  .container .portrait, .container .portrait2 {
+    height: 80vh;
+  }
+  .container .portrait h2, .container .portrait2 h2 {
+    font-size: 2rem;
+  }
+  .container .portrait2 {
+    background-size: cover;
+  }
+}
+@media all and (max-width: 480px) {
+  .container .header {
+    justify-content: center !important;
+    flex-direction: column;
+    text-align: center;
+  }
+  .container .header .lang {
+    display: block;
+    position: relative;
+  }
+  .container .portrait, .container .portrait2 {
+    height: 60vh;
+  }
+  .container .portrait h2, .container .portrait2 h2 {
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
