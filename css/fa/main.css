@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   z-index: 5;
   left: -0.2em;
   top: -50px;
+  user-select: none;
+}
+.container .smaller {
+  font-size: 30rem;
 }
 .container .header {
   z-index: 6;
@@ -137,11 +141,48 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   padding: 40px;
   font-family: IRANSansWeb, "Mf Queen Leela", serif;
 }
+.container .artboard {
+  background-image: url("../../img/1.jpg");
+  background-position: right -6rem bottom -18rem;
+  background-size: 60%;
+  height: 85vh;
+  background-color: white;
+  z-index: 0;
+  position: relative;
+}
+.container .artboard .title-wrapper {
+  margin: 30vh 20vw 0 0;
+}
+.container .artboard .title-wrapper h1 {
+  font-size: 7rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  line-height: 1;
+  color: #cccccc;
+}
+.container .artboard .title-wrapper h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 1.5rem;
+  margin-right: 2em;
+  color: #a7a7a7;
+}
 .container .slider {
   height: 120vh;
   background-color: deeppink;
   width: 100%;
   margin-top: 100px;
+  z-index: 6;
+}
+.container .sl1 {
+  background-color: darkorange;
+  height: 800px;
+  margin: 0;
+}
+.container .sl2 {
+  background-color: darkcyan;
+  height: 800px;
+  margin: 0;
 }
 .container .categories {
   font-family: "Segoe UI Semibold", "Lao UI", serif;
@@ -312,8 +353,58 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .container .noback {
   background: none;
 }
-.container .noback::before {
-  background: none;
+.container .services {
+  display: flex;
+  flex: 1 1 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  white-space: nowrap;
+}
+.container .services .delivery, .container .services .insurance {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 0;
+  height: 33vw;
+  align-items: center;
+  font-size: 2.5rem;
+  font-family: "Segoe UI Semibold", "Lao UI", serif;
+}
+.container .services .delivery h2, .container .services .insurance h2 {
+  padding: 5px;
+}
+.container .services .insurance {
+  background-color: #cccccc;
+}
+.container .services .delivery {
+  background-color: #EEEEEE;
+}
+.container .customers {
+  display: flex;
+  flex: 1 1 0;
+  flex-wrap: wrap;
+  border-top: solid 5px #bc008c;
+  margin-top: 40px;
+  background-color: #a9a9a9;
+}
+.container .customers h2 {
+  display: flex;
+  flex: 1 1 0;
+  color: white;
+  padding: 60px;
+  font-size: 4rem;
+  white-space: nowrap;
+}
+.container .customers .logo-wrapper {
+  display: flex;
+  flex: 2 1 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .customers .logo-wrapper img {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
 }
 .container .footer {
   background-color: #777777;
@@ -469,8 +560,20 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .container .portrait img, .container .portrait2 img {
     width: 30vw;
   }
+  .container .artboard .title-wrapper h1 {
+    font-size: 4.5rem;
+  }
+  .container .artboard .title-wrapper h6 {
+    font-size: 1rem;
+  }
+  .container .services h2 {
+    font-size: 2.5rem;
+  }
 }
 @media all and (max-width: 736px) {
+  .container .fsymbol {
+    font-size: 15rem;
+  }
   .container .header {
     justify-content: flex-end !important;
   }
@@ -490,8 +593,20 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .container .portrait2 {
     background-size: cover;
   }
+  .container .artboard .title-wrapper {
+    margin: 0;
+  }
+  .container .artboard .title-wrapper h1 {
+    font-size: 4rem;
+  }
+  .container .artboard .title-wrapper h6 {
+    font-size: 0.8rem;
+  }
 }
 @media all and (max-width: 480px) {
+  .container .fsymbol {
+    display: none;
+  }
   .container .header {
     justify-content: center !important;
     flex-direction: column;
@@ -507,6 +622,11 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .container .portrait h2, .container .portrait2 h2 {
     padding: 20px;
     font-size: 1.5rem;
+  }
+  .container .customers h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 5px;
   }
 }
 

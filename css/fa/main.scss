@@ -1,4 +1,5 @@
 $border: #EEEEEE;
+$gray: #cccccc;
 $darker: #777777;
 $fontThicker: "Segoe UI Semibold", "Lao UI", serif;
 
@@ -31,6 +32,11 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     z-index: 5;
     left: -.2em;
     top: -50px;
+    user-select: none;
+  }
+
+  .smaller {
+    font-size: 30rem;
   }
 
   .header {
@@ -159,11 +165,55 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     }
   }
 
+  .artboard {
+    background-image: url("../../img/1.jpg");
+    background-position: right -6rem bottom -18rem;
+    background-size: 60%;
+    height: 85vh;
+    background-color: white;
+    z-index: 0;
+    position: relative;
+
+    .title-wrapper {
+      margin: 30vh 20vw 0 0;
+
+      h1 {
+        font-size: 7rem;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        line-height: 1;
+        color: $gray;
+      }
+
+      h6 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        font-size: 1.5rem;
+        margin-right: 2em;
+        color: #a7a7a7;
+      }
+    }
+
+  }
+
   .slider {
     height: 120vh;
     background-color: deeppink;
     width: 100%;
     margin-top: 100px;
+    z-index: 6;
+  }
+
+  .sl1 {
+    background-color: darkorange;
+    height: 800px;
+    margin: 0;
+  }
+
+  .sl2 {
+    background-color: darkcyan;
+    height: 800px;
+    margin: 0;
   }
 
   .categories {
@@ -367,9 +417,68 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
   .noback {
     background: none;
+  }
 
-    &::before {
-      background: none;
+  .services {
+    display: flex;
+    flex: 1 1 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    white-space: nowrap;
+
+    .delivery, .insurance {
+      display: flex;
+      justify-content: center;
+      flex: 1 1 0;
+      height: 33vw;
+      align-items: center;
+      font-size: 2.5rem;
+      font-family: $fontThicker;
+
+      h2 {
+        padding: 5px;
+      }
+    }
+
+    .insurance {
+      background-color: $gray;
+    }
+
+    .delivery {
+      background-color: $border;
+    }
+
+  }
+
+  .customers {
+    display: flex;
+    flex: 1 1 0;
+    flex-wrap: wrap;
+    border-top: solid 5px #bc008c;
+    margin-top: 40px;
+    background-color: #a9a9a9;
+
+    h2 {
+      display: flex;
+      flex: 1 1 0;
+      color: white;
+      padding: 60px;
+      font-size: 4rem;
+      white-space: nowrap;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      flex: 2 1 0;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      img {
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+      }
     }
   }
 
@@ -571,11 +680,32 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       }
     }
 
+    .artboard {
+      .title-wrapper {
+        h1 {
+          font-size: 4.5rem;
+        }
+
+        h6 {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .services {
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+
   }
 }
 
 @media all and (max-width: 736px) {
   .container {
+    .fsymbol {
+      font-size: 15rem;
+    }
 
     .header {
       justify-content: flex-end !important;
@@ -607,11 +737,29 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       background-size: cover;
     }
 
+    .artboard {
+      .title-wrapper {
+        margin: 0;
+
+        h1 {
+          font-size: 4rem;
+        }
+
+        h6 {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
   }
 }
 
 @media all and (max-width: 480px) {
   .container {
+    .fsymbol {
+      display: none;
+    }
+
     .header {
       justify-content: center !important;
       flex-direction: column;
@@ -631,6 +779,15 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         font-size: 1.5rem;
       }
     }
+
+    .customers {
+      h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 5px;
+      }
+    }
+
   }
 }
 
