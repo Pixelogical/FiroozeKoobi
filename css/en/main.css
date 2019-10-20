@@ -28,9 +28,9 @@ body {
 .container section.home {
   height: 100vh;
   width: 100%;
-  background-color: #ce79d3;
   background-image: url("../../img/girl.jpg");
   background-size: cover;
+  background-position: center;
 }
 .container section.home .logo {
   position: absolute;
@@ -772,6 +772,8 @@ body {
 .container .footer .details .site-map .wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 470px;
 }
 .container .footer .details .site-map .wrapper .left, .container .footer .details .site-map .wrapper .right {
   display: flex;
@@ -1141,6 +1143,7 @@ body {
 }
 .container .features .picture #three {
   background: url("../../img/port.jpg");
+  background-size: cover;
   transition: 0.2s ease-in;
 }
 .container .features .picture #three:hover {
@@ -1262,6 +1265,14 @@ body {
   .container .collection {
     background-size: 600px;
   }
+  .container .features .picture #one {
+    width: 270px !important;
+    height: 270px !important;
+  }
+  .container .features .picture div {
+    width: 280px;
+    height: 280px;
+  }
 }
 @media all and (max-width: 980px) {
   .container section.home .logo img {
@@ -1369,6 +1380,34 @@ body {
   .container .gooddesign .titles ul li {
     font-size: 1.2rem;
     padding: 20px 5px;
+  }
+  .container .features {
+    padding: 50px 10px;
+  }
+  .container .features .picture {
+    margin: 20px;
+  }
+  .container .features .picture #one {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .container .features .picture div {
+    border-radius: 20px;
+    width: 210px;
+    height: 210px;
+  }
+  .container .features .description h5 {
+    font-size: 1rem;
+  }
+  .container .features .description ul li {
+    margin-right: 20px;
+  }
+  .container .features .description ul li a {
+    font-size: 1.5rem;
+  }
+  .container .features .description .readmore img {
+    width: 10px;
+    padding: 8px;
   }
 }
 @media all and (max-width: 736px) {
@@ -1482,6 +1521,38 @@ body {
   .container .gooddesign .description .text-wrapper .readmore h4 {
     font-size: 0.8rem;
   }
+  .container .features {
+    padding: 50px 10px;
+  }
+  .container .features .picture {
+    margin: 0;
+  }
+  .container .features .picture #one {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  .container .features .picture div {
+    background-position: center;
+    border-radius: 18px;
+    width: 150px;
+    height: 150px;
+  }
+  .container .features .description h5 {
+    font-size: 0.8rem;
+  }
+  .container .features .description ul li {
+    margin-right: 18px;
+  }
+  .container .features .description ul li a {
+    font-size: 1.2rem;
+  }
+  .container .features .description .readmore img {
+    width: 10px;
+    padding: 8px;
+  }
+  .container .features .description .readmore h4 {
+    font-size: 0.8rem;
+  }
 }
 @media all and (max-width: 480px) {
   .container section.home .logo {
@@ -1591,6 +1662,63 @@ body {
   .container .collection .description .text-wrapper .readmore h4 {
     padding: 0 10px;
     font-size: 0.4rem;
+  }
+  .container .features {
+    padding: 5px 5px;
+  }
+  .container .features .picture {
+    margin: 10px;
+  }
+  .container .features .picture #one {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .container .features .picture div {
+    border-radius: 12px;
+    width: 100px;
+    height: 100px;
+  }
+  .container .features .description h5 {
+    font-size: 0.5rem;
+  }
+  .container .features .description ul li {
+    margin-right: 15px;
+  }
+  .container .features .description ul li a {
+    font-size: 0.5rem;
+  }
+  .container .features .description .readmore img {
+    width: 8px;
+    padding: 5px;
+  }
+  .container .features .description .readmore h4 {
+    font-size: 0.5rem;
+  }
+  .container .ourcustomers h1 {
+    font-size: 1.8rem;
+  }
+  .container .ourcustomers .logos .item {
+    margin: 20px;
+    width: 100px;
+  }
+  .container .footer .details .logo div {
+    width: 190px !important;
+    height: 190px !important;
+  }
+  .container .footer .details .site-map .wrapper {
+    min-width: auto;
+  }
+  .container .footer .details .site-map .wrapper .right ul li, .container .footer .details .site-map .wrapper .left ul li {
+    font-size: 0rem;
+  }
+  .container .footer .details .site-map .wrapper .right ul li .item a, .container .footer .details .site-map .wrapper .left ul li .item a {
+    font-size: 0.8rem;
+  }
+  .container .footer .details .site-map .wrapper .right ul li .item .arrow, .container .footer .details .site-map .wrapper .left ul li .item .arrow {
+    padding: 8px;
+  }
+  .container .footer .details .site-map .wrapper .right ul li .item .arrow img, .container .footer .details .site-map .wrapper .left ul li .item .arrow img {
+    width: 11px;
   }
 }
 

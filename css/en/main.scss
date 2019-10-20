@@ -36,9 +36,9 @@ body {
   section.home {
     height: 100vh;
     width: 100%;
-    background-color: #ce79d3;
     background-image: url("../../img/girl.jpg");
     background-size: cover;
+    background-position: center;
 
     .logo {
       position: absolute;
@@ -922,6 +922,8 @@ body {
         .wrapper {
           display: flex;
           flex-direction: row;
+          flex-wrap: wrap;
+          min-width: 470px;
 
           .left {
           }
@@ -1375,6 +1377,7 @@ body {
 
       #three {
         background: url("../../img/port.jpg");
+        background-size: cover;
         transition: 0.2s ease-in;
 
         &:hover {
@@ -1544,8 +1547,22 @@ body {
     .collection {
       background-size: 600px;
     }
-  }
 
+    .features {
+      .picture {
+        #one {
+          width: 270px !important;
+          height: 270px !important;
+        }
+
+        div {
+          width: 280px;
+          height: 280px;
+        }
+      }
+    }
+
+  }
 
 }
 
@@ -1724,6 +1741,49 @@ body {
         }
       }
     }
+
+    .features {
+      padding: 50px 10px;
+
+      .picture {
+        margin: 20px;
+
+        #one {
+          width: 200px !important;
+          height: 200px !important;
+        }
+
+        div {
+          border-radius: 20px;
+          width: 210px;
+          height: 210px;
+        }
+      }
+
+      .description {
+        h5 {
+          font-size: 1rem;
+        }
+
+        ul {
+          li {
+            margin-right: 20px;
+
+            a {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        .readmore {
+          img {
+            width: 10px;
+            padding: 8px;
+          }
+        }
+      }
+    }
+
   }
 }
 
@@ -1894,6 +1954,53 @@ body {
         }
       }
     }
+
+    .features {
+      padding: 50px 10px;
+
+      .picture {
+        margin: 0;
+
+        #one {
+          width: 140px !important;
+          height: 140px !important;
+        }
+
+        div {
+          background-position: center;
+          border-radius: 18px;
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      .description {
+        h5 {
+          font-size: 0.8rem;
+        }
+
+        ul {
+          li {
+            margin-right: 18px;
+
+            a {
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        .readmore {
+          img {
+            width: 10px;
+            padding: 8px;
+          }
+
+          h4 {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -2051,6 +2158,97 @@ body {
             h4 {
               padding: 0 10px;
               font-size: 0.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    .features {
+      padding: 5px 5px;
+
+      .picture {
+        margin: 10px;
+
+        #one {
+          width: 90px !important;
+          height: 90px !important;
+        }
+
+        div {
+          border-radius: 12px;
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .description {
+        h5 {
+          font-size: 0.5rem;
+        }
+
+        ul {
+          li {
+            margin-right: 15px;
+
+            a {
+              font-size: 0.5rem;
+            }
+          }
+        }
+
+        .readmore {
+          img {
+            width: 8px;
+            padding: 5px;
+          }
+
+          h4 {
+            font-size: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .ourcustomers {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .logos .item {
+        margin: 20px;
+        width: 100px;
+      }
+    }
+
+    .footer {
+      .details {
+        .logo div {
+          width: 190px !important;
+          height: 190px !important;
+        }
+
+        .site-map .wrapper {
+          min-width: auto;
+          .right, .left {
+            ul li {
+              font-size: 0rem;
+
+              .item {
+                a {
+                  font-size: 0.8rem;
+                }
+
+                .arrow {
+                  padding: 8px;
+
+                  img {
+                    width: 11px;
+                  }
+
+                }
+
+              }
             }
           }
         }
