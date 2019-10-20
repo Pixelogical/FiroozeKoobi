@@ -1040,11 +1040,13 @@ body {
 .container .gooddesign .titles {
   display: flex;
   width: 100%;
+  justify-content: center;
 }
 .container .gooddesign .titles ul {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .container .gooddesign .titles li {
   list-style: none;
@@ -1214,6 +1216,30 @@ body {
 }
 
 @media all and (max-width: 1280px) {
+  .container .gooddesign .description .text-wrapper {
+    width: 60%;
+  }
+  .container .gooddesign .description .text-wrapper h1 {
+    font-size: 3.4rem;
+  }
+  .container .gooddesign .description .text-wrapper h6 {
+    padding: 10px 50px;
+    font-size: 1rem;
+  }
+  .container .gooddesign .description .text-wrapper .readmore {
+    padding: 10px 50px;
+  }
+  .container .gooddesign .description .text-wrapper .readmore img {
+    padding: 20px;
+    width: 20px;
+  }
+  .container .gooddesign .description .text-wrapper .readmore h4 {
+    font-size: 1.6rem;
+  }
+  .container .gooddesign .titles {
+    width: 60%;
+    margin: auto;
+  }
   .container .portrait h2, .container .portrait2 h2 {
     font-size: 4rem;
     overflow: hidden;
@@ -1233,6 +1259,9 @@ body {
   .container .half-slider .hs-wrapper {
     flex: 2 1 50%;
   }
+  .container .collection {
+    background-size: 600px;
+  }
 }
 @media all and (max-width: 980px) {
   .container section.home .logo img {
@@ -1243,7 +1272,6 @@ body {
   }
   .container section.home .navbar .nav ul {
     margin: 1em;
-    background-color: #9f89c2;
     font-size: 0.8rem;
   }
   .container section.home .description .home-title {
@@ -1259,6 +1287,15 @@ body {
   .container section.home .description .scroll {
     width: 40px;
     height: 40px;
+  }
+  .container .collection {
+    background-size: 600px;
+  }
+  .container .collection .description .text-wrapper h1 {
+    font-size: 4.5rem;
+  }
+  .container .collection .description .text-wrapper .readmore {
+    padding: 50px 70px;
   }
   .container .fsymbol {
     font-size: 20rem;
@@ -1308,6 +1345,31 @@ body {
   .container .info .map-wrapper {
     width: 100%;
   }
+  .container .gooddesign .description .text-wrapper {
+    width: 60%;
+  }
+  .container .gooddesign .description .text-wrapper h1 {
+    font-size: 2.4rem;
+  }
+  .container .gooddesign .description .text-wrapper h6 {
+    padding: 10px 50px;
+    font-size: 0.8rem;
+  }
+  .container .gooddesign .description .text-wrapper .readmore img {
+    padding: 12px;
+    width: 12px;
+  }
+  .container .gooddesign .description .text-wrapper .readmore h4 {
+    font-size: 1rem;
+  }
+  .container .gooddesign .titles {
+    width: 100%;
+    margin: auto;
+  }
+  .container .gooddesign .titles ul li {
+    font-size: 1.2rem;
+    padding: 20px 5px;
+  }
 }
 @media all and (max-width: 736px) {
   .container section.home .logo {
@@ -1322,7 +1384,6 @@ body {
   }
   .container section.home .navbar .nav ul {
     margin: 1em;
-    background-color: #9f89c2;
     font-size: 0.6rem;
   }
   .container section.home .description {
@@ -1377,6 +1438,49 @@ body {
   }
   .container .sponsorship .row {
     flex-direction: column-reverse;
+  }
+  .container .collection {
+    background-size: 350px;
+    background-position: right -160px center;
+  }
+  .container .collection .description .text-wrapper {
+    padding: 20px 0;
+  }
+  .container .collection .description .text-wrapper h1 {
+    padding: 10px 30px 0 30px;
+    font-size: 3.5rem;
+  }
+  .container .collection .description .text-wrapper h6 {
+    padding: 0 0 0 35px;
+    font-size: 0.6rem;
+  }
+  .container .collection .description .text-wrapper .readmore {
+    padding: 50px 0 50px 30px;
+  }
+  .container .collection .description .text-wrapper .readmore img {
+    width: 10px;
+    padding: 12px;
+  }
+  .container .collection .description .text-wrapper .readmore h4 {
+    font-size: 1rem;
+  }
+  .container .gooddesign .description .text-wrapper {
+    width: 75%;
+    padding: 60px 0;
+  }
+  .container .gooddesign .description .text-wrapper h1 {
+    font-size: 2rem;
+  }
+  .container .gooddesign .description .text-wrapper h6 {
+    font-size: 0.5rem;
+  }
+  .container .gooddesign .description .text-wrapper .readmore img {
+    width: 8px;
+    height: 8px;
+    padding: 8px;
+  }
+  .container .gooddesign .description .text-wrapper .readmore h4 {
+    font-size: 0.8rem;
   }
 }
 @media all and (max-width: 480px) {
@@ -1437,6 +1541,56 @@ body {
   }
   .container .half-slider .hs-wrapper {
     height: 200px;
+  }
+  .container .gooddesign .description .text-wrapper {
+    width: 75%;
+    padding: 30px 0;
+  }
+  .container .gooddesign .description .text-wrapper h1 {
+    font-size: 0.8rem;
+    padding: 0 0 0 48px;
+  }
+  .container .gooddesign .description .text-wrapper h6 {
+    padding: 0 10px 0 48px;
+    font-size: 0.3rem;
+  }
+  .container .gooddesign .description .text-wrapper .readmore img {
+    width: 5px;
+    height: 5px;
+    padding: 4px;
+  }
+  .container .gooddesign .description .text-wrapper .readmore h4 {
+    font-size: 0.5rem;
+    padding: 0 10px;
+  }
+  .container .gooddesign .titles ul li {
+    font-size: 0.8rem;
+  }
+  .container .collection {
+    background-size: 180px;
+    background-position: right -100px center;
+  }
+  .container .collection .description .text-wrapper {
+    padding: 20px 0;
+  }
+  .container .collection .description .text-wrapper h1 {
+    padding: 10px 30px 0 30px;
+    font-size: 1.5rem;
+  }
+  .container .collection .description .text-wrapper h6 {
+    padding: 0 0 0 35px;
+    font-size: 0.3rem;
+  }
+  .container .collection .description .text-wrapper .readmore {
+    padding: 20px 0 20px 30px;
+  }
+  .container .collection .description .text-wrapper .readmore img {
+    width: 5px;
+    padding: 4px;
+  }
+  .container .collection .description .text-wrapper .readmore h4 {
+    padding: 0 10px;
+    font-size: 0.4rem;
   }
 }
 
