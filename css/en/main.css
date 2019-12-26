@@ -1836,6 +1836,53 @@ body {
   .container .gooddesign .description .text-wrapper .readmore h4 {
     font-size: 0.8rem;
   }
+  .container .gooddesign-slide .image-object {
+    width: 230px;
+    filter: drop-shadow(-5px 0 6px #444444aa);
+  }
+  .container .gooddesign-slide .image-object:hover {
+    width: 240px;
+    filter: drop-shadow(-10px 0 10px #444444aa);
+  }
+  .container .gooddesign-slide .description .text-wrapper h1 {
+    padding: 5px 25px;
+    font-size: 1.5rem;
+  }
+  .container .gooddesign-slide .description .text-wrapper h6 {
+    padding: 10px 30px;
+    line-height: 1.5;
+  }
+  .container .gooddesign-slide .description .text-wrapper .readmore {
+    padding: 10px 25px;
+  }
+  .container .gooddesign-slide .description .text-wrapper .readmore h4 {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+  .container .gooddesign-slide .description .text-wrapper .readmore img {
+    padding: 10px;
+    width: 10px;
+  }
+  .container .gallery .description .play .button {
+    padding: 5px 17px;
+  }
+  .container .gallery .description .play .button h2 {
+    padding: 2px;
+    font-size: 1rem;
+  }
+  .container .gallery .description .play .button img {
+    padding: 8px;
+    width: 12px;
+    height: 12px;
+  }
+  .container .tiles-wrapper .tile .hover h3 {
+    font-size: 0.6rem;
+  }
+  .container .tiles-wrapper .tile .hover .button div {
+    width: 17px;
+    height: 17px;
+    margin: 7px;
+  }
   .container .features {
     padding: 50px 10px;
   }

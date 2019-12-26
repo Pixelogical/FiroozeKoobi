@@ -2337,6 +2337,85 @@ body {
       }
     }
 
+    .gooddesign-slide {
+      .image-object {
+        width: 230px;
+        filter: drop-shadow(-5px 0 6px #444444aa);
+
+        &:hover {
+          width: 240px;
+          filter: drop-shadow(-10px 0 10px #444444aa);
+        }
+      }
+
+      .description {
+        .text-wrapper {
+          h1 {
+            padding: 5px 25px;
+            font-size: 1.5rem;
+          }
+
+          h6 {
+            padding: 10px 30px;
+            line-height: 1.5;
+          }
+
+          .readmore {
+            padding: 10px 25px;
+
+            h4 {
+              font-size: 1.5rem;
+              padding: 0 10px;
+            }
+
+            img {
+              padding: 10px;
+              width: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .gallery {
+      .description {
+        .play {
+          .button {
+            padding: 5px 17px;
+
+            h2 {
+              padding: 2px;
+              font-size: 1rem;
+            }
+
+            img {
+              padding: 8px;
+              width: 12px;
+              height: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .tiles-wrapper {
+      .tile {
+        .hover {
+          h3 {
+            font-size: 0.6rem;
+          }
+
+          .button {
+            div {
+              width: 17px;
+              height: 17px;
+              margin: 7px;
+            }
+          }
+        }
+      }
+    }
+
     .features {
       padding: 50px 10px;
 
