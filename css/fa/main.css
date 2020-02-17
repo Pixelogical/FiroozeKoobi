@@ -1,3 +1,11 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
 @font-face {
   font-family: "IRANSansWeb";
   src: url("../fonts/IRANSansWeb.woff2") format("woff2");
@@ -11,6 +19,41 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   font-family: "IRANSansWeb", "Microsoft JhengHei Light", serif;
 }
 
+@keyframes roller {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  10%, 3.333% {
+    transform: translate(0, -100%);
+  }
+  13.333%, 20% {
+    transform: translate(0, -200%);
+  }
+  23.333%, 30% {
+    transform: translate(0, -300%);
+  }
+  33.333%, 40% {
+    transform: translate(0, -400%);
+  }
+  43.333%, 50% {
+    transform: translate(0, -500%);
+  }
+  53.333%, 60% {
+    transform: translate(0, -600%);
+  }
+  63.333%, 70% {
+    transform: translate(0, -700%);
+  }
+  73.333%, 80% {
+    transform: translate(0, -800%);
+  }
+  83.333%, 90% {
+    transform: translate(0, -900%);
+  }
+  93.333%, 99.999% {
+    transform: translate(0, -1000%);
+  }
+}
 .container {
   font-family: "IRANSansWeb", "Microsoft JhengHei Light", serif;
   font-size: 1.6rem;
@@ -73,7 +116,6 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   padding: 5px;
   text-align: center;
   list-style: none;
-  font-style: italic;
   font-size: 1rem;
   color: white;
   font-family: "IRANSansWeb", "Microsoft JhengHei Light", serif;
@@ -825,9 +867,36 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .container .footer .details .site-map span {
   color: white;
   display: block;
-  padding: 50px 0 0 30px;
+  padding: 50px 0 0 10px;
   font-size: 2.1rem;
   font-family: "Segoe UI Semibold", "Lao UI", serif;
+  position: relative;
+  width: fit-content;
+}
+.container .footer .details .site-map span .footer-slider-wrapper {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  height: 100%;
+  margin: 50px 0px 0 0;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0;
+}
+.container .footer .details .site-map span .footer-slider-wrapper .footer-slider {
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  transform: translate(0, 0);
+  animation: roller 19.98s cubic-bezier(0.82, 0.05, 0, 1.26) infinite;
+  padding: 0;
+}
+.container .footer .details .site-map span .footer-slider-wrapper .footer-slider span {
+  padding: 0;
+  height: 100%;
+  text-transform: lowercase;
+  white-space: nowrap;
+  display: block;
 }
 .container .footer .details .site-map .wrapper {
   display: flex;
@@ -879,6 +948,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .container .footer .details .site-map .wrapper .left ul li .item .arrow img, .container .footer .details .site-map .wrapper .right ul li .item .arrow img {
   width: 15px;
+  transform: rotate(180deg);
 }
 .container .footer .details .site-map .wrapper .left ul li .item a, .container .footer .details .site-map .wrapper .right ul li .item a {
   color: white;
@@ -893,7 +963,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   flex-direction: column;
 }
 .container .footer .details .contact h2 {
-  padding: 20px 0 40px 50px;
+  padding: 20px 40px 0 50px;
   font-size: 2.1rem;
   color: white;
   margin-block-end: 0;
@@ -919,7 +989,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   flex-direction: column;
 }
 .container .footer .details .newsletter h2 {
-  padding: 20px 0 0 50px;
+  padding: 20px 50px 0 0;
   font-size: 2.1rem;
   color: white;
   margin-block-end: 0;
@@ -932,7 +1002,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .container .footer .details .newsletter .inp .label {
   position: absolute;
   top: 16px;
-  left: 0;
+  right: 0;
   font-size: 16px;
   color: #cccccc;
   font-weight: 500;
@@ -985,16 +1055,6 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .container .footer .details .newsletter .inp input:focus + span + .border {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
-}
-.container .footer .details .newsletter button {
-  font-family: IRANSansWeb, "Lato", serif;
-  background-color: white;
-  border-radius: 30px;
-  border-style: none;
-  width: 80px;
-  margin: 0 20px;
-  color: #777777;
-  padding: 10px 20px;
 }
 .container .footer .social {
   width: 100%;
@@ -1084,22 +1144,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   padding: 20px 50px;
   line-height: 2;
 }
-.container .gooddesign .description .text-wrapper .readmore {
-  display: flex;
-  align-items: center;
-  padding: 20px 50px;
-  color: #454545;
+.container .gooddesign .description .text-wrapper .learn-more {
+  margin: 20px 50px;
   cursor: pointer;
-}
-.container .gooddesign .description .text-wrapper .readmore img {
-  padding: 20px;
-  background-color: #3e3e46;
-  width: 20px;
-  border-radius: 50px;
-}
-.container .gooddesign .description .text-wrapper .readmore h4 {
-  align-items: center;
-  padding: 0 20px;
 }
 .container .gooddesign .titles {
   display: flex;
@@ -1157,22 +1204,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   padding: 20px 60px;
   line-height: 2;
 }
-.container .gooddesign-slide .description .text-wrapper .readmore {
-  display: flex;
-  align-items: center;
-  padding: 20px 50px;
-  color: #454545;
+.container .gooddesign-slide .description .text-wrapper .learn-more {
+  margin: 20px 50px;
   cursor: pointer;
-}
-.container .gooddesign-slide .description .text-wrapper .readmore img {
-  padding: 20px;
-  background-color: #3e3e46;
-  width: 20px;
-  border-radius: 50px;
-}
-.container .gooddesign-slide .description .text-wrapper .readmore h4 {
-  align-items: center;
-  padding: 0 20px;
 }
 .container .gooddesign-slide .image-object {
   position: absolute;
@@ -1239,32 +1273,16 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .container .collection .description .text-wrapper h1 {
   padding: 10px 80px;
-  font-size: 7rem;
+  font-size: 3.5rem;
   font-weight: bolder;
 }
 .container .collection .description .text-wrapper h6 {
   padding: 0 100px;
-  font-size: 0.8rem;
-  color: #777777;
   line-height: 1.8;
 }
-.container .collection .description .text-wrapper .readmore {
-  display: flex;
-  align-items: center;
-  padding: 50px 100px;
-  color: #454545;
+.container .collection .description .text-wrapper .learn-more {
+  margin: 50px 100px;
   cursor: pointer;
-  flex-direction: row-reverse;
-}
-.container .collection .description .text-wrapper .readmore img {
-  padding: 20px;
-  background-color: #3e3e46;
-  width: 20px;
-  border-radius: 50px;
-}
-.container .collection .description .text-wrapper .readmore h4 {
-  align-items: center;
-  padding: 0 20px;
 }
 .container .features {
   display: flex;
@@ -1325,26 +1343,14 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   padding: 0 40px;
   margin-block-end: 0.5em;
   line-height: 1.5;
-  font-family: "Lato Hairline";
+  min-height: 110px;
 }
-.container .features .description .readmore {
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-  color: #454545;
+.container .features .description h5.off {
+  display: none;
+}
+.container .features .description .learn-more {
+  margin: 20px 50px;
   cursor: pointer;
-  flex-direction: row-reverse;
-}
-.container .features .description .readmore img {
-  padding: 15px;
-  background-color: #3e3e46;
-  width: 20px;
-  border-radius: 50px;
-}
-.container .features .description .readmore h4 {
-  align-items: center;
-  padding: 0 10px;
-  font-size: 1rem;
 }
 .container .ourcustomers {
   display: flex;
@@ -1550,9 +1556,288 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   box-shadow: 0 20px 13px #00000021;
 }
 
+/* SUBMIT BUTTON AT FOOTER*/
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+button.learn-more {
+  width: 14rem;
+  height: auto;
+}
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  right: 0.725rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.25rem;
+  left: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-left: 0.125rem solid #fff;
+  transform: rotate(-45deg);
+}
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.45rem 0;
+  font-size: 1.4rem;
+  margin: 0 3rem 0 0;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+button:hover .circle {
+  width: 100%;
+}
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(-1rem, 0);
+}
+button:hover .button-text {
+  color: #fff;
+}
+
+.submit {
+  outline: none;
+  height: 40px;
+  margin: 0 20px;
+  text-align: center;
+  width: 130px;
+  border-radius: 40px;
+  background: #fff;
+  border: 2px solid #9f89c2;
+  color: #9f89c2;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.submit:hover {
+  color: white;
+  background: #9f89c2;
+}
+.submit:active {
+  letter-spacing: 2px;
+}
+.submit:after {
+  content: "ثبت";
+}
+
+.onclic {
+  width: 40px;
+  border-color: #cccccc;
+  border-width: 5px;
+  font-size: 0;
+  border-left-color: #9f89c2;
+  animation: rotating 2s 0.25s linear infinite;
+}
+.onclic:after {
+  content: "";
+}
+.onclic:hover {
+  color: #9f89c2;
+  background: white;
+}
+
+.validate {
+  font-size: 13px;
+  color: white;
+  background: #9f89c2;
+}
+.validate:after {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+/* SELECT LANGUAGE*/
+.select-menu {
+  --background: #242836;
+  --text: #fff;
+  --icon: #fff;
+  --icon-active: #3F4656;
+  --list: #1C212E;
+  --list-text: rgba(255, 255, 255, .2);
+  --list-text-hover: rgba(255, 255, 255, .5);
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  margin: 1.5em;
+}
+.select-menu select,
+.select-menu .button {
+  font-family: inherit;
+  margin: 0;
+  border: 0;
+  text-align: right;
+  text-transform: none;
+  -webkit-appearance: none;
+}
+.select-menu select {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  padding: 8px 36px 8px 12px;
+  visibility: hidden;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+}
+.select-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  transform: translateY(var(--t));
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+.select-menu ul li {
+  padding: 8px 12px 8px 36px;
+  cursor: pointer;
+}
+.select-menu > ul {
+  background: var(--list);
+  color: var(--list-text);
+  border-radius: 6px;
+}
+.select-menu > ul li {
+  transition: color 0.3s ease;
+}
+.select-menu > ul li:hover {
+  color: var(--list-text-hover);
+}
+.select-menu .button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  z-index: 1;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--background);
+}
+.select-menu .button em {
+  --r: 45deg;
+  display: block;
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 7px;
+  height: 7px;
+  margin-top: 13px;
+  -webkit-backface-visibility: hidden;
+}
+.select-menu .button em:before, .select-menu .button em:after {
+  --o: .4;
+  content: "";
+  width: 7px;
+  height: 7px;
+  opacity: var(--o);
+  display: block;
+  position: relative;
+  transition: opacity 0.2s ease;
+  transform: rotate(var(--r)) scale(0.75);
+}
+.select-menu .button em:before {
+  border-left: 2px solid var(--icon);
+  border-top: 2px solid var(--icon);
+  top: 1px;
+}
+.select-menu .button em:after {
+  border-right: 2px solid var(--icon);
+  border-bottom: 2px solid var(--icon);
+  bottom: 1px;
+}
+.select-menu:not(.open) > ul {
+  opacity: 0;
+  pointer-events: none;
+}
+.select-menu.open.tilt-up {
+  animation: tilt-up 0.4s linear forwards;
+}
+.select-menu.open.tilt-up .button em:before {
+  --o: 1;
+}
+.select-menu.open.tilt-down {
+  animation: tilt-down 0.4s linear forwards;
+}
+.select-menu.open.tilt-down .button em:after {
+  --o: 1;
+}
+
+@keyframes tilt-up {
+  40%, 60% {
+    transform: perspective(500px) rotateX(8deg);
+  }
+}
+@keyframes tilt-down {
+  40%, 60% {
+    transform: perspective(500px) rotateX(-8deg);
+  }
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media all and (max-width: 1280px) {
   .container .gooddesign .description .text-wrapper {
     width: 60%;
+    padding: 15px 0;
   }
   .container .gooddesign .description .text-wrapper h1 {
     font-size: 3.4rem;
@@ -1597,6 +1882,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .container .collection {
     background-size: 600px;
   }
+  .container .collection .description .text-wrapper h6 {
+    padding: 0 30px;
+  }
   .container .features .picture #one {
     width: 270px !important;
     height: 270px !important;
@@ -1612,6 +1900,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   }
   .container section.home .navbar .nav {
     margin-top: 1em;
+    margin-left: 0;
   }
   .container section.home .navbar .nav ul {
     margin: 1em;
@@ -1740,6 +2029,25 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .container .features .description .readmore img {
     width: 10px;
     padding: 8px;
+  }
+
+  .lang .select-menu {
+    margin-top: 2.4em;
+  }
+  .lang .select-menu .button em {
+    margin-top: 8px;
+  }
+  .lang .select-menu .button em::before, .lang .select-menu .button em::after {
+    width: 5px;
+    height: 5px;
+  }
+  .lang .select-menu select {
+    padding: 8px 9px 8px 9px;
+    line-height: 15px;
+  }
+  .lang .select-menu ul li {
+    font-size: 0.5rem;
+    padding: 3px 12px 0px 10px;
   }
 }
 @media all and (max-width: 736px) {
@@ -1936,6 +2244,10 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .container .features .description .readmore h4 {
     font-size: 0.8rem;
   }
+
+  .lang .select-menu {
+    margin: 2.4em 0 0 6em;
+  }
 }
 @media all and (max-width: 480px) {
   .container section.home .logo {
@@ -1951,6 +2263,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .container section.home .navbar .nav ul {
     margin: 0.8em;
     font-size: 0.3rem;
+  }
+  .container section.home .navbar .nav ul li {
+    padding: 0 8px;
   }
   .container section.home .description {
     height: 50px;
@@ -2102,6 +2417,36 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   }
   .container .footer .details .site-map .wrapper .right ul li .item .arrow img, .container .footer .details .site-map .wrapper .left ul li .item .arrow img {
     width: 11px;
+  }
+
+  .lang .select-menu {
+    margin: 1.5em 0 0 5em;
+    line-height: 15px;
+  }
+  .lang .select-menu .button em {
+    margin-top: 4px;
+    left: 7px;
+  }
+  .lang .select-menu .button em::before, .lang .select-menu .button em::after {
+    width: 3px;
+    height: 3px;
+  }
+  .lang .select-menu .button em::before {
+    border-left: 1px solid var(--icon);
+    border-top: 1px solid var(--icon);
+  }
+  .lang .select-menu .button em::after {
+    border-right: 1px solid var(--icon);
+    border-bottom: 1px solid var(--icon);
+  }
+  .lang .select-menu select {
+    padding: 0 5px 0 5px;
+    line-height: 15px;
+    font-size: 8px;
+  }
+  .lang .select-menu ul li {
+    font-size: 0.3rem;
+    padding: 0 5px 0 5px;
   }
 }
 

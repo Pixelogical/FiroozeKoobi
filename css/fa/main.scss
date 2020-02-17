@@ -4,6 +4,26 @@ $darker: #777777;
 $darkest: #454545;
 $fontThicker: "Segoe UI Semibold", "Lao UI", serif;
 
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
+  url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
+  url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
+  url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
+  url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+
 @font-face {
   font-family: 'IRANSansWeb';
   src: url('../fonts/IRANSansWeb.woff2') format('woff2');
@@ -18,12 +38,49 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   font-family: 'IRANSansWeb', "Microsoft JhengHei Light", serif;
 }
 
+@keyframes roller {
+  0%, 100% {
+    transform: translate(0, 0)
+  }
+  10%, 3.333% {
+    transform: translate(0, -100%)
+  }
+  13.333%, 20% {
+    transform: translate(0, -200%)
+  }
+  23.333%, 30% {
+    transform: translate(0, -300%)
+  }
+  33.333%, 40% {
+    transform: translate(0, -400%)
+  }
+  43.333%, 50% {
+    transform: translate(0, -500%)
+  }
+  53.333%, 60% {
+    transform: translate(0, -600%)
+  }
+  63.333%, 70% {
+    transform: translate(0, -700%)
+  }
+  73.333%, 80% {
+    transform: translate(0, -800%)
+  }
+  83.333%, 90% {
+    transform: translate(0, -900%)
+  }
+  93.333%, 99.999% {
+    transform: translate(0, -1000%)
+  }
+}
+
 .container {
   font-family: 'IRANSansWeb', "Microsoft JhengHei Light", serif;
   font-size: 1.6rem;
   display: flex;
   flex-direction: column;
   direction: rtl;
+
 
   .fsymbol {
     font-size: 40rem;
@@ -86,7 +143,6 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           padding: 5px;
           text-align: center;
           list-style: none;
-          font-style: italic;
           font-size: 1rem;
           color: white;
           font-family: "IRANSansWeb", "Microsoft JhengHei Light", serif;
@@ -992,9 +1048,40 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         span {
           color: white;
           display: block;
-          padding: 50px 0 0 30px;
+          padding: 50px 0 0 10px;
           font-size: 2.1rem;
           font-family: $fontThicker;
+          position: relative;
+          width: fit-content;
+
+          .footer-slider-wrapper {
+            position: absolute;
+            right: 100%;
+            top: 0;
+            height: 100%;
+            margin: 50px 0px 0 0;
+            overflow: hidden;
+            display: inline-block;
+            padding: 0;
+
+            .footer-slider {
+              position: relative;
+              height: 100%;
+              display: inline-block;
+              transform: translate(0, 0);
+              animation: roller 19.98s cubic-bezier(0.82, 0.05, 0, 1.26) infinite;
+              padding: 0;
+
+              span {
+                padding: 0;
+                height: 100%;
+                text-transform: lowercase;
+                white-space: nowrap;
+                display: block;
+              }
+            }
+          }
+
         }
 
         .wrapper {
@@ -1052,6 +1139,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
                     img {
                       width: 15px;
+                      transform: rotate(180deg);
                     }
                   }
 
@@ -1076,7 +1164,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         flex-direction: column;
 
         h2 {
-          padding: 20px 0 40px 50px;
+          padding: 20px 40px 0 50px;
           font-size: 2.1rem;
           color: white;
           margin-block-end: 0;
@@ -1109,7 +1197,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         flex-direction: column;
 
         h2 {
-          padding: 20px 0 0 50px;
+          padding: 20px 50px 0 0;
           font-size: 2.1rem;
           color: white;
           margin-block-end: 0;
@@ -1123,7 +1211,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           .label {
             position: absolute;
             top: 16px;
-            left: 0;
+            right: 0;
             font-size: 16px;
             color: $gray;
             font-weight: 500;
@@ -1189,17 +1277,6 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           }
 
 
-        }
-
-        button {
-          font-family: IRANSansWeb, "Lato", serif;
-          background-color: white;
-          border-radius: 30px;
-          border-style: none;
-          width: 80px;
-          margin: 0 20px;
-          color: $darker;
-          padding: 10px 20px;
         }
 
       }
@@ -1311,25 +1388,11 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           line-height: 2;
         }
 
-        .readmore {
-          display: flex;
-          align-items: center;
-          padding: 20px 50px;
-          color: $darkest;
+        .learn-more {
+          margin: 20px 50px;
           cursor: pointer;
-
-          img {
-            padding: 20px;
-            background-color: #3e3e46;
-            width: 20px;
-            border-radius: 50px;
-          }
-
-          h4 {
-            align-items: center;
-            padding: 0 20px;
-          }
         }
+
       }
     }
 
@@ -1400,24 +1463,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           line-height: 2;
         }
 
-        .readmore {
-          display: flex;
-          align-items: center;
-          padding: 20px 50px;
-          color: $darkest;
+        .learn-more {
+          margin: 20px 50px;
           cursor: pointer;
-
-          img {
-            padding: 20px;
-            background-color: #3e3e46;
-            width: 20px;
-            border-radius: 50px;
-          }
-
-          h4 {
-            align-items: center;
-            padding: 0 20px;
-          }
         }
       }
     }
@@ -1499,36 +1547,18 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
         h1 {
           padding: 10px 80px;
-          font-size: 7rem;
+          font-size: 3.5rem;
           font-weight: bolder;
         }
 
         h6 {
           padding: 0 100px;
-          font-size: 0.8rem;
-          color: $darker;
           line-height: 1.8;
         }
 
-        .readmore {
-          display: flex;
-          align-items: center;
-          padding: 50px 100px;
-          color: $darkest;
+        .learn-more {
+          margin: 50px 100px;
           cursor: pointer;
-          flex-direction: row-reverse;
-
-          img {
-            padding: 20px;
-            background-color: #3e3e46;
-            width: 20px;
-            border-radius: 50px;
-          }
-
-          h4 {
-            align-items: center;
-            padding: 0 20px;
-          }
         }
       }
     }
@@ -1605,29 +1635,16 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         padding: 0 40px;
         margin-block-end: 0.5em;
         line-height: 1.5;
-        font-family: "Lato Hairline";
+        min-height: 110px;
       }
 
-      .readmore {
-        display: flex;
-        align-items: center;
-        padding: 0 40px;
-        color: $darkest;
+      h5.off {
+        display: none;
+      }
+
+      .learn-more {
+        margin: 20px 50px;
         cursor: pointer;
-        flex-direction: row-reverse;
-
-        img {
-          padding: 15px;
-          background-color: #3e3e46;
-          width: 20px;
-          border-radius: 50px;
-        }
-
-        h4 {
-          align-items: center;
-          padding: 0 10px;
-          font-size: 1rem;
-        }
       }
 
     }
@@ -1877,6 +1894,341 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
 }
 
+/* SUBMIT BUTTON AT FOOTER*/
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+
+  &.learn-more {
+    width: 14rem;
+    height: auto;
+
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $black;
+      border-radius: 1.625rem;
+
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $white;
+
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+          right: 0.725rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+
+          &::before {
+            position: absolute;
+            content: "";
+            top: -0.25rem;
+            left: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-left: 0.125rem solid #fff;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.45rem 0;
+      font-size: 1.4rem;
+      margin: 0 3.0rem 0 0;
+      color: #282936;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+    .circle {
+      width: 100%;
+
+      .icon {
+        &.arrow {
+          background: $white;
+          transform: translate(-1rem, 0);
+        }
+      }
+    }
+
+    .button-text {
+      color: $white;
+    }
+  }
+}
+
+.submit {
+  outline: none;
+  height: 40px;
+  margin: 0 20px;
+  text-align: center;
+  width: 130px;
+  border-radius: 40px;
+  background: #fff;
+  border: 2px solid #9f89c2;
+  color: #9f89c2;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  font: {
+    size: 12px;
+    weight: bold;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    color: white;
+    background: #9f89c2;
+  }
+
+  &:active {
+    //letter-spacing: 2px;
+    letter-spacing: 2px;
+  }
+
+  &:after {
+    content: "ثبت";
+  }
+}
+
+.onclic {
+  width: 40px;
+  border-color: $gray;
+  border-width: 5px;
+  font-size: 0;
+  border-left-color: #9f89c2;
+  animation: rotating 2s 0.25s linear infinite;
+
+  &:after {
+    content: "";
+  }
+
+  &:hover {
+    color: #9f89c2;
+    background: white;
+  }
+}
+
+.validate {
+  font-size: 13px;
+  color: white;
+  background: #9f89c2;
+
+  &:after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+}
+
+/* SELECT LANGUAGE*/
+.select-menu {
+  --background: #242836;
+  --text: #fff;
+  --icon: #fff;
+  --icon-active: #3F4656;
+  --list: #1C212E;
+  --list-text: rgba(255, 255, 255, .2);
+  --list-text-hover: rgba(255, 255, 255, .5);
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  margin: 1.5em;
+
+  select,
+  .button {
+    font-family: inherit;
+    margin: 0;
+    border: 0;
+    text-align: right;
+    text-transform: none;
+    -webkit-appearance: none;
+  }
+
+  select {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    padding: 8px 36px 8px 12px;
+    visibility: hidden;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    transform: translateY(var(--t));
+    transition: opacity .3s ease, transform .4s cubic-bezier(.2, .9, .4, 1.1);
+
+    li {
+      padding: 8px 12px 8px 36px;
+      cursor: pointer;
+    }
+  }
+
+  & > ul {
+    background: var(--list);
+    color: var(--list-text);
+    border-radius: 6px;
+
+    li {
+      transition: color .3s ease;
+
+      &:hover {
+        color: var(--list-text-hover);
+      }
+    }
+  }
+
+  .button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    z-index: 1;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    color: var(--text);
+    background: var(--background);
+
+    em {
+      --r: 45deg;
+      display: block;
+      position: absolute;
+      left: 12px;
+      top: 0;
+      width: 7px;
+      height: 7px;
+      margin-top: 13px;
+      -webkit-backface-visibility: hidden;
+
+      &:before,
+      &:after {
+        --o: .4;
+        content: '';
+        width: 7px;
+        height: 7px;
+        opacity: var(--o);
+        display: block;
+        position: relative;
+        transition: opacity .2s ease;
+        transform: rotate(var(--r)) scale(.75);
+      }
+
+      &:before {
+        border-left: 2px solid var(--icon);
+        border-top: 2px solid var(--icon);
+        top: 1px;
+      }
+
+      &:after {
+        border-right: 2px solid var(--icon);
+        border-bottom: 2px solid var(--icon);
+        bottom: 1px;
+      }
+    }
+  }
+
+  &:not(.open) {
+    & > ul {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &.open {
+    &.tilt-up {
+      animation: tilt-up .4s linear forwards;
+
+      .button {
+        em {
+          &:before {
+            --o: 1;
+          }
+        }
+      }
+    }
+
+    &.tilt-down {
+      animation: tilt-down .4s linear forwards;
+
+      .button {
+        em {
+          &:after {
+            --o: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes tilt-up {
+  40%,
+  60% {
+    transform: perspective(500px) rotateX(8deg);
+  }
+}
+
+@keyframes tilt-down {
+  40%,
+  60% {
+    transform: perspective(500px) rotateX(-8deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media all and (max-width: 1280px) {
   .container {
 
@@ -1884,6 +2236,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       .description {
         .text-wrapper {
           width: 60%;
+          padding: 15px 0;
 
           h1 {
             font-size: 3.4rem;
@@ -1948,6 +2301,13 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
     .collection {
       background-size: 600px;
+.description{
+.text-wrapper{
+  h6{
+    padding: 0 30px;
+  }
+}
+}
     }
 
     .features {
@@ -1980,6 +2340,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       .navbar {
         .nav {
           margin-top: 1em;
+          margin-left: 0;
 
           ul {
             margin: 1em;
@@ -2187,6 +2548,34 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     }
 
   }
+  .lang {
+    .select-menu {
+      margin-top: 2.4em;
+
+      .button {
+        em {
+          margin-top: 8px;
+
+          &::before, &::after {
+            width: 5px;
+            height: 5px;
+          }
+        }
+      }
+
+      select {
+        padding: 8px 9px 8px 9px;
+        line-height: 15px;
+      }
+
+      ul {
+        li {
+          font-size: 0.5rem;
+          padding: 3px 12px 0px 10px;
+        }
+      }
+    }
+  }
 }
 
 @media all and (max-width: 736px) {
@@ -2262,7 +2651,6 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         }
       }
     }
-
 
     .portrait, .portrait2 {
       height: 80vh;
@@ -2491,6 +2879,11 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       }
     }
   }
+.lang{
+  .select-menu{
+    margin: 2.4em 0 0 6em;
+  }
+}
 }
 
 @media all and (max-width: 480px) {
@@ -2513,6 +2906,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           ul {
             margin: 0.8em;
             font-size: 0.3rem;
+li{
+  padding: 0 8px;
+}
           }
         }
       }
@@ -2741,6 +3137,47 @@ h1, h2, h3, h4, h5, h6, span, a, li {
               }
             }
           }
+        }
+      }
+    }
+  }
+  .lang {
+    .select-menu {
+      margin: 1.5em 0 0 5em;
+      line-height: 15px;
+
+      .button {
+        em {
+          margin-top: 4px;
+          left: 7px;
+
+          &::before, &::after {
+            width: 3px;
+            height: 3px;
+          }
+
+          &::before {
+            border-left: 1px solid var(--icon);
+            border-top: 1px solid var(--icon);
+          }
+
+          &::after {
+            border-right: 1px solid var(--icon);
+            border-bottom: 1px solid var(--icon);
+          }
+        }
+      }
+
+      select {
+        padding: 0 5px 0 5px;
+        line-height: 15px;
+        font-size: 8px;
+      }
+
+      ul {
+        li {
+          font-size: 0.3rem;
+          padding: 0 5px 0 5px;
         }
       }
     }
