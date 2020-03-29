@@ -48,11 +48,13 @@ body {
   }
 }
 .container {
-  font-family: "Microsoft JhengHei Light", serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /* export page */
 }
 .container .fsymbol {
   font-size: 40rem;
@@ -85,6 +87,8 @@ body {
 }
 .container section.home .logo img {
   width: 100px;
+  height: 100px;
+  transform: scale(1.5);
 }
 .container section.home .navbar {
   display: flex;
@@ -106,21 +110,22 @@ body {
   margin: 1.5em;
   padding-inline-start: 0;
   flex-wrap: wrap;
-  padding: 5px;
   text-align: center;
   list-style: none;
   font-size: 1rem;
   color: white;
-  font-family: "IRANSansWeb", "Microsoft JhengHei Light", serif;
 }
 .container section.home .navbar .nav ul li {
-  margin: 0 -5px;
-  padding: 0 25px;
+  margin: 0 6px;
+  padding: 7px 20px;
   border-radius: 20px;
   cursor: pointer;
+  font-weight: 400;
+  font-style: italic;
 }
 .container section.home .navbar .nav ul li:hover {
-  background-color: #3e3e46;
+  background-color: #EEEEEE;
+  color: #454545;
 }
 .container section.home .description {
   position: absolute;
@@ -138,14 +143,13 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.51);
   margin-block-start: 0;
   margin-block-end: 0;
-  font-family: Lato;
   font-weight: bolder;
 }
 .container section.home .description .home-title h6 {
   margin-block-start: 0;
   margin-block-end: 0;
   padding: 0;
-  font-family: "Lato Hairline";
+  font-weight: 300;
 }
 .container section.home .description .scroll {
   position: absolute;
@@ -159,6 +163,12 @@ body {
   margin-right: auto;
   bottom: 10px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+.container section.home .description .scroll:hover {
+  width: 55px;
+  height: 55px;
+  bottom: 8px;
 }
 .container section.collection-home {
   background-image: url("../../img/exhibition.jpg");
@@ -170,7 +180,7 @@ body {
   position: relative;
 }
 .container section.collection-home .navbar .nav ul {
-  color: #606357;
+  color: #454545;
 }
 .container section.collection-home .shadow-text {
   position: absolute;
@@ -214,6 +224,7 @@ body {
   width: 100%;
   justify-content: center;
   border-bottom: solid #EEEEEE 2px;
+  height: 80px;
 }
 .container .header .lang {
   position: absolute;
@@ -239,6 +250,9 @@ body {
   position: relative;
   justify-content: center;
   margin-left: 1.2em;
+  line-height: 1.2;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 .container .header .nav ul {
   justify-self: center;
@@ -249,9 +263,17 @@ body {
   margin: 1em;
   padding-inline-start: 0;
   flex-wrap: wrap;
-  padding: 5px;
   text-align: center;
   list-style: none;
+}
+.container .header .nav ul .links {
+  margin: 0 10px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container .header .nav ul .links:hover {
+  background-color: #cccccc;
 }
 .container .header .nav ul .shop {
   display: flex;
@@ -273,9 +295,6 @@ body {
   line-height: 1.2;
   width: 1.2em;
   padding: 5px;
-}
-.container .header .nav ul li {
-  margin: 0 20px;
 }
 .container .hover {
   color: #c28fb8 !important;
@@ -344,10 +363,10 @@ body {
 }
 .container .portrait {
   width: 100%;
-  height: 120vh;
+  height: calc(100vh - 80px);
   z-index: 6;
   background: url(../../img/tree.png) no-repeat right -20vw bottom -10vh;
-  background-size: 120vh;
+  background-size: calc(100vh - 80px);
   background-color: #f8f8f8;
   background-blend-mode: overlay;
   display: flex;
@@ -355,11 +374,11 @@ body {
   justify-content: space-around;
 }
 .container .portrait img {
-  padding: 15vw;
+  margin: 15vw;
   vertical-align: middle;
 }
 .container .portrait h2 {
-  font-size: 7rem;
+  font-size: 6.5rem;
   padding: 40px;
   font-family: "Mf Queen Leela", serif;
 }
@@ -593,6 +612,151 @@ body {
 }
 .container .categories #three, .container .categories #five {
   background-image: url("../../img/neck.jpg");
+}
+.container .categories-noback {
+  font-family: "Segoe UI Semibold", "Lao UI", serif;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60px;
+}
+.container .categories-noback .nonitalic {
+  margin-top: 30px !important;
+  font-style: normal !important;
+  color: white !important;
+}
+.container .categories-noback .title {
+  margin-top: 100px;
+  overflow: hidden;
+  text-align: center;
+  color: #777777;
+  font-style: italic;
+}
+.container .categories-noback .regular {
+  font-style: normal !important;
+  font-family: "Lao UI", serif;
+  font-size: 2.2rem;
+  color: black;
+}
+.container .categories-noback .title:before,
+.container .categories-noback .title:after {
+  content: "";
+  display: inline-block;
+  height: 3px;
+  border-radius: 50px;
+  position: relative;
+  vertical-align: middle;
+  width: 40%;
+  background-color: #EEEEEE;
+}
+.container .categories-noback .title:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.container .categories-noback .title:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .categories-noback .cats-title {
+  width: 60vw;
+  margin: auto;
+}
+.container .categories-noback .cats-title ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-inline-start: 0;
+}
+.container .categories-noback .cats-title ul li {
+  list-style: none;
+  padding: 20px;
+}
+.container .categories-noback .cats-title ul a {
+  color: #3e3e46;
+  font-size: 2.2rem;
+  font-family: Lato;
+  text-decoration: none;
+}
+.container .categories-noback .cats-title ul a:hover {
+  color: #c28fb8;
+}
+.container .categories-noback .items-wrapper {
+  display: flex;
+  margin: auto;
+  width: 80vw;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.container .categories-noback .items-wrapper .item {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  width: 340px;
+  align-items: center;
+  margin: 25px;
+}
+.container .categories-noback .items-wrapper .item img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  border-bottom: solid 3px #EEEEEE;
+}
+.container .categories-noback .items-wrapper .item span {
+  padding: 5px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.container .categories-noback .items-wrapper .item .seemore {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.container .categories-noback .items-wrapper .item .seemore:before,
+.container .categories-noback .items-wrapper .item .seemore:after {
+  text-align: center;
+  background-color: #777777;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  position: relative;
+  vertical-align: middle;
+  width: 28%;
+}
+.container .categories-noback .items-wrapper .item .seemore:before,
+.container .categories-noback .items-wrapper .item .seemore:after {
+  background-color: #EEEEEE;
+}
+.container .categories-noback .items-wrapper .item .seemore:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.container .categories-noback .items-wrapper .item .seemore:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .categories-noback .cats-wrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container .categories-noback .cats {
+  width: 420px;
+  height: 320px;
+  border-radius: 15px;
+  margin: 10px 5px;
+  background-color: rgba(0, 0, 0, 0.67);
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+}
+.container .categories-noback .cats .span {
+  display: inline-flex;
+  vertical-align: middle;
 }
 .container .marginbackground {
   margin: 0;
@@ -837,16 +1001,14 @@ body {
   align-items: center;
 }
 .container .footer .details .logo div {
-  width: 250px;
-  height: 250px;
+  min-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  color: white;
 }
 .container .footer .details .logo div img {
   width: 100%;
+  transform: scale(1.5);
 }
 .container .footer .details .site-map {
   flex: 1 1 0;
@@ -963,7 +1125,8 @@ body {
   font-size: 1rem;
 }
 .container .footer .details .contact div h6 {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 .container .footer .details .contact div h5, .container .footer .details .contact div h6 {
   color: #fff;
@@ -1083,7 +1246,6 @@ body {
   color: #cccccc;
   width: 100%;
   overflow: hidden;
-  font-family: "Lato Hairline";
 }
 .container .footer .copyright h6 b {
   color: white !important;
@@ -1104,10 +1266,25 @@ body {
 }
 .container .gooddesign {
   display: flex;
-  background-image: url("../../img/cubblestone.jpg");
-  background-size: contain;
+  background-size: 64vw 100%;
+  /* background-size: contain; */
   background-repeat: no-repeat;
   flex-direction: column;
+  position: relative;
+}
+.container .gooddesign img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  /* width: 64vw; */
+  z-index: 0;
+}
+.container .gooddesign .off {
+  display: none;
+}
+.container .gooddesign .hidden {
+  opacity: 0;
 }
 .container .gooddesign * {
   margin-block-start: 0;
@@ -1117,19 +1294,22 @@ body {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
+  z-index: 5;
 }
 .container .gooddesign .description .text-wrapper {
   width: 50%;
   padding: 80px 0;
 }
 .container .gooddesign .description .text-wrapper h1 {
-  padding: 10px 50px;
+  padding: 10px 10px 10px 50px;
   font-size: 3.5rem;
   font-weight: bolder;
 }
 .container .gooddesign .description .text-wrapper h6 {
-  padding: 20px 50px;
-  line-height: 2;
+  padding: 20px 130px 20px 90px;
+  line-height: 2.2;
+  font-weight: 500;
+  min-height: 150px;
 }
 .container .gooddesign .description .text-wrapper .learn-more {
   margin: 20px 50px;
@@ -1139,25 +1319,44 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
+  z-index: 5;
 }
 .container .gooddesign .titles ul {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 .container .gooddesign .titles li {
   list-style: none;
-  padding: 15px;
+  padding: 5px;
 }
 .container .gooddesign .titles li a {
   color: black;
   text-decoration: none;
-  padding: 5px;
+  padding: 5px 0;
+  font-size: 1.2rem;
+  position: relative;
+}
+.container .gooddesign .titles li a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #000;
+  transition: width 0.2s ease;
+  -webkit-transition: width 0.2s ease;
 }
 .container .gooddesign .titles li a:hover {
-  border-bottom: 1px solid #777777;
-  font-weight: bold;
+  text-shadow: 0 0 1px black;
+}
+.container .gooddesign .titles li a:hover:after {
+  width: 100%;
+  left: 0;
+  background: #000;
 }
 .container .gooddesign-slide {
   display: flex;
@@ -1185,11 +1384,12 @@ body {
 .container .gooddesign-slide .description .text-wrapper h1 {
   padding: 10px 50px;
   font-size: 3rem;
-  font-family: "Lato Hairline", serif;
+  font-weight: 100;
 }
 .container .gooddesign-slide .description .text-wrapper h6 {
   padding: 20px 60px;
   line-height: 2;
+  font-weight: 400;
 }
 .container .gooddesign-slide .description .text-wrapper .learn-more {
   margin: 20px 50px;
@@ -1263,8 +1463,9 @@ body {
   font-weight: bolder;
 }
 .container .collection .description .text-wrapper h6 {
-  padding: 0 100px;
   line-height: 1.8;
+  font-weight: 500;
+  padding: 0 20px 0 100px;
 }
 .container .collection .description .text-wrapper .learn-more {
   margin: 50px 100px;
@@ -1310,27 +1511,44 @@ body {
 }
 .container .features .description {
   flex: 5 0 0;
+  min-height: 480px;
 }
 .container .features .description ul {
   display: flex;
 }
 .container .features .description ul li {
   list-style: none;
-  margin-right: 100px;
+  margin-right: 80px;
+  font-weight: 500;
 }
 .container .features .description ul li a {
   text-decoration: none;
   padding: 3px 0;
+  color: #bd8cbf;
+  position: relative;
 }
-.container .features .description ul li a:hover {
-  border-bottom: 4px solid #9f89c2;
+.container .features .description ul li a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #bd8cbf;
+  transition: width 0.2s ease;
+  -webkit-transition: width 0.2s ease;
+}
+.container .features .description ul li a:hover:after {
+  width: 100%;
+  left: 0;
+  background: #bd8cbf;
 }
 .container .features .description h5 {
   padding: 0 40px;
   margin-block-end: 0.5em;
   line-height: 1.5;
-  font-family: "Lato Hairline";
-  min-height: 110px;
+  font-weight: 400;
 }
 .container .features .description h5.off {
   display: none;
@@ -1343,12 +1561,12 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #454545;
+  padding-bottom: 20px;
 }
 .container .ourcustomers h1 {
   font-style: italic;
   font-size: 4.5rem;
   font-weight: bolder;
-  font-family: "Lao UI", serif;
   text-align: center;
   margin-block-end: 1rem;
   color: white;
@@ -1360,10 +1578,12 @@ body {
 .container .ourcustomers .logos .item {
   margin: 30px;
   width: 200px;
+  height: 200px;
 }
 .container .ourcustomers .logos .item img {
   width: 100%;
   height: 100%;
+  object-fit: scale-down;
 }
 .container .word-slider {
   display: flex;
@@ -1377,7 +1597,7 @@ body {
 }
 .container .word-slider h1, .container .word-slider h4 {
   text-align: center;
-  font-family: "Lato Hairline", serif;
+  font-weight: 300;
 }
 .container .tiles-wrapper {
   box-sizing: border-box;
@@ -1542,6 +1762,491 @@ body {
   border-radius: 5px;
   box-shadow: 0 20px 13px #00000021;
 }
+.container .product-preview {
+  height: 120vh;
+  background: url("../../img/abstech.jpg") no-repeat;
+  background-size: cover;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container .product-preview .product img {
+  width: 550px;
+  margin-top: 100px;
+}
+.container .product-preview .details {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.container .product-preview .details .title {
+  padding: 20px 50px;
+  text-transform: uppercase;
+  font-family: lato, serif;
+  font-stretch: ultra-expanded;
+  transform: scale(1, 1.3);
+}
+.container .product-preview .details .images {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.container .product-preview .details .images .image {
+  display: flex;
+  width: 4em;
+  margin: 15px 0 0 40px;
+  height: 4em;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.container .product-preview .details .images .image:hover {
+  border: 3px solid #bd8cbf;
+  padding: 5px;
+}
+.container .product-preview .details .images .image img {
+  height: 100%;
+  cursor: pointer;
+}
+.container .product-info {
+  display: flex;
+  padding: 40px;
+}
+.container .product-info .selected {
+  background-color: #bd8cbf !important;
+}
+.container .product-info .product-description {
+  flex: 4 0 0;
+  margin-right: 60px;
+}
+.container .product-info .product-description .title {
+  margin-block-end: 0;
+}
+.container .product-info .product-description .info {
+  padding: 30px 0;
+  width: 95%;
+}
+.container .product-info .product-description .offer {
+  border-radius: 15px;
+  padding: 80px 80px;
+  text-align: center;
+  background-color: #bd8cbf;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: cursive;
+  color: #454545;
+}
+.container .product-info .choose-model {
+  flex: 3 0 0;
+  padding-left: 70px;
+  border-left: 4px solid #bd8cbf;
+}
+.container .product-info .choose-model .title {
+  margin-block-end: 0;
+}
+.container .product-info .choose-model .models {
+  padding: 5px 0;
+}
+.container .product-info .choose-model .models .model {
+  padding: 5px 32px;
+  background-color: #cccccc;
+  color: white;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+.container .product-info .choose-model .models .model:hover {
+  background-color: #bd8cbf;
+}
+.container .product-info .properties {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  padding: 10px;
+}
+.container .product-info .properties .property {
+  font-size: 1.2rem;
+}
+.container .product-info .choose-packing .models {
+  position: relative;
+}
+.container .product-info .choose-packing .models a h4 {
+  position: absolute;
+  color: #bd8cbf;
+  left: 145px;
+  top: -5px;
+}
+.container .product-info .price {
+  display: flex;
+}
+.container .product-info .price .text {
+  color: #777777;
+  font-family: "Lato hairline", serif;
+}
+.container .product-info .price .text h3 {
+  margin-block-end: 0;
+}
+.container .product-info .price .text h3 span {
+  padding-left: 15px;
+}
+.container .product-info .price .text h5 {
+  margin-block-start: 0;
+  font-size: 0.8rem;
+}
+.container .product-info .price .icon {
+  color: black;
+  width: 36px;
+  height: 58px;
+  margin: 1.2em 0 1.2em 2em;
+  background: #cccccc;
+  padding: 0px 19px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .product-info .price .icon img {
+  width: 46px;
+}
+.container .similar-product .title {
+  margin-top: 20px;
+  padding: 40px 20px;
+  overflow: hidden;
+  text-align: left;
+  color: #282936;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.container .similar-product .title:after {
+  content: "";
+  display: inline-block;
+  height: 3px;
+  border-radius: 50px;
+  position: relative;
+  vertical-align: middle;
+  width: 75%;
+  background-color: #EEEEEE;
+}
+.container .similar-product .title:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .similar-product .items {
+  display: flex;
+  margin: auto;
+  width: 95%;
+  margin-bottom: 120px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.container .similar-product .items .item {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  width: 340px;
+  align-items: center;
+  margin: 25px;
+  cursor: pointer;
+}
+.container .similar-product .items .item img {
+  width: 100%;
+  height: 320px;
+  padding-bottom: 20px;
+  object-fit: contain;
+  border-bottom: solid 3px #EEEEEE;
+}
+.container .similar-product .items .item span {
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.container .similar-product .items .item .seemore {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.container .similar-product .items .item .seemore:before,
+.container .similar-product .items .item .seemore:after {
+  text-align: center;
+  background-color: #777777;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  position: relative;
+  vertical-align: middle;
+  width: 28%;
+}
+.container .similar-product .items .item .seemore:before,
+.container .similar-product .items .item .seemore:after {
+  background-color: #EEEEEE;
+}
+.container .similar-product .items .item .seemore:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.container .similar-product .items .item .seemore:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .export-title {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-image: url("../../img/export.jpeg");
+  background-size: cover;
+  z-index: 6;
+  justify-content: left;
+}
+.container .export-title .left-side {
+  display: flex;
+  width: calc(50vw - 40px);
+  background-color: rgba(255, 255, 255, 0.85);
+  flex-direction: column;
+  padding: 0 40px;
+}
+.container .export-title .left-side .wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.container .export-title .left-side .wrapper h1 {
+  font-weight: 500;
+  margin-block-end: -1rem;
+  font-size: 2.8rem;
+  margin-block-start: 0;
+}
+.container .export-title .left-side .wrapper p {
+  line-height: 1.6;
+  font-size: 1.7rem;
+}
+.container .artco-bio {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 100px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-bottom: solid 3px #cccccc;
+  margin-bottom: 50px;
+}
+.container .artco-bio .title {
+  margin-block-end: 0;
+  margin-block-start: 1rem;
+}
+.container .artco-bio p {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  line-height: 1.6;
+  font-size: 1.7rem;
+  min-height: 180px;
+}
+.container .artco-bio p.off {
+  display: none;
+}
+.container .artco-bio .topics {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+}
+.container .artco-bio .topics ul {
+  display: flex;
+  flex: 1 0 0;
+  justify-content: space-around;
+  list-style: none;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+}
+.container .artco-bio .topics ul li {
+  padding: 4px 20px;
+  cursor: pointer;
+}
+.container .artco-bio .topics ul li:hover {
+  border-radius: 45px 15px;
+  background: #cccccc;
+}
+.container .artco-bio .a-symbol {
+  font-size: 40rem;
+  font-family: "Mf Queen Leela", serif;
+  position: absolute;
+  color: #cccccc;
+  z-index: 5;
+  left: -160px;
+  top: -224px;
+  user-select: none;
+}
+.container .export-resume.reverse {
+  flex-direction: row-reverse;
+}
+.container .export-resume {
+  display: flex;
+  padding: 20px 30px;
+}
+.container .export-resume .text-side {
+  flex: 5 0 0;
+}
+.container .export-resume .text-side .title {
+  margin-block-end: 0;
+  font-weight: 300;
+  font-style: italic;
+  color: #777777;
+}
+.container .export-resume .text-side .title:after {
+  content: "";
+  display: inline-block;
+  height: 5px;
+  border-radius: 50px;
+  position: relative;
+  vertical-align: middle;
+  width: 75%;
+  background-color: #EEEEEE;
+}
+.container .export-resume .text-side .title:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .export-resume .text-side p {
+  margin-block-start: 0.5em;
+  padding: 0 30px 0 20px;
+  text-align: justify;
+  line-height: 1.6;
+}
+.container .export-resume .pic-side {
+  padding: 20px 0;
+  justify-content: center;
+  flex: 4 0 0;
+  display: flex;
+}
+.container .export-resume .pic-side img {
+  height: 500px;
+}
+.container .export-gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.container .export-gallery img {
+  width: 24%;
+}
+.container .export-description .title {
+  margin-top: 100px;
+  overflow: hidden;
+  text-align: center;
+  color: #777777;
+  font-style: italic;
+  font-size: 2rem;
+}
+.container .export-description .title:before,
+.container .export-description .title:after {
+  content: "";
+  display: inline-block;
+  height: 3px;
+  border-radius: 50px;
+  position: relative;
+  vertical-align: middle;
+  width: 38%;
+  background-color: #EEEEEE;
+}
+.container .export-description .title:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.container .export-description .title:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .export-description h5 {
+  padding: 1em 6em;
+  line-height: 2;
+  font-weight: 300;
+}
+.container .export-info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.container .export-info .text-wrapper {
+  flex: 1 1 auto;
+}
+.container .export-info .text-wrapper .title {
+  padding: 0 40px;
+  overflow: hidden;
+  text-align: left;
+  color: #777777;
+  font-style: italic;
+  font-size: 2.5rem;
+}
+.container .export-info .text-wrapper .title:after {
+  content: "";
+  display: inline-block;
+  height: 3px;
+  border-radius: 50px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  background-color: #EEEEEE;
+}
+.container .export-info .text-wrapper .title:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.container .export-info .text-wrapper .details {
+  padding: 40px;
+}
+.container .export-info .text-wrapper .details h5, .container .export-info .text-wrapper .details h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 10px;
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+.container .export-info .text-wrapper .details h5 {
+  font-weight: bold;
+  color: #454545;
+}
+.container .export-info .text-wrapper .details h6 {
+  color: #777777;
+}
+.container .export-info .text-wrapper .details span {
+  display: flex;
+  background-color: #cccccc;
+  padding-left: 10px;
+  margin: 40px;
+  align-items: center;
+  width: fit-content;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.container .export-info .text-wrapper .details span:hover {
+  background-color: #454545;
+  color: white;
+}
+.container .export-info .text-wrapper .details span:hover > img {
+  background-color: #454545;
+}
+.container .export-info .text-wrapper .details span img {
+  width: 30px;
+  background-color: #777777;
+  padding: 15px;
+  border-radius: 12px;
+  margin-left: 10px;
+  transition: 0.2s ease;
+}
+.container .export-info .map-wrapper {
+  flex: 3 1 auto;
+  background: url("../../img/photo galley (8).jpg") no-repeat;
+  background-size: cover;
+  margin: 25px;
+  height: 500px;
+}
 
 /* SUBMIT BUTTON AT FOOTER*/
 button {
@@ -1612,6 +2317,9 @@ button.learn-more .button-text {
   line-height: 1.6;
   text-align: center;
   text-transform: uppercase;
+}
+button.longer {
+  width: 16rem;
 }
 button:hover .circle {
   width: 100%;
@@ -1830,7 +2538,7 @@ button:hover .button-text {
   }
   .container .gooddesign .description .text-wrapper h6 {
     padding: 10px 50px;
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   .container .gooddesign .description .text-wrapper .readmore {
     padding: 10px 50px;
@@ -1878,10 +2586,16 @@ button:hover .button-text {
   }
 
   .lang .select-menu {
-    margin-top: 2.4em;
+    margin-top: 1.5em;
   }
   .lang .select-menu ul li {
     font-size: 0.7rem;
+  }
+
+  button .button-text {
+    padding: 0.45rem 0;
+    font-size: 1.4rem;
+    font-weight: 700;
   }
 }
 @media all and (max-width: 980px) {
@@ -2244,6 +2958,9 @@ button:hover .button-text {
   .container section.home .navbar .nav ul {
     margin: 0.8em;
     font-size: 0.3rem;
+  }
+  .container section.home .navbar .nav ul li {
+    padding: 3px 7px;
   }
   .container section.home .description {
     height: 50px;

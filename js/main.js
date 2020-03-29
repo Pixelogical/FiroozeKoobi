@@ -1,12 +1,14 @@
 $(document).ready(function () {
-  var x = document.documentElement.scrollTop || document.body.scrollTop;
-  var y = $('#other').offset().top;
-  $('#scroll').on('click', function () {
-    $('html, body').animate({
-      scrollTop: $("#other").offset().top
-    }, 1200);
+  if ($("#home").length) {
+    var x = document.documentElement.scrollTop || document.body.scrollTop;
+    var y = $('#other').offset().top;
+    $('#scroll').on('click', function () {
+      $('html, body').animate({
+        scrollTop: $("#other").offset().top
+      }, 1200);
 
-  });
+    });
+  }
 
   // SUBMIT BUTTON AT FOOTER
   $(function () {
@@ -40,6 +42,14 @@ $(document).ready(function () {
     e.preventDefault();
     var i = $('.features .description ul li').index(this);
     var desc = $('.features .description h5');
+    desc.addClass('off');
+    desc.eq(i).removeClass('off');
+  });
+  //Export Page topic select:
+  $(".artco-bio .topics ul li").on('click', function (e) {
+    e.preventDefault();
+    var i = $('.artco-bio .topics ul li').index(this);
+    var desc = $('.artco-bio p');
     desc.addClass('off');
     desc.eq(i).removeClass('off');
   });
@@ -85,16 +95,6 @@ $(document).ready(function () {
       selected = select.find('option:selected'),
       index = li.index();
 
-    // menu.css('--t', index * -41 + 'px');
-    // selected.attr('selected', false);
-    // select.find('option').eq(index).attr('selected', true);
-    //
-    // menu.addClass(index > selected.index() ? 'tilt-down' : 'tilt-up');
-    //
-    // setTimeout(() => {
-    //   menu.removeClass('open tilt-up tilt-down');
-    // }, 500);
-
   });
   $(document).click(e => {
     e.stopPropagation();
@@ -104,5 +104,43 @@ $(document).ready(function () {
   })
 
 
+  /* shop details */
+
+  $shop_items = $(".product-preview .details .images .image");
+  $shop_preview = $(".product-preview .product img");
+  $shop_title = $(".product-preview .details .title");
+  $shop_items.on('click',function (e) {
+    $prev = $shop_preview.attr('src');
+    $clicked = $(this).children('img').attr('src');
+    $alt = $(this).children('img').attr('alt');
+    $shop_preview.attr('src',$clicked);
+    $shop_title.html($alt);
+    console.log('done');
+
+
+  });
+
+  // good design change background and content
+  $(".gooddesign .titles ul li").on('click', function (e) {
+    e.preventDefault();
+    var i = $('.gooddesign .titles ul li').index(this);
+    var desc = $('.gooddesign .description .text-wrapper h1');
+    var text = $('.gooddesign .description .text-wrapper h6');
+    var button = $('.gooddesign .description .text-wrapper button');
+    desc.addClass('off');
+    text.addClass('off');
+    button.addClass('off');
+    desc.eq(i).removeClass('off');
+    text.eq(i).removeClass('off');
+    button.eq(i).removeClass('off');
+
+    //change background:
+    // var image = desc.eq(i).data("image");
+    // $(".gooddesign").css("background-image", `url(img/${image})`);
+
+    $(".gooddesign img").animate({opacity: '0'}, {duration: 400, queue: false})
+    $(".gooddesign img").eq(i).animate({opacity: '1'}, {duration: 600, queue: false})
+
+  });
 });
 

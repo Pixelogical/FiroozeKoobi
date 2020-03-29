@@ -14,10 +14,12 @@
 
 $border: #EEEEEE;
 $green: #1ECD97;
+$purple: #bd8cbf;
 $gray: #cccccc;
 $darker: #777777;
 $darkest: #454545;
 $fontThicker: "Segoe UI Semibold", "Lao UI", serif;
+$roboto: 'Roboto', sans-serif;
 
 $bg: #f3f8fa;
 $white: #fff;
@@ -69,8 +71,9 @@ body {
 }
 
 .container {
-  font-family: "Microsoft JhengHei Light", serif;
+  font-family: $roboto;
   font-size: 1.6rem;
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -109,6 +112,8 @@ body {
 
       img {
         width: 100px;
+        height: 100px;
+        transform: scale(1.5);
       }
     }
 
@@ -133,21 +138,22 @@ body {
           margin: 1.5em;
           padding-inline-start: 0;
           flex-wrap: wrap;
-          padding: 5px;
           text-align: center;
           list-style: none;
           font-size: 1rem;
           color: white;
-          font-family: "IRANSansWeb", "Microsoft JhengHei Light", serif;
 
           li {
-            margin: 0 -5px;
-            padding: 0 25px;
+            margin: 0 6px;
+            padding: 7px 20px;
             border-radius: 20px;
             cursor: pointer;
+            font-weight: 400;
+            font-style: italic;
 
             &:hover {
-              background-color: #3e3e46;
+              background-color: $border;
+              color: $darkest;
             }
           }
         }
@@ -170,7 +176,6 @@ body {
           border-bottom: 1px solid rgba(255, 255, 255, 0.51);
           margin-block-start: 0;
           margin-block-end: 0;
-          font-family: Lato;
           font-weight: bolder;
         }
 
@@ -178,7 +183,7 @@ body {
           margin-block-start: 0;
           margin-block-end: 0;
           padding: 0;
-          font-family: "Lato Hairline";
+          font-weight: 300;
         }
       }
 
@@ -194,6 +199,13 @@ body {
         margin-right: auto;
         bottom: 10px;
         cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+          width: 55px;
+          height: 55px;
+          bottom: 8px;
+        }
       }
     }
   }
@@ -210,7 +222,7 @@ body {
     .navbar {
       .nav {
         ul {
-          color: #606357;
+          color: $darkest;
         }
       }
     }
@@ -267,6 +279,7 @@ body {
     width: 100%;
     justify-content: center;
     border-bottom: solid $border 2px;
+    height: 80px;
 
     .lang {
       position: absolute;
@@ -295,6 +308,9 @@ body {
       position: relative;
       justify-content: center;
       margin-left: 1.2em;
+      line-height: 1.2;
+      font-size: 1.5rem;
+      font-weight: 300;
 
       ul {
         justify-self: center;
@@ -305,9 +321,19 @@ body {
         margin: 1em;
         padding-inline-start: 0;
         flex-wrap: wrap;
-        padding: 5px;
         text-align: center;
         list-style: none;
+
+        .links {
+          margin: 0 10px;
+          padding: 3px 10px;
+          border-radius: 10px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $gray;
+          }
+        }
 
         .shop {
           display: flex;
@@ -333,9 +359,6 @@ body {
           }
         }
 
-        li {
-          margin: 0 20px;
-        }
       }
     }
   }
@@ -421,10 +444,10 @@ body {
 
   .portrait {
     width: 100%;
-    height: 120vh;
+    height: calc(100vh - 80px);
     z-index: 6;
     background: url(../../img/tree.png) no-repeat right -20vw bottom -10vh;
-    background-size: 120vh;
+    background-size: calc(100vh - 80px);
     background-color: #f8f8f8;
     background-blend-mode: overlay;
     display: flex;
@@ -432,12 +455,12 @@ body {
     justify-content: space-around;
 
     img {
-      padding: 15vw;
+      margin: 15vw;
       vertical-align: middle;
     }
 
     h2 {
-      font-size: 7rem;
+      font-size: 6.5rem;
       padding: 40px;
       font-family: "Mf Queen Leela", serif;
     }
@@ -716,6 +739,179 @@ body {
     #three, #five {
       background-image: url("../../img/neck.jpg");
 
+    }
+  }
+
+  .categories-noback {
+    .nonitalic {
+      margin-top: 30px !important;
+      font-style: normal !important;
+      color: white !important;
+
+    }
+
+    font-family: $fontThicker;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 60px;
+
+    .title {
+      margin-top: 100px;
+      overflow: hidden;
+      text-align: center;
+      color: $darker;
+      font-style: italic;
+    }
+
+    .regular {
+      font-style: normal !important;
+      font-family: "Lao UI", serif;
+      font-size: 2.2rem;
+      color: black;
+    }
+
+    .title:before,
+    .title:after {
+      content: "";
+      display: inline-block;
+      height: 3px;
+      border-radius: 50px;
+      position: relative;
+      vertical-align: middle;
+      width: 40%;
+      background-color: $border;
+    }
+
+    .title:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+
+    .title:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+
+    .cats-title {
+      width: 60vw;
+      margin: auto;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-inline-start: 0;
+
+        li {
+          list-style: none;
+          padding: 20px;
+        }
+
+        a {
+          color: #3e3e46;
+          font-size: 2.2rem;
+          font-family: Lato;
+          text-decoration: none;
+
+          &:hover {
+            color: #c28fb8;
+          }
+        }
+      }
+
+
+    }
+
+    .items-wrapper {
+      display: flex;
+      margin: auto;
+      width: 80vw;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+        width: 340px;
+        align-items: center;
+        margin: 25px;
+
+        img {
+          width: 100%;
+          height: 320px;
+          object-fit: contain;
+          border-bottom: solid 3px #EEEEEE;
+        }
+
+        span {
+          padding: 5px 10px;
+          text-align: center;
+          cursor: pointer;
+        }
+
+        .seemore {
+          width: 100%;
+          text-align: center;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+
+        .seemore:before,
+        .seemore:after {
+          text-align: center;
+          background-color: $darker;
+          content: "";
+          display: inline-block;
+          height: 3px;
+          position: relative;
+          vertical-align: middle;
+          width: 28%;
+        }
+
+        .seemore:before,
+        .seemore:after {
+          background-color: $border;
+        }
+
+        .seemore:before {
+          right: 0.5em;
+          margin-left: -50%;
+        }
+
+        .seemore:after {
+          left: 0.5em;
+          margin-right: -50%;
+        }
+      }
+
+    }
+
+    .cats-wrapper {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cats {
+      width: 420px;
+      height: 320px;
+      border-radius: 15px;
+      margin: 10px 5px;
+      background-color: rgba(0, 0, 0, 0.67);
+      background-size: cover;
+      background-blend-mode: multiply;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+
+      .span {
+        display: inline-flex;
+        vertical-align: middle;
+      }
     }
   }
 
@@ -1014,16 +1210,14 @@ body {
         align-items: center;
 
         div {
-          width: 250px;
-          height: 250px;
+          min-width: 200px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 20px;
-          color: white;
 
           img {
             width: 100%;
+            transform: scale(1.5);
           }
         }
       }
@@ -1166,7 +1360,8 @@ body {
           }
 
           h6 {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 300;
           }
 
           h5, h6 {
@@ -1317,7 +1512,6 @@ body {
         color: $gray;
         width: 100%;
         overflow: hidden;
-        font-family: "Lato Hairline";
 
         b {
           color: white !important;
@@ -1345,10 +1539,29 @@ body {
 
   .gooddesign {
     display: flex;
-    background-image: url("../../img/cubblestone.jpg");
-    background-size: contain;
+    //background-image: url(../../img/whitish4.jpg);
+    background-size: 64vw 100%;
+    /* background-size: contain; */
     background-repeat: no-repeat;
     flex-direction: column;
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      /* width: 64vw; */
+      z-index: 0;
+    }
+
+    .off {
+      display: none;
+    }
+
+    .hidden {
+      opacity: 0;
+    }
 
     * {
       margin-block-start: 0;
@@ -1359,20 +1572,23 @@ body {
       display: flex;
       flex-direction: row-reverse;
       width: 100%;
+      z-index: 5;
 
       .text-wrapper {
         width: 50%;
         padding: 80px 0;
 
         h1 {
-          padding: 10px 50px;
+          padding: 10px 10px 10px 50px;
           font-size: 3.5rem;
           font-weight: bolder;
         }
 
         h6 {
-          padding: 20px 50px;
-          line-height: 2;
+          padding: 20px 130px 20px 90px;
+          line-height: 2.2;
+          font-weight: 500;
+          min-height: 150px;
         }
 
         .learn-more {
@@ -1387,28 +1603,48 @@ body {
       display: flex;
       width: 100%;
       justify-content: center;
+      z-index: 5;
 
       ul {
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         flex-wrap: wrap;
       }
 
       li {
         list-style: none;
-        padding: 15px;
-        //transition: 0.8s ease-in;
+        padding: 5px;
 
 
         a {
           color: black;
           text-decoration: none;
-          padding: 5px;
+          padding: 5px 0;
+          font-size: 1.2rem;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #000;
+            transition: width .2s ease;
+            -webkit-transition: width .2s ease;
+          }
 
           &:hover {
-            border-bottom: 1px solid $darker;
-            font-weight: bold;
+            text-shadow: 0 0 1px black;
+          }
+
+          &:hover:after {
+            width: 100%;
+            left: 0;
+            background: #000;
           }
         }
       }
@@ -1442,12 +1678,13 @@ body {
         h1 {
           padding: 10px 50px;
           font-size: 3rem;
-          font-family: "Lato Hairline", serif;
+          font-weight: 100;
         }
 
         h6 {
           padding: 20px 60px;
           line-height: 2;
+          font-weight: 400;
         }
 
         .learn-more {
@@ -1538,8 +1775,9 @@ body {
         }
 
         h6 {
-          padding: 0 100px;
           line-height: 1.8;
+          font-weight: 500;
+          padding: 0 20px 0 100px;
         }
 
         .learn-more {
@@ -1598,20 +1836,39 @@ body {
 
     .description {
       flex: 5 0 0;
+      min-height: 480px;
 
       ul {
         display: flex;
 
         li {
           list-style: none;
-          margin-right: 100px;
+          margin-right: 80px;
+          font-weight: 500;
 
           a {
             text-decoration: none;
             padding: 3px 0;
+            color: $purple;
+            position: relative;
 
-            &:hover {
-              border-bottom: 4px solid #9f89c2;
+            &:after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 2px;
+              display: block;
+              margin-top: 5px;
+              right: 0;
+              background: $purple;
+              transition: width .2s ease;
+              -webkit-transition: width .2s ease;
+            }
+
+            &:hover:after {
+              width: 100%;
+              left: 0;
+              background: $purple;
             }
           }
         }
@@ -1621,8 +1878,7 @@ body {
         padding: 0 40px;
         margin-block-end: 0.5em;
         line-height: 1.5;
-        font-family: "Lato Hairline";
-        min-height: 110px;
+        font-weight: 400;
       }
 
       h5.off {
@@ -1641,12 +1897,11 @@ body {
     display: flex;
     flex-direction: column;
     background-color: $darkest;
-
+    padding-bottom: 20px;
     h1 {
       font-style: italic;
       font-size: 4.5rem;
       font-weight: bolder;
-      font-family: "Lao UI", serif;
       text-align: center;
       margin-block-end: 1rem;
       color: white;
@@ -1659,10 +1914,12 @@ body {
       .item {
         margin: 30px;
         width: 200px;
+        height: 200px;
 
         img {
           width: 100%;
           height: 100%;
+          object-fit: scale-down;
         }
       }
     }
@@ -1681,7 +1938,7 @@ body {
 
     h1, h4 {
       text-align: center;
-      font-family: "Lato Hairline", serif;
+      font-weight: 300;
     }
 
   }
@@ -1879,6 +2136,598 @@ body {
     }
   }
 
+  .product-preview {
+    height: 120vh;
+    background: url("../../img/abstech.jpg") no-repeat;
+    background-size: cover;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .product {
+      img {
+        width: 550px;
+        margin-top: 100px;
+      }
+
+    }
+
+    .details {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+
+      .title {
+        padding: 20px 50px;
+        text-transform: uppercase;
+        font-family: lato, serif;
+        font-stretch: ultra-expanded;
+        transform: scale(1, 1.3);
+      }
+
+      .images {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+
+        .image {
+          display: flex;
+          width: 4em;
+          margin: 15px 0 0 40px;
+          height: 4em;
+          overflow: hidden;
+          justify-content: center;
+          align-items: center;
+          box-sizing: border-box;
+          border-radius: 20px;
+
+          &:hover {
+            border: 3px solid $purple;
+            padding: 5px;
+          }
+
+
+          img {
+            height: 100%;
+            cursor: pointer;
+
+          }
+        }
+      }
+
+    }
+  }
+
+  .product-info {
+    display: flex;
+    padding: 40px;
+
+    .selected {
+      background-color: $purple !important;
+    }
+
+    .product-description {
+      flex: 4 0 0;
+      margin-right: 60px;
+
+      .title {
+        margin-block-end: 0;
+      }
+
+      .info {
+        padding: 30px 0;
+        width: 95%;
+      }
+
+      .offer {
+        border-radius: 15px;
+        padding: 80px 80px;
+        text-align: center;
+        background-color: $purple;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: cursive;
+        color: $darkest;
+      }
+
+    }
+
+    .choose-model {
+      flex: 3 0 0;
+      padding-left: 70px;
+      border-left: 4px solid $purple;
+
+      .title {
+        margin-block-end: 0;
+      }
+
+      .models {
+        padding: 5px 0;
+
+        .model {
+          padding: 5px 32px;
+          background-color: $gray;
+          color: white;
+          border-radius: 20px;
+          font-size: 1rem;
+          cursor: pointer;
+          text-decoration: none;
+          font-weight: bold;
+
+          &:hover {
+            background-color: $purple;
+          }
+        }
+      }
+    }
+
+    .properties {
+      display: flex;
+      justify-content: space-between;
+      width: 320px;
+      padding: 10px;
+
+      .property {
+        font-size: 1.2rem;
+      }
+    }
+
+    .choose-packing {
+      .models {
+        position: relative;
+
+        a {
+          h4 {
+            position: absolute;
+            color: $purple;
+            left: 145px;
+            top: -5px;
+          }
+        }
+      }
+    }
+
+    .price {
+      display: flex;
+
+      .text {
+        color: $darker;
+        font-family: "Lato hairline", serif;
+
+        h3 {
+          margin-block-end: 0;
+
+          span {
+            padding-left: 15px;
+          }
+        }
+
+        h5 {
+          margin-block-start: 0;
+          font-size: 0.8rem;
+        }
+      }
+
+      .icon {
+        color: black;
+        width: 36px;
+        height: 58px;
+        margin: 1.2em 0 1.2em 2em;
+        background: $gray;
+        padding: 0px 19px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 46px;
+        }
+      }
+    }
+  }
+
+  .similar-product {
+    .title {
+      margin-top: 20px;
+      padding: 40px 20px;
+      overflow: hidden;
+      text-align: left;
+      color: $black;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .title:after {
+      content: "";
+      display: inline-block;
+      height: 3px;
+      border-radius: 50px;
+      position: relative;
+      vertical-align: middle;
+      width: 75%;
+      background-color: $border;
+    }
+
+    .title:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+
+    .items {
+      display: flex;
+      margin: auto;
+      width: 95%;
+      margin-bottom: 120px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+        width: 340px;
+        align-items: center;
+        margin: 25px;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          height: 320px;
+          padding-bottom: 20px;
+          object-fit: contain;
+          border-bottom: solid 3px #EEEEEE;
+        }
+
+        span {
+          padding: 5px 10px;
+          text-align: center;
+          font-weight: bold;
+        }
+
+        .seemore {
+          width: 100%;
+          text-align: center;
+          font-size: 1.5rem;
+        }
+
+        .seemore:before,
+        .seemore:after {
+          text-align: center;
+          background-color: $darker;
+          content: "";
+          display: inline-block;
+          height: 3px;
+          position: relative;
+          vertical-align: middle;
+          width: 28%;
+        }
+
+        .seemore:before,
+        .seemore:after {
+          background-color: $border;
+        }
+
+        .seemore:before {
+          right: 0.5em;
+          margin-left: -50%;
+        }
+
+        .seemore:after {
+          left: 0.5em;
+          margin-right: -50%;
+        }
+      }
+    }
+  }
+
+  /* export page */
+  .export-title {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-image: url("../../img/export.jpeg");
+    background-size: cover;
+    z-index: 6;
+    justify-content: left;
+
+    .left-side {
+      display: flex;
+      width: calc(50vw - 40px);
+      background-color: rgba(255, 255, 255, 0.85);
+      flex-direction: column;
+      padding: 0 40px;
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+
+        h1 {
+          font-weight: 500;
+          margin-block-end: -1rem;
+          font-size: 2.8rem;
+          margin-block-start: 0;
+        }
+
+        p {
+          line-height: 1.6;
+          font-size: 1.7rem;
+        }
+      }
+
+    }
+  }
+
+  .artco-bio {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 100px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: solid 3px $gray;
+    margin-bottom: 50px;
+
+    .title {
+      margin-block-end: 0;
+      margin-block-start: 1rem;
+    }
+
+    p {
+      margin-block-start: 1rem;
+      margin-block-end: 1rem;
+      line-height: 1.6;
+      font-size: 1.7rem;
+      min-height: 180px;
+    }
+
+    p.off {
+      display: none;
+    }
+
+    .topics {
+      display: flex;
+      width: 60%;
+      justify-content: center;
+
+      ul {
+        display: flex;
+        flex: 1 0 0;
+        justify-content: space-around;
+        list-style: none;
+        margin-block-end: 0;
+        margin-block-start: 0;
+        padding-inline-start: 0;
+
+        li {
+          padding: 4px 20px;
+          cursor: pointer;
+
+          &:hover {
+            border-radius: 45px 15px;
+            background: $gray;
+          }
+        }
+      }
+    }
+
+    .a-symbol {
+      font-size: 40rem;
+      font-family: "Mf Queen Leela", serif;
+      position: absolute;
+      color: #cccccc;
+      z-index: 5;
+      left: -160px;
+      top: -224px;
+      user-select: none;
+    }
+  }
+
+  .export-resume.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .export-resume {
+    display: flex;
+    padding: 20px 30px;
+
+    .text-side {
+      flex: 5 0 0;
+
+      .title {
+        margin-block-end: 0;
+        font-weight: 300;
+        font-style: italic;
+        color: $darker;
+      }
+
+      .title:after {
+        content: "";
+        display: inline-block;
+        height: 5px;
+        border-radius: 50px;
+        position: relative;
+        vertical-align: middle;
+        width: 75%;
+        background-color: $border;
+
+      }
+
+      .title:after {
+        left: 0.5em;
+        margin-right: -50%;
+      }
+
+      p {
+        margin-block-start: 0.5em;
+        padding: 0 30px 0 20px;
+        text-align: justify;
+        line-height: 1.6;
+      }
+    }
+
+    .pic-side {
+      padding: 20px 0;
+      justify-content: center;
+      flex: 4 0 0;
+      display: flex;
+
+      img {
+        height: 500px;
+      }
+    }
+  }
+
+  .export-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 0;
+
+    img {
+      width: 24%;
+    }
+  }
+
+  .export-description {
+    .title {
+      margin-top: 100px;
+      overflow: hidden;
+      text-align: center;
+      color: $darker;
+      font-style: italic;
+      font-size: 2rem;
+    }
+
+    .title:before,
+    .title:after {
+      content: "";
+      display: inline-block;
+      height: 3px;
+      border-radius: 50px;
+      position: relative;
+      vertical-align: middle;
+      width: 38%;
+      background-color: $border;
+    }
+
+    .title:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+
+    .title:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+
+    h5 {
+      padding: 1em 6em;
+      line-height: 2;
+      font-weight: 300;
+    }
+  }
+
+  .export-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .text-wrapper {
+      flex: 1 1 auto;
+
+      .title {
+        padding: 0 40px;
+        overflow: hidden;
+        text-align: left;
+        color: $darker;
+        font-style: italic;
+        font-size: 2.5rem;
+      }
+
+      .title:after {
+        content: "";
+        display: inline-block;
+        height: 3px;
+        border-radius: 50px;
+        position: relative;
+        vertical-align: middle;
+        width: 100%;
+        background-color: $border;
+      }
+
+      .title:after {
+        left: 0.5em;
+        margin-right: -50%;
+      }
+
+      .details {
+        padding: 40px;
+
+        h5, h6 {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          padding: 10px;
+          font-weight: 300;
+          font-size: 1.7rem;
+        }
+
+        h5 {
+          font-weight: bold;
+          color: $darkest;
+        }
+
+        h6 {
+          color: $darker;
+        }
+
+        span {
+          display: flex;
+          background-color: $gray;
+          padding-left: 10px;
+          margin: 40px;
+          align-items: center;
+          width: fit-content;
+          border-radius: 12px;
+          cursor: pointer;
+          transition: 0.2s ease;
+
+          &:hover {
+            background-color: $darkest;
+            color: white;
+          }
+
+          &:hover > img {
+            background-color: $darkest;
+          }
+
+          img {
+            width: 30px;
+            background-color: $darker;
+            padding: 15px;
+            border-radius: 12px;
+            margin-left: 10px;
+            transition: 0.2s ease;
+          }
+        }
+
+      }
+
+
+    }
+
+    .map-wrapper {
+      flex: 3 1 auto;
+      background: url("../../img/photo galley (8).jpg") no-repeat;
+      background-size: cover;
+      margin: 25px;
+      height: 500px;
+    }
+  }
+
 }
 
 /* SUBMIT BUTTON AT FOOTER*/
@@ -1955,6 +2804,10 @@ button {
       text-align: center;
       text-transform: uppercase;
     }
+  }
+
+  &.longer {
+    width: 16rem;
   }
 
   &:hover {
@@ -2231,7 +3084,7 @@ button {
 
           h6 {
             padding: 10px 50px;
-            font-size: 1rem;
+            font-size: 1.4rem;
           }
 
           .readmore {
@@ -2306,7 +3159,7 @@ button {
   }
   .lang {
     .select-menu {
-      margin-top: 2.4em;
+      margin-top: 1.5em;
 
       ul {
         li {
@@ -2317,20 +3170,17 @@ button {
   }
   button {
     &.learn-more {
-      width: 14rem;
-      }
-
-      .button-text {
-        padding: 0.45rem 0;
-        font-size: 1.4rem;
-        font-weight: 700;
-      }
     }
 
+    .button-text {
+      padding: 0.45rem 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
   }
 
-
 }
+
 
 @media all and (max-width: 980px) {
   .container {
@@ -2554,15 +3404,18 @@ button {
   .lang {
     .select-menu {
       margin-top: 2.4em;
+
       .button {
         em {
           margin-top: 8px;
+
           &::before, &::after {
             width: 5px;
             height: 5px;
           }
         }
       }
+
       select {
         padding: 8px 9px 8px 9px;
         line-height: 15px;
@@ -2894,6 +3747,10 @@ button {
           ul {
             margin: 0.8em;
             font-size: 0.3rem;
+
+            li {
+              padding: 3px 7px;
+            }
           }
         }
       }
@@ -3153,6 +4010,7 @@ button {
           }
         }
       }
+
       select {
         padding: 0 5px 0 5px;
         line-height: 15px;
