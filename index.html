@@ -14,6 +14,9 @@
 
   <!--  <link rel="stylesheet" href="css/flexboxgrid.min.css">-->
   <!--  <link rel="stylesheet" href="css/normalize.css">-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v24.0.0/dist/font-face.css" rel="stylesheet"
+        type="text/css"/>
   <link rel="stylesheet" href="css/en/main.css">
 
   <meta name="theme-color" content="#fafafa">
@@ -27,137 +30,291 @@
 
 <!-- Add your site or application content here -->
 <div class="container">
-  <div class="header">
-    <div class="lang"><span>English</span>
-      <img src="img/translate.svg" alt="Language"/>
+  <section class="home" id="home">
+    <div class="logo">
+      <img src="img/artcologo3.svg" alt="ARTCO">
     </div>
-    <div class="nav">
-      <ul>
-        <li>Home</li>
-        <li>Galley</li>
-        <li>Some</li>
-        <li>Export</li>
-        <li>About us</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="slider"></div>
-  <div class="categories">
-    <div class="title">Categories</div>
-    <div class="cats-wrapper">
-      <div class="cats" id="one"><span>Ghandoon Group</span></div>
-      <div class="cats" id="two"><span>Jewelry Group</span></div>
-      <div class="cats" id="three"><span>Necklace Group</span></div>
-      <div class="cats" id="four"><span>Jewelry Group</span></div>
-      <div class="cats" id="five"><span>Necklace Group</span></div>
-      <div class="cats" id="six"><span>Ghandoon Group</span></div>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="details">
-      <div class="logo">
-        <div><img src="img/logo.png" alt=""></div>
+    <div class="navbar">
+      <div class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Galley</a></li>
+          <li><a href="#">Collection</a></li>
+          <li><a href="#">Wholesale</a></li>
+          <li><a href="#">Export</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
       </div>
-      <div class="site-map">
-        <span>Explore</span>
-        <div class="wrapper">
-          <div class="left">
-            <ul>
-              <li>
-                <div class="item">
-                  <div class="arrow"><img src="img/arrow-b.png" alt="read more">
-                  </div>
-                  <a href="#">Home</a>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <div class="arrow"><img src="img/arrow-b.png" alt="read more">
-                  </div>
-                  <a href="#">Gallery</a>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <div class="arrow"><img src="img/arrow-b.png" alt="read more">
-                  </div>
-                  <a href="#">Export</a>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <div class="arrow"><img src="img/arrow-b.png" alt="read more">
-                  </div>
-                  <a href="#">About Us</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="right">
-            <ul>
-              <li>
-                <div class="item">
-                  <div class="arrow"><img src="img/arrow-b.png" alt="read more">
-                  </div>
-                  <a href="#">Collection</a>
-                </div>
-              </li>
-              <li>
-                <div class="item">
-                  <div class="arrow"><img src="img/arrow-b.png" alt="read more">
-                  </div>
-                  <a href="#">Wholesale</a>
-                </div>
-              </li>
-            </ul>
-          </div>
+      <div class="lang">
+        <select data-menu>
+          <option selected>English</option>
+          <option>Farsi</option>
+        </select>
+      </div>
+    </div>
+    <div class="description">
+      <div class="home-title">
+        <h1>THE BLUE</h1>
+        <h6>Write something about this image</h6>
+      </div>
+      <div class="scroll" id="scroll"></div>
+    </div>
+  </section>
+  <section id="other">
+
+    <div class="gooddesign">
+      <img src="img/whitish1.jpg" alt="">
+      <img class="hidden" src="img/whitish2.jpg" alt="">
+      <img class="hidden" src="img/whitish3.jpg" alt="">
+      <img class="hidden" src="img/whitish4.jpg" alt="">
+      <img class="hidden" src="img/whitish5.jpg" alt="">
+      <div class="description">
+        <div class="text-wrapper">
+          <h1 data-image="whitish1.jpg">Elegant Art of Nature </h1>
+          <h1 class="off" data-image="whitish2.jpg">Tune of Abiding Originality</h1>
+          <h1 class="off" data-image="whitish3.jpg">Customized Materials </h1>
+          <h1 class="off" data-image="whitish4.jpg">Tougher than Stone</h1>
+          <h1 class="off" data-image="whitish5.jpg"> All-inclusive Guarantee </h1>
+          <h6>The epitome of the unmatched elegance and delicacy of Iranian-arabesque-style turquoise inlay products </h6>
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+          <h6 class="off">Experiencing the lasting sensation of originality with turquoise inlay handicrafts; the
+            products of original Iranian art combined with the skill of master craftsmen. </h6>
+          <button class="learn-more off">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+          <h6 class="off">Using 1.99% pure, 1.5 millimeters thick rolled copper in all turquoise inlay products, coupled
+            with German-made BST nanoparticle coating for preserving the natural hue of copper. </h6>
+          <button class="learn-more off">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+          <h6 class="off">Using Neyshabur turquoise with maximum microcrystal density for increased transparency, along
+            with SST nanoparticle coating aimed at preserving the product against moisture, heat and impact. </h6>
+          <button class="learn-more off">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+          <h6 class="off">Provision of certificates of authenticity and 10-year warranty cards for all products with CE
+            markings.</h6>
+          <button class="learn-more off">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
         </div>
       </div>
-      <div class="contact">
-        <h2>Contact Us</h2>
-        <div><h5>Mail:</h5></div>
-        <div><h6>FirozeKoobi@gmail.com</h6></div>
-        <div><h6>CustomerService@artco.com</h6></div>
-        <div><h5>Phone:</h5></div>
-        <div><h6>+98 912 212 1773 (Sells department)</h6></div>
-        <div><h5>Address:</h5></div>
-        <div><h6>Zanjan, Zanjan, Iran, Lorep ipsum</h6></div>
+      <div class="titles">
+        <ul>
+          <li><a href="#">Elegant Art of Nature </a></li>
+          <li><a href="#">Tune of Abiding Originality</a></li>
+          <li><a href="#">Customized Materials </a></li>
+          <li><a href="#">Tougher than Stone</a></li>
+          <li><a href="#">All-inclusive Guarantee</a></li>
+        </ul>
       </div>
-      <div class="newsletter">
-        <h2>Newsletter</h2>
-        <label for="inp" class="inp">
-          <input type="text" id="inp" placeholder="&nbsp;">
-          <span class="label">Enter your email</span>
-          <span class="border"></span>
-        </label>
-        <button type="submit">Submit</button>
+
+    </div>
+    <div class="collection">
+      <div class="description">
+        <div class="text-wrapper">
+          <h1>Collection</h1>
+          <h6>Artisanship and a return to the essence of originality are invaluable features of the artisan who, through
+            his craftsmanship, has tied his soul to pure art and breathed new life into a once-lost, authentic form of
+            art, in order to create a lasting value that stems from an ancient history; a value as original as the
+            turquoise stone itself and everlasting as a shiny element like copper, which will unite with the spirit of
+            art to symbolize a distinct form of authenticity.</h6>
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
       </div>
     </div>
-    <div class="social">
-      <div class="icons">
-        <a href="#">
-          <div class="icon" id="instagram"></div>
-        </a>
-        <a href="#">
-          <div class="icon" id="facebook"></div>
-        </a>
-        <a href="#">
-          <div class="icon" id="linkedin"></div>
-        </a>
+    <div class="features">
+      <div class="picture">
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+      </div>
+      <div class="description">
+        <ul>
+          <li><a href="#">Packaging</a></li>
+          <li><a href="#">Transportation</a></li>
+          <li><a href="#">About the Product</a></li>
+        </ul>
+        <h5>Low weight, elegance and durability are three key factors in packaging of exported goods. Taking
+          into account the cultures of the target countries, transportation issues and the features of every product,
+          The Package Design and Manufacturing Unit in Artco Company has designed exclusive, customized packages and
+          makes use of functional packaging in exports. </h5>
+        <h5 class="off"> On-time delivery of products according to the delivery schedule per contract, as
+          well as observing global standards of transportation in terms of the number and the unharmed state of
+          delivered goods are the cornerstones of ensuring the satisfaction of Artco`s international customers. </h5>
+        <h5 class="off">Inherent beauty of handicrafts and manufacturing of exclusive packages
+          according to type of the product and the cultural context of target countries are important factors
+          contributing to the creation of export value and the selling of this value and art in the global free market.
+          Artco takes pride in the fact that, in an attempt to establish mutual relations with international traders and
+          exchanging information with them, it has achieved practical and profound levels of behavior analysis and
+          shopping behavior analysis with respect to the target market in each of the countries, and has covered all the
+          demands of the international markets.</h5>
+        <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+          <span class="button-text">Read More</span>
+        </button>
       </div>
     </div>
-    <div class="copyright"><h6>All right reserved for <b>ARTCO</b> company, 2019</h6></div>
-  </div>
+    <div class="ourcustomers">
+      <h1>Our Customers</h1>
+      <div class="logos">
+        <div class="item"><img src="img/200.png" alt="Artco"></div>
+        <div class="item"><img src="img/300.png" alt="Artco"></div>
+        <div class="item"><img src="img/400.png" alt="Artco"></div>
+        <div class="item"><img src="img/600.png" alt="Artco"></div>
+        <div class="item"><img src="img/zurich-tile.png" alt="Artco"></div>
+      </div>
+      <div class="logos">
+        <div class="item"><img src="img/customer1.png" alt="Artco"></div>
+        <div class="item"><img src="img/customer2.png" alt="Artco"></div>
+        <div class="item"><img src="img/customer3.png" alt="Artco"></div>
+        <div class="item"><img src="img/customer3.png" alt="Artco"></div>
+        <div class="item"><img src="img/customer3.png" alt="Artco"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="details">
+        <div class="logo">
+          <div><img src="img/artcologo3.svg" alt=""></div>
+        </div>
+        <div class="site-map">
+          <span>Explore
+            <span class="footer-slider-wrapper">
+              <span class="footer-slider roll-it">
+                <span>Smart</span>
+                <span>Inspiring</span>
+                <span>Inovative</span>
+                <span>Technotile</span>
+                <span>magic</span>
+                <span>Interesting</span>
+                <span>Reliable</span>
+                <span>immortal</span>
+                <span>Divine</span>
+                <span>Lovely</span>
+                <span>Pixel</span>
+              </span>
+            </span>
+          </span>
+          <div class="wrapper">
+            <div class="left">
+              <ul>
+                <li>
+                  <div class="item">
+                    <div class="arrow"><img src="img/arrow-b.png" alt="read more">
+                    </div>
+                    <a href="#">Home</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    <div class="arrow"><img src="img/arrow-b.png" alt="read more">
+                    </div>
+                    <a href="#">Gallery</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    <div class="arrow"><img src="img/arrow-b.png" alt="read more">
+                    </div>
+                    <a href="#">Export</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    <div class="arrow"><img src="img/arrow-b.png" alt="read more">
+                    </div>
+                    <a href="#">About Us</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="right">
+              <ul>
+                <li>
+                  <div class="item">
+                    <div class="arrow"><img src="img/arrow-b.png" alt="read more">
+                    </div>
+                    <a href="#">Collection</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="item">
+                    <div class="arrow"><img src="img/arrow-b.png" alt="read more">
+                    </div>
+                    <a href="#">Wholesale</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="contact">
+          <h2>Contact Us</h2>
+          <div><h5>Mail:</h5></div>
+          <div><h6>FirozeKoobi@gmail.com</h6></div>
+          <div><h6>CustomerService@artco.com</h6></div>
+          <div><h5>Phone:</h5></div>
+          <div><h6>+98 912 212 1773 (Sells department)</h6></div>
+          <div><h5>Address:</h5></div>
+          <div><h6>Zanjan, Zanjan, Iran, Lorep ipsum</h6></div>
+        </div>
+        <div class="newsletter">
+          <h2>Newsletter</h2>
+          <label for="inp" class="inp">
+            <input type="text" id="inp" placeholder="&nbsp;">
+            <span class="label">Enter your email</span>
+            <span class="border"></span>
+          </label>
+          <button class="submit"></button>
+        </div>
+      </div>
+      <div class="social">
+        <div class="icons">
+          <a href="#">
+            <div class="icon" id="instagram"></div>
+          </a>
+          <a href="#">
+            <div class="icon" id="facebook"></div>
+          </a>
+          <a href="#">
+            <div class="icon" id="linkedin"></div>
+          </a>
+        </div>
+      </div>
+      <div class="copyright"><h6>All right reserved for <b>ARTCO</b> company, 2019</h6></div>
+    </div>
+  </section>
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="js/vendor/jquery-3.4.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 </div>
-
-
-<script src="js/vendor/modernizr-3.7.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
-
 </body>
 
 </html>

@@ -1,12 +1,9 @@
 $(document).ready(function () {
   if ($("#home").length) {
-    var x = document.documentElement.scrollTop || document.body.scrollTop;
-    var y = $('#other').offset().top;
     $('#scroll').on('click', function () {
       $('html, body').animate({
         scrollTop: $("#other").offset().top
       }, 1200);
-
     });
   }
 
@@ -45,14 +42,32 @@ $(document).ready(function () {
     desc.addClass('off');
     desc.eq(i).removeClass('off');
   });
-  //Export Page topic select:
-  $(".artco-bio .topics ul li").on('click', function (e) {
+
+  // //Export Page topic select:
+  // $(".artco-bio .topics ul li").on('click', function (e) {
+  //   e.preventDefault();
+  //   var i = $('.artco-bio .topics ul li').index(this);
+  //   var desc = $('.artco-bio p');
+  //   desc.addClass('off');
+  //   desc.eq(i).removeClass('off');
+  // });
+
+  // Export scroll cotrol
+  $('.topics ul li').on('click', function (e) {
     e.preventDefault();
-    var i = $('.artco-bio .topics ul li').index(this);
-    var desc = $('.artco-bio p');
-    desc.addClass('off');
-    desc.eq(i).removeClass('off');
+    var i = $('.topics ul li').index(this);
+    var myElement = $("#export-resume");
+    if (i === 1)
+      myElement = $("#export-quality");
+    if (i === 2)
+      myElement = $("#export-gallery");
+    if (i === 3)
+      myElement = $("#export-description");
+      $('html, body').animate({
+        scrollTop: myElement.offset().top
+      }, 1000);
   });
+
 
   // LANGUAGE DROP DOWN
   $('select[data-menu]').each(function () {
@@ -109,11 +124,11 @@ $(document).ready(function () {
   $shop_items = $(".product-preview .details .images .image");
   $shop_preview = $(".product-preview .product img");
   $shop_title = $(".product-preview .details .title");
-  $shop_items.on('click',function (e) {
+  $shop_items.on('click', function (e) {
     $prev = $shop_preview.attr('src');
     $clicked = $(this).children('img').attr('src');
     $alt = $(this).children('img').attr('alt');
-    $shop_preview.attr('src',$clicked);
+    $shop_preview.attr('src', $clicked);
     $shop_title.html($alt);
     console.log('done');
 

@@ -78,6 +78,11 @@ body {
   flex-direction: column;
   overflow: hidden;
 
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+
   .fsymbol {
     font-size: 40rem;
     font-family: "Mf Queen Leela", serif;
@@ -765,7 +770,6 @@ body {
 
     .regular {
       font-style: normal !important;
-      font-family: "Lao UI", serif;
       font-size: 2.2rem;
       color: black;
     }
@@ -810,11 +814,10 @@ body {
         a {
           color: #3e3e46;
           font-size: 2.2rem;
-          font-family: Lato;
           text-decoration: none;
 
           &:hover {
-            color: #c28fb8;
+            color: $purple;
           }
         }
       }
@@ -833,7 +836,7 @@ body {
         display: flex;
         flex-direction: column;
         font-size: 2rem;
-        width: 340px;
+        width: 300px;
         align-items: center;
         margin: 25px;
 

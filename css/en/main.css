@@ -56,6 +56,10 @@ body {
   overflow: hidden;
   /* export page */
 }
+.container a {
+  text-decoration: none;
+  color: inherit;
+}
 .container .fsymbol {
   font-size: 40rem;
   font-family: "Mf Queen Leela", serif;
@@ -633,7 +637,6 @@ body {
 }
 .container .categories-noback .regular {
   font-style: normal !important;
-  font-family: "Lao UI", serif;
   font-size: 2.2rem;
   color: black;
 }
@@ -673,11 +676,10 @@ body {
 .container .categories-noback .cats-title ul a {
   color: #3e3e46;
   font-size: 2.2rem;
-  font-family: Lato;
   text-decoration: none;
 }
 .container .categories-noback .cats-title ul a:hover {
-  color: #c28fb8;
+  color: #bd8cbf;
 }
 .container .categories-noback .items-wrapper {
   display: flex;
@@ -690,7 +692,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  width: 340px;
+  width: 300px;
   align-items: center;
   margin: 25px;
 }
