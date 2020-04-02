@@ -63,9 +63,9 @@ $(document).ready(function () {
       myElement = $("#export-gallery");
     if (i === 3)
       myElement = $("#export-description");
-      $('html, body').animate({
-        scrollTop: myElement.offset().top
-      }, 1000);
+    $('html, body').animate({
+      scrollTop: myElement.offset().top
+    }, 1000);
   });
 
 
@@ -81,7 +81,9 @@ $(document).ready(function () {
 
     options.each(function (i) {
       let option = $(this);
-      list.append($('<li />').text(option.text()));
+      list.append(
+        $('<li />').append($('<a href="#"/>').text(option.text()))
+      );
     });
 
     menu.css('--t', select.find(':selected').index() * -41 + 'px');
@@ -93,6 +95,7 @@ $(document).ready(function () {
     list.clone().insertAfter(button);
 
   });
+
   $(document).on('click', '.select-menu', function (e) {
 
     let menu = $(this);
@@ -116,7 +119,12 @@ $(document).ready(function () {
     if ($('.select-menu').has(e.target).length === 0) {
       $('.select-menu').removeClass('open');
     }
-  })
+  });
+  var mySelectMenu = $('.select-menu').eq(0);
+  mySelectMenu.find('.button').find('ul').find('li').eq(0).find('a').attr("href", "http://aparat.com")
+  mySelectMenu.find('.button').find('ul').find('li').eq(1).find('a').attr("href", "http://varzesh3.com")
+  mySelectMenu.find('ul').eq(1).find('li').eq(0).find('a').attr("href", "http://aparat.com");
+  mySelectMenu.find('ul').eq(1).find('li').eq(1).find('a').attr("href", "http://varzesh3.com");
 
 
   /* shop details */
