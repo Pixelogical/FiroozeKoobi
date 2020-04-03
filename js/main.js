@@ -138,7 +138,6 @@ $(document).ready(function () {
     $alt = $(this).children('img').attr('alt');
     $shop_preview.attr('src', $clicked);
     $shop_title.html($alt);
-    console.log('done');
 
 
   });

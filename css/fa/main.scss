@@ -2142,8 +2142,6 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     justify-content: center;
     align-items: center;
     position: relative;
-    font-family: 'IRANSansWeb', "Microsoft JhengHei Light", serif;
-
 
     .product {
       img {
@@ -2172,19 +2170,25 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
         .image {
           display: flex;
+          width: 4em;
           margin: 15px 40px 0 0;
+          height: 4em;
+          overflow: hidden;
+          justify-content: center;
+          align-items: center;
+          box-sizing: border-box;
+          border-radius: 20px;
+
+          &:hover {
+            border: 3px solid $purple;
+            padding: 5px;
+          }
 
 
           img {
-            width: 4em;
-            height: 4em;
-            border-radius: 20px;
-            box-sizing: border-box;
+            height: 100%;
             cursor: pointer;
 
-            &:hover {
-              border: 3px solid $purple;
-            }
           }
         }
       }

@@ -1849,9 +1849,10 @@ body {
 }
 .container .product-info .choose-model .title {
   margin-block-end: 0;
+  font-weight: 500;
 }
 .container .product-info .choose-model .models {
-  padding: 5px 0;
+  padding: 7px 0 15px 0;
 }
 .container .product-info .choose-model .models .model {
   padding: 5px 32px;
@@ -1870,7 +1871,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 320px;
-  padding: 10px;
+  padding: 3px 10px;
 }
 .container .product-info .properties .property {
   font-size: 1.2rem;
@@ -1889,13 +1890,14 @@ body {
 }
 .container .product-info .price .text {
   color: #777777;
-  font-family: "Lato hairline", serif;
 }
 .container .product-info .price .text h3 {
   margin-block-end: 0;
+  font-weight: 300;
 }
 .container .product-info .price .text h3 span {
   padding-left: 15px;
+  font-weight: 300;
 }
 .container .product-info .price .text h5 {
   margin-block-start: 0;
