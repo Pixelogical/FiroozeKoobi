@@ -887,6 +887,9 @@ body {
   display: flex;
   flex: 1 1 0;
 }
+.container .sponsorship .row h4, .container .sponsorship .row h5 {
+  font-weight: 400;
+}
 .container .sponsorship .row .text-wrapper {
   display: flex;
   flex: 4 1 0;
@@ -933,11 +936,15 @@ body {
 .container .description h5 {
   padding: 5%;
   line-height: 2;
+  font-weight: 400;
 }
 .container .info {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+.container .info h4, .container .info h5 {
+  font-weight: 400;
 }
 .container .info .text-wrapper {
   flex: 1 1 auto;
