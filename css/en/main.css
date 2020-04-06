@@ -2258,6 +2258,284 @@ body {
   margin: 25px;
   height: 500px;
 }
+.container .purchase {
+  padding: 40px;
+  z-index: 6;
+  display: flex;
+  min-height: 100vh;
+}
+.container .purchase .factor {
+  display: flex;
+  flex: 5 0 0;
+  background: #EEEEEE;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  padding: 20px;
+  padding-right: 30px;
+  flex-direction: column;
+}
+.container .purchase .factor .url {
+  padding-bottom: 30px;
+  font-size: 1.2rem;
+}
+.container .purchase .factor .url a.link::after {
+  font-family: "FontAwesome", serif;
+  content: "";
+  font-size: 28px;
+  display: inline-block;
+  color: #00000085;
+  padding-left: 4px;
+  vertical-align: middle;
+  height: 30px;
+}
+.container .purchase .factor .url a.link:hover {
+  color: #bd8cbf;
+}
+.container .purchase .factor .items {
+  flex-grow: 1;
+}
+.container .purchase .factor .items .item {
+  display: flex;
+  background: #cccccc;
+  flex: 100% 0 0;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 12px;
+  padding: 12px 0;
+  margin: 7px 0;
+}
+.container .purchase .factor .items .item img {
+  width: 95px;
+  height: 95px;
+  object-fit: scale-down;
+  border-radius: 12px;
+}
+.container .purchase .factor .items .item .entity::before {
+  content: "-";
+  font-weight: 400;
+  padding: 5px;
+  cursor: pointer;
+}
+.container .purchase .factor .items .item .entity::after {
+  content: "+";
+  font-weight: 400;
+  padding: 5px;
+  cursor: pointer;
+}
+.container .purchase .factor .items .item .close {
+  border-radius: 11px;
+}
+.container .purchase .factor .items .item .close::after {
+  font-family: "FontAwesome", serif;
+  content: "";
+  display: inline-block;
+  color: #00000085;
+  padding: 1px 7px;
+  vertical-align: middle;
+  height: 30px;
+}
+.container .purchase .factor .items .item .close:hover {
+  background-color: #bd8cbf;
+}
+.container .purchase .factor .total {
+  margin-top: 40px;
+}
+.container .purchase .factor .total .charge {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top: 3px solid gray;
+}
+.container .purchase .factor .total h5 {
+  font-weight: 400;
+  margin-block-end: 1em;
+  margin-block-start: 1em;
+}
+.container .purchase .factor .total .bold h5 {
+  font-weight: bold;
+}
+.container .purchase .user-info {
+  display: flex;
+  flex: 2 0 0;
+  margin-left: -10px;
+  background: #cccccc;
+  border-radius: 13px;
+  padding: 20px;
+}
+.container .purchase .user-info form {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+.container .purchase .user-info form label {
+  font-size: 1rem;
+  margin: 12px 0 5px 12px;
+}
+.container .purchase .user-info form input {
+  border: none;
+  height: 25px;
+  border-radius: 12px;
+  background-color: #EEEEEE;
+  padding: 10px;
+  margin: 5px;
+}
+.container .purchase .user-info form .address {
+  display: flex;
+  justify-content: space-around;
+}
+.container .purchase .user-info form .address .select-wrapper {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 0;
+  position: relative;
+}
+.container .purchase .user-info form .address .select-wrapper::after {
+  font-family: "FontAwesome", serif;
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 0;
+  color: #cccccc;
+  /* align-self: center; */
+  display: flex;
+  bottom: 0;
+  align-items: center;
+  font-size: 0.6em;
+}
+.container .purchase .user-info form .address .select-wrapper select {
+  margin: 5px;
+  background-color: #EEEEEE;
+  color: #cccccc;
+  flex: 1 0 0;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.container .purchase .user-info form textarea {
+  border: none;
+  border-radius: 12px;
+  background-color: #EEEEEE;
+  padding: 10px;
+  margin: 5px;
+  height: 130px;
+  resize: none;
+}
+.container .purchase .user-info form textarea::placeholder {
+  color: #cccccc;
+  font-family: "Roboto", sans-serif;
+}
+.container .purchase .user-info form .payment {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container .purchase .user-info form .payment h5 {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+.container .purchase .user-info form .payment .logos {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.container .purchase .user-info form .payment .logos .bank {
+  width: 8px;
+  height: 8px;
+  border: 12px solid #454545;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+.container .purchase .user-info form input[type=submit] {
+  margin: 30px 10px;
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  vertical-align: middle;
+  line-height: 0.3;
+  color: #cccccc;
+  background-color: #454545;
+  border: 2px solid #454545;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.container .purchase .user-info form input[type=submit]:hover {
+  background-color: #cccccc;
+  color: #454545;
+}
+.container .card-contact {
+  padding: 100px 40px;
+  padding-top: 0;
+  z-index: 6;
+  display: flex;
+}
+.container .card-contact .mail {
+  display: flex;
+  flex: 4 0 0;
+  background: #EEEEEE;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  padding: 20px;
+  padding-right: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .card-contact .mail h5 {
+  font-weight: 300;
+  margin-block-end: 0;
+}
+.container .card-contact .mail span {
+  display: flex;
+  background-color: #cccccc;
+  padding-left: 50px;
+  margin: 20px;
+  align-items: center;
+  width: fit-content;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 1.3rem;
+}
+.container .card-contact .mail span:hover {
+  background-color: #454545;
+  color: white;
+}
+.container .card-contact .mail span:hover > img {
+  background-color: #454545;
+}
+.container .card-contact .mail span img {
+  width: 30px;
+  background-color: #777777;
+  padding: 15px;
+  border-radius: 12px;
+  margin-left: 35px;
+  transition: 0.2s ease;
+}
+.container .card-contact .card-dl {
+  display: flex;
+  flex: 3 0 0;
+  margin-left: -10px;
+  background: #cccccc;
+  border-radius: 13px;
+  padding: 20px;
+  flex-direction: column;
+}
+.container .card-contact .card-dl h5, .container .card-contact .card-dl h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 5px 20px;
+  color: #454545;
+}
+.container .card-contact .card-dl h6 {
+  font-weight: 300;
+}
 
 /* SUBMIT BUTTON AT FOOTER*/
 button {
