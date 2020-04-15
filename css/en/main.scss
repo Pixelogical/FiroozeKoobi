@@ -465,7 +465,7 @@ body {
     }
 
     h2 {
-      font-size: 6.5rem;
+      font-size: 6rem;
       padding: 40px;
       font-family: "Mf Queen Leela", serif;
     }
@@ -839,6 +839,10 @@ body {
         width: 300px;
         align-items: center;
         margin: 25px;
+
+        a {
+          text-align: center;
+        }
 
         img {
           width: 100%;
@@ -2775,7 +2779,7 @@ body {
             height: 30px;
           }
 
-          &:hover{
+          &:hover {
             color: $purple;
           }
         }
@@ -3061,13 +3065,14 @@ body {
       padding: 20px;
       flex-direction: column;
 
-      h5,h6{
+      h5, h6 {
         margin-block-start: 0;
         margin-block-end: 0;
         padding: 5px 20px;
         color: #454545;
       }
-      h6{
+
+      h6 {
         font-weight: 300;
       }
     }

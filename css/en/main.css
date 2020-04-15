@@ -382,7 +382,7 @@ body {
   vertical-align: middle;
 }
 .container .portrait h2 {
-  font-size: 6.5rem;
+  font-size: 6rem;
   padding: 40px;
   font-family: "Mf Queen Leela", serif;
 }
@@ -695,6 +695,9 @@ body {
   width: 300px;
   align-items: center;
   margin: 25px;
+}
+.container .categories-noback .items-wrapper .item a {
+  text-align: center;
 }
 .container .categories-noback .items-wrapper .item img {
   width: 100%;
