@@ -809,6 +809,7 @@ body {
         li {
           list-style: none;
           padding: 20px;
+
         }
 
         a {
@@ -820,6 +821,11 @@ body {
             color: $purple;
           }
         }
+
+        li.selected a {
+          color: $purple;
+        }
+
       }
 
 
@@ -849,6 +855,7 @@ body {
           height: 320px;
           object-fit: contain;
           border-bottom: solid 3px #EEEEEE;
+          padding: 5px;
         }
 
         span {

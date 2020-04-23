@@ -164,5 +164,27 @@ $(document).ready(function () {
     $(".gooddesign img").eq(i).animate({opacity: '1'}, {duration: 600, queue: false})
 
   });
+
+
+  // generalshop categories selection
+  var catDOM = $(".categories-noback .cats-title ul li");
+  catDOM.on('click', function (e) {
+    e.preventDefault();
+    catDOM.each(function () {
+      $(this).removeClass('selected');
+    });
+    $(this).addClass('selected');
+    var category = $(this).data('category');
+    $(".categories-noback .items-wrapper .item").each(function (i) {
+      if (category === 'all')
+        $(this).show();
+      else {
+        if ($(this).data('category') === category)
+          $(this).show();
+        else
+          $(this).hide();
+      }
+    });
+  });
 });
 

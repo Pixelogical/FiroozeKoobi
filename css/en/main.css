@@ -681,6 +681,9 @@ body {
 .container .categories-noback .cats-title ul a:hover {
   color: #bd8cbf;
 }
+.container .categories-noback .cats-title ul li.selected a {
+  color: #bd8cbf;
+}
 .container .categories-noback .items-wrapper {
   display: flex;
   margin: auto;
@@ -704,6 +707,7 @@ body {
   height: 320px;
   object-fit: contain;
   border-bottom: solid 3px #EEEEEE;
+  padding: 5px;
 }
 .container .categories-noback .items-wrapper .item span {
   padding: 5px 10px;

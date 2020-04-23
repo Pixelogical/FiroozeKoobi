@@ -830,8 +830,11 @@ h1, h2, h3, h4, h5, h6, span, a, li {
             color: $purple;
           }
         }
-      }
 
+        li.selected a {
+          color: $purple;
+        }
+      }
 
     }
 
@@ -859,6 +862,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           height: 320px;
           object-fit: contain;
           border-bottom: solid 3px #EEEEEE;
+          padding: 5px;
         }
 
         span {
@@ -1867,6 +1871,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
             text-decoration: none;
             padding: 3px 0;
             color: $purple;
+
             &:hover {
               border-bottom: 4px solid #9f89c2;
             }
@@ -2731,336 +2736,337 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   }
 }
 
-  .purchase {
-    padding: 40px;
-    z-index: 6;
+.purchase {
+  padding: 40px;
+  z-index: 6;
+  display: flex;
+  min-height: 100vh;
+
+  .factor {
     display: flex;
-    min-height: 100vh;
+    flex: 5 0 0;
+    background: $border;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    padding: 20px;
+    padding-left: 30px;
+    flex-direction: column;
 
-    .factor {
-      display: flex;
-      flex: 5 0 0;
-      background: $border;
-      border-top-right-radius: 13px;
-      border-bottom-right-radius: 13px;
-      padding: 20px;
-      padding-left: 30px;
-      flex-direction: column;
+    .url {
+      padding-bottom: 30px;
+      font-size: 1.2rem;
 
-      .url {
-        padding-bottom: 30px;
-        font-size: 1.2rem;
+      a.link {
+        &::after {
+          font-family: "FontAwesome", serif;
+          content: "\f104";
+          font-size: 28px;
+          display: inline-block;
+          color: #00000085;
+          padding-right: 4px;
+          vertical-align: middle;
+          height: 30px;
+        }
 
-        a.link {
+        &:hover {
+          color: $purple;
+        }
+      }
+
+    }
+
+    .items {
+      flex-grow: 1;
+
+      .item {
+        display: flex;
+        background: $gray;
+        flex: 100% 0 0;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 12px;
+        padding: 12px 0;
+        margin: 7px 0;
+
+        img {
+          width: 95px;
+          height: 95px;
+          object-fit: scale-down;
+          border-radius: 12px;
+        }
+
+        .entity {
+          &::before {
+            content: "-";
+            font-weight: 400;
+            padding: 5px;
+            cursor: pointer;
+          }
+
+          &::after {
+            content: "+";
+            font-weight: 400;
+            padding: 5px;
+            cursor: pointer;
+          }
+        }
+
+        .close {
+          border-radius: 11px;
+
           &::after {
             font-family: "FontAwesome", serif;
-            content: "\f104";
-            font-size: 28px;
+            content: "\f00d";
             display: inline-block;
             color: #00000085;
-            padding-right: 4px;
+            padding: 1px 7px;
             vertical-align: middle;
             height: 30px;
           }
 
-          &:hover{
-            color: $purple;
-          }
-        }
-
-      }
-
-      .items {
-        flex-grow: 1;
-
-        .item {
-          display: flex;
-          background: $gray;
-          flex: 100% 0 0;
-          align-items: center;
-          justify-content: space-around;
-          border-radius: 12px;
-          padding: 12px 0;
-          margin: 7px 0;
-
-          img {
-            width: 95px;
-            height: 95px;
-            object-fit: scale-down;
-            border-radius: 12px;
-          }
-
-          .entity {
-            &::before {
-              content: "-";
-              font-weight: 400;
-              padding: 5px;
-              cursor: pointer;
-            }
-
-            &::after {
-              content: "+";
-              font-weight: 400;
-              padding: 5px;
-              cursor: pointer;
-            }
-          }
-
-          .close {
-            border-radius: 11px;
-
-            &::after {
-              font-family: "FontAwesome", serif;
-              content: "\f00d";
-              display: inline-block;
-              color: #00000085;
-              padding: 1px 7px;
-              vertical-align: middle;
-              height: 30px;
-            }
-
-            &:hover {
-              background-color: $purple;
-            }
-          }
-        }
-      }
-
-      .total {
-        margin-top: 40px;
-
-        .charge {
-          display: flex;
-          justify-content: space-between;
-          padding: 0 20px;
-          border-top: 3px solid gray;
-        }
-
-        h5 {
-          font-weight: 400;
-          margin-block-end: 1em;
-          margin-block-start: 1em;
-        }
-
-        .bold h5 {
-          font-weight: bold;
-        }
-      }
-    }
-
-    .user-info {
-      display: flex;
-      flex: 2 0 0;
-      margin-right: -10px;
-      background: $gray;
-      border-radius: 13px;
-      padding: 20px;
-
-
-      form {
-        display: flex;
-        flex-direction: column;
-        flex: 1 0 0;
-
-        label {
-          font-size: 1rem;
-          margin: 12px 0 5px 12px;
-        }
-
-        input {
-          border: none;
-          height: 25px;
-          border-radius: 12px;
-          background-color: $border;
-          padding: 10px;
-          margin: 5px;
-        }
-
-        .address {
-          display: flex;
-          justify-content: space-around;
-
-          .select-wrapper {
-            display: flex;
-            justify-content: center;
-            flex: 1 0 0;
-            position: relative;
-
-            &::after {
-              font-family: "FontAwesome", serif;
-              content: "\f078";
-              position: absolute;
-              left: 16px;
-              top: 0;
-              color: $gray;
-              /* align-self: center; */
-              display: flex;
-              bottom: 0;
-              align-items: center;
-              font-size: 0.6em;
-            }
-
-            select {
-              font-family: $persian;
-              margin: 5px;
-              background-color: $border;
-              color: $gray;
-              flex: 1 0 0;
-              border: none;
-              padding: 12px;
-              border-radius: 12px;
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
-            }
-          }
-
-        }
-
-        textarea {
-          border: none;
-          border-radius: 12px;
-          background-color: $border;
-          padding: 10px;
-          margin: 5px;
-          height: 130px;
-          resize: none;
-
-          &::placeholder {
-            color: $gray;
-            font-family: $persian;
-          }
-        }
-
-        .payment {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-
-          h5 {
-            font-size: 1rem;
-            font-weight: 300;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-          }
-
-          .logos {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-
-            .bank {
-              width: 8px;
-              height: 8px;
-              border: 12px solid $darkest;
-              border-radius: 50%;
-              margin: 0 3px;
-            }
-          }
-
-
-        }
-
-        input[type="submit"] {
-          margin: 30px 10px;
-          padding: 28px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          align-content: center;
-          vertical-align: middle;
-          line-height: 0.3;
-          color: $gray;
-          background-color: $darkest;
-          border: 2px solid $darkest;
-          box-sizing: border-box;
-          cursor: pointer;
-
           &:hover {
-            background-color: $gray;
-            color: $darkest;
+            background-color: $purple;
           }
         }
       }
     }
 
-  }
+    .total {
+      margin-top: 40px;
 
-  .card-contact {
-    padding: 100px 40px;
-    padding-top: 0;
-    z-index: 6;
-    display: flex;
-
-    .mail {
-      display: flex;
-      flex: 4 0 0;
-      background: $border;
-      border-top-right-radius: 13px;
-      border-bottom-right-radius: 13px;
-      padding: 20px;
-      padding-left: 30px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      .charge {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        border-top: 3px solid gray;
+      }
 
       h5 {
-        font-weight: 300;
-        margin-block-end: 0;
+        font-weight: 400;
+        margin-block-end: 1em;
+        margin-block-start: 1em;
       }
 
-      span {
-        display: flex;
-        background-color: $gray;
-        padding-right: 50px;
-        margin: 20px;
-        align-items: center;
-        width: fit-content;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: 0.2s ease;
-        font-size: 1.3rem;
-
-        &:hover {
-          background-color: $darkest;
-          color: white;
-        }
-
-        &:hover > img {
-          background-color: $darkest;
-        }
-
-        img {
-          width: 30px;
-          background-color: $darker;
-          padding: 15px;
-          border-radius: 12px;
-          margin-right: 35px;
-          transition: 0.2s ease;
-        }
-      }
-    }
-
-    .card-dl {
-      display: flex;
-      flex: 3 0 0;
-      margin-right: -10px;
-      background: $gray;
-      border-radius: 13px;
-      padding: 20px;
-      flex-direction: column;
-
-      h5,h6{
-        margin-block-start: 0;
-        margin-block-end: 0;
-        padding: 5px 20px;
-        color: #454545;
-      }
-      h6{
-        font-weight: 300;
+      .bold h5 {
+        font-weight: bold;
       }
     }
   }
+
+  .user-info {
+    display: flex;
+    flex: 2 0 0;
+    margin-right: -10px;
+    background: $gray;
+    border-radius: 13px;
+    padding: 20px;
+
+
+    form {
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 0;
+
+      label {
+        font-size: 1rem;
+        margin: 12px 0 5px 12px;
+      }
+
+      input {
+        border: none;
+        height: 25px;
+        border-radius: 12px;
+        background-color: $border;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      .address {
+        display: flex;
+        justify-content: space-around;
+
+        .select-wrapper {
+          display: flex;
+          justify-content: center;
+          flex: 1 0 0;
+          position: relative;
+
+          &::after {
+            font-family: "FontAwesome", serif;
+            content: "\f078";
+            position: absolute;
+            left: 16px;
+            top: 0;
+            color: $gray;
+            /* align-self: center; */
+            display: flex;
+            bottom: 0;
+            align-items: center;
+            font-size: 0.6em;
+          }
+
+          select {
+            font-family: $persian;
+            margin: 5px;
+            background-color: $border;
+            color: $gray;
+            flex: 1 0 0;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          }
+        }
+
+      }
+
+      textarea {
+        border: none;
+        border-radius: 12px;
+        background-color: $border;
+        padding: 10px;
+        margin: 5px;
+        height: 130px;
+        resize: none;
+
+        &::placeholder {
+          color: $gray;
+          font-family: $persian;
+        }
+      }
+
+      .payment {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h5 {
+          font-size: 1rem;
+          font-weight: 300;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+        }
+
+        .logos {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          .bank {
+            width: 8px;
+            height: 8px;
+            border: 12px solid $darkest;
+            border-radius: 50%;
+            margin: 0 3px;
+          }
+        }
+
+
+      }
+
+      input[type="submit"] {
+        margin: 30px 10px;
+        padding: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        vertical-align: middle;
+        line-height: 0.3;
+        color: $gray;
+        background-color: $darkest;
+        border: 2px solid $darkest;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $gray;
+          color: $darkest;
+        }
+      }
+    }
+  }
+
+}
+
+.card-contact {
+  padding: 100px 40px;
+  padding-top: 0;
+  z-index: 6;
+  display: flex;
+
+  .mail {
+    display: flex;
+    flex: 4 0 0;
+    background: $border;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    padding: 20px;
+    padding-left: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h5 {
+      font-weight: 300;
+      margin-block-end: 0;
+    }
+
+    span {
+      display: flex;
+      background-color: $gray;
+      padding-right: 50px;
+      margin: 20px;
+      align-items: center;
+      width: fit-content;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-size: 1.3rem;
+
+      &:hover {
+        background-color: $darkest;
+        color: white;
+      }
+
+      &:hover > img {
+        background-color: $darkest;
+      }
+
+      img {
+        width: 30px;
+        background-color: $darker;
+        padding: 15px;
+        border-radius: 12px;
+        margin-right: 35px;
+        transition: 0.2s ease;
+      }
+    }
+  }
+
+  .card-dl {
+    display: flex;
+    flex: 3 0 0;
+    margin-right: -10px;
+    background: $gray;
+    border-radius: 13px;
+    padding: 20px;
+    flex-direction: column;
+
+    h5, h6 {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding: 5px 20px;
+      color: #454545;
+    }
+
+    h6 {
+      font-weight: 300;
+    }
+  }
+}
 
 /* SUBMIT BUTTON AT FOOTER*/
 button {
