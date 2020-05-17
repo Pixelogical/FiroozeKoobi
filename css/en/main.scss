@@ -130,7 +130,7 @@ body {
       justify-content: center;
       position: absolute;
       z-index: 8;
-top:0;
+      top: 0;
 
       .nav {
         display: flex;
@@ -1684,12 +1684,12 @@ top:0;
   .gooddesign-slide {
     display: flex;
     position: relative;
-    background-image: url("../../img/waves.jpg");
+    //background-image: url("../../img/waves.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     flex-direction: column;
-    padding: 40px 0;
-    border-top: 15px white solid;
+    //padding: 40px 0;
+    //border-top: 15px white solid;
 
     * {
       margin-block-start: 0;
@@ -1726,12 +1726,13 @@ top:0;
 
     .image-object {
       position: absolute;
-      left: 48%;
-      top: 20px;
+      right: 10%;
+      top: calc(50% - 249px);
       width: 330px;
       padding: 20px;
       transition: 0.3s ease;
       filter: drop-shadow(-15px 0 16px #444444aa);
+      z-index: 8;
 
       img {
         width: 100%;
@@ -3430,7 +3431,7 @@ svg {
   z-index: 6;
 }
 
-.slider-container.v100{
+.slider-container.v100 {
   height: 100vh;
 }
 
@@ -3725,6 +3726,7 @@ svg {
     }
   }
 }
+
 /* about us slider slide show */
 
 @keyframes tilt-up {

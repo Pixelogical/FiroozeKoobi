@@ -1394,12 +1394,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .container .gooddesign-slide {
   display: flex;
   position: relative;
-  background-image: url("../../img/waves.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   flex-direction: column;
-  padding: 40px 0;
-  border-top: 15px white solid;
 }
 .container .gooddesign-slide * {
   margin-block-start: 0;
@@ -1429,12 +1426,13 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .container .gooddesign-slide .image-object {
   position: absolute;
-  right: 48%;
-  top: 20px;
+  left: 10%;
+  top: calc(50% - 249px);
   width: 330px;
   padding: 20px;
   transition: 0.3s ease;
   filter: drop-shadow(-15px 0 16px #444444aa);
+  z-index: 8;
 }
 .container .gooddesign-slide .image-object img {
   width: 100%;
