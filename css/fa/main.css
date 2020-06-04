@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   cursor: pointer;
 }
 .container section.home .navbar .nav ul li:hover {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   color: #454545;
 }
 .container section.home .description {
@@ -235,7 +235,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   display: flex;
   width: 100%;
   justify-content: center;
-  border-bottom: solid #EEEEEE 2px;
+  border-bottom: solid #CECECE 2px;
   height: 80px;
 }
 .container .header .lang {
@@ -292,7 +292,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .container .header .nav ul .shop {
   display: flex;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   border-radius: 10px;
   height: 1.8em;
 }
@@ -513,7 +513,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .container .categories .title:before,
 .container .categories .title:after {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .categories .title:before {
   left: 0.5em;
@@ -589,7 +589,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .container .categories .items-wrapper .item .seemore:before,
 .container .categories .items-wrapper .item .seemore:after {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .categories .items-wrapper .item .seemore:before {
   left: 0.5em;
@@ -665,7 +665,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   position: relative;
   vertical-align: middle;
   width: 40%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .categories-noback .title:after {
   right: 0.5em;
@@ -750,7 +750,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .container .categories-noback .items-wrapper .item .seemore:before,
 .container .categories-noback .items-wrapper .item .seemore:after {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .categories-noback .items-wrapper .item .seemore:after {
   right: 0.5em;
@@ -793,7 +793,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   padding: 0;
 }
 .container .marginbackground h5 {
-  color: #EEEEEE;
+  color: #CECECE;
   text-align: center;
   padding: 20px 12%;
   line-height: 2;
@@ -855,7 +855,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   background-color: #cccccc;
 }
 .container .services .delivery {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .customers {
   display: flex;
@@ -902,7 +902,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   position: relative;
   vertical-align: middle;
   width: 100%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .sponsorship .title:after {
   right: 0.5em;
@@ -948,7 +948,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   position: relative;
   vertical-align: middle;
   width: 38%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .description .title:before {
   right: 0.5em;
@@ -986,7 +986,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   position: relative;
   vertical-align: middle;
   width: 100%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .info .text-wrapper .title:after {
   right: 0.5em;
@@ -1943,7 +1943,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   position: relative;
   vertical-align: middle;
   width: 75%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .similar-product .title:after {
   right: 0.5em;
@@ -1996,7 +1996,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .container .similar-product .items .item .seemore:before,
 .container .similar-product .items .item .seemore:after {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .similar-product .items .item .seemore:after {
   right: 0.5em;
@@ -2123,7 +2123,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   position: relative;
   vertical-align: middle;
   width: 75%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .export-resume .text-side .title:after {
   right: 0.5em;
@@ -2172,7 +2172,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   position: relative;
   vertical-align: middle;
   width: 38%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .export-description .title:before {
   right: 0.5em;
@@ -2212,7 +2212,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   position: relative;
   vertical-align: middle;
   width: 100%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .export-info .text-wrapper .title:after {
   right: 0.5em;
@@ -2270,15 +2270,18 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 
 .purchase {
-  padding: 40px;
+  padding: 40px 60px;
   z-index: 6;
   display: flex;
   min-height: 100vh;
 }
+.purchase input, .purchase select, .purchase textarea {
+  outline: none;
+}
 .purchase .factor {
   display: flex;
   flex: 5 0 0;
-  background: #EEEEEE;
+  background: #CECECE;
   border-top-right-radius: 13px;
   border-bottom-right-radius: 13px;
   padding: 20px;
@@ -2304,6 +2307,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .purchase .factor .items {
   flex-grow: 1;
+  overflow-y: scroll;
+  padding: 0 15px;
+  max-height: 60vh;
 }
 .purchase .factor .items .item {
   display: flex;
@@ -2321,6 +2327,20 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   object-fit: scale-down;
   border-radius: 12px;
 }
+.purchase .factor .items .item h5.name {
+  width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.purchase .factor .items .item .price {
+  width: 165px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
 .purchase .factor .items .item .entity::before {
   content: "-";
   font-weight: 400;
@@ -2335,13 +2355,15 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 .purchase .factor .items .item .close {
   border-radius: 11px;
+  display: flex;
+  align-items: center;
 }
 .purchase .factor .items .item .close::after {
   font-family: "FontAwesome", serif;
   content: "";
   display: inline-block;
   color: #00000085;
-  padding: 1px 7px;
+  padding: 2px 7px;
   vertical-align: middle;
   height: 30px;
 }
@@ -2386,7 +2408,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   border: none;
   height: 25px;
   border-radius: 12px;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   padding: 10px;
   margin: 5px;
 }
@@ -2416,7 +2438,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .purchase .user-info form .address .select-wrapper select {
   font-family: vazir, "Roboto", sans-serif;
   margin: 5px;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   color: #cccccc;
   flex: 1 0 0;
   border: none;
@@ -2429,7 +2451,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .purchase .user-info form textarea {
   border: none;
   border-radius: 12px;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   padding: 10px;
   margin: 5px;
   height: 130px;
@@ -2491,7 +2513,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .card-contact .mail {
   display: flex;
   flex: 4 0 0;
-  background: #EEEEEE;
+  background: #CECECE;
   border-top-right-radius: 13px;
   border-bottom-right-radius: 13px;
   padding: 20px;

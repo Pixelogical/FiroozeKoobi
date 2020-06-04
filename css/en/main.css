@@ -133,7 +133,7 @@ body {
   font-style: italic;
 }
 .container section.home .navbar .nav ul li:hover {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   color: #454545;
 }
 .container section.home .description {
@@ -233,7 +233,7 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
-  border-bottom: solid #EEEEEE 2px;
+  border-bottom: solid #CECECE 2px;
   height: 80px;
 }
 .container .header .lang {
@@ -290,7 +290,7 @@ body {
 }
 .container .header .nav ul .shop {
   display: flex;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   border-radius: 10px;
 }
 .container .header .nav ul .shop img {
@@ -505,7 +505,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 40%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .categories .title:before {
   right: 0.5em;
@@ -581,7 +581,7 @@ body {
 }
 .container .categories .items-wrapper .item .seemore:before,
 .container .categories .items-wrapper .item .seemore:after {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .categories .items-wrapper .item .seemore:before {
   right: 0.5em;
@@ -656,7 +656,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 40%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .categories-noback .title:before {
   right: 0.5em;
@@ -740,7 +740,7 @@ body {
 }
 .container .categories-noback .items-wrapper .item .seemore:before,
 .container .categories-noback .items-wrapper .item .seemore:after {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .categories-noback .items-wrapper .item .seemore:before {
   right: 0.5em;
@@ -783,7 +783,7 @@ body {
   padding: 0;
 }
 .container .marginbackground h5 {
-  color: #EEEEEE;
+  color: #CECECE;
   text-align: center;
   padding: 20px 12%;
   line-height: 2;
@@ -845,7 +845,7 @@ body {
   background-color: #cccccc;
 }
 .container .services .delivery {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .customers {
   display: flex;
@@ -891,7 +891,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 100%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .sponsorship .title:after {
   left: 0.5em;
@@ -938,7 +938,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 38%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .description .title:before {
   right: 0.5em;
@@ -980,7 +980,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 100%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .info .text-wrapper .title:after {
   left: 0.5em;
@@ -1955,7 +1955,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 75%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .similar-product .title:after {
   left: 0.5em;
@@ -2008,7 +2008,7 @@ body {
 }
 .container .similar-product .items .item .seemore:before,
 .container .similar-product .items .item .seemore:after {
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .similar-product .items .item .seemore:before {
   right: 0.5em;
@@ -2129,7 +2129,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 75%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .export-resume .text-side .title:after {
   left: 0.5em;
@@ -2176,7 +2176,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 38%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .export-description .title:before {
   right: 0.5em;
@@ -2215,7 +2215,7 @@ body {
   position: relative;
   vertical-align: middle;
   width: 100%;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
 }
 .container .export-info .text-wrapper .title:after {
   left: 0.5em;
@@ -2272,15 +2272,18 @@ body {
   height: 500px;
 }
 .container .purchase {
-  padding: 40px;
+  padding: 40px 60px;
   z-index: 6;
   display: flex;
   min-height: 100vh;
 }
+.container .purchase input, .container .purchase select, .container .purchase textarea {
+  outline: none;
+}
 .container .purchase .factor {
   display: flex;
   flex: 5 0 0;
-  background: #EEEEEE;
+  background: #CECECE;
   border-top-left-radius: 13px;
   border-bottom-left-radius: 13px;
   padding: 20px;
@@ -2306,6 +2309,9 @@ body {
 }
 .container .purchase .factor .items {
   flex-grow: 1;
+  overflow-y: scroll;
+  padding: 0 15px;
+  max-height: 60vh;
 }
 .container .purchase .factor .items .item {
   display: flex;
@@ -2323,6 +2329,18 @@ body {
   object-fit: scale-down;
   border-radius: 12px;
 }
+.container .purchase .factor .items .item h5.name {
+  width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.container .purchase .factor .items .item .price {
+  width: 165px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .container .purchase .factor .items .item .entity::before {
   content: "-";
   font-weight: 400;
@@ -2337,13 +2355,15 @@ body {
 }
 .container .purchase .factor .items .item .close {
   border-radius: 11px;
+  display: flex;
+  align-items: center;
 }
 .container .purchase .factor .items .item .close::after {
   font-family: "FontAwesome", serif;
   content: "";
   display: inline-block;
   color: #00000085;
-  padding: 1px 7px;
+  padding: 2px 7px;
   vertical-align: middle;
   height: 30px;
 }
@@ -2388,7 +2408,7 @@ body {
   border: none;
   height: 25px;
   border-radius: 12px;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   padding: 10px;
   margin: 5px;
 }
@@ -2417,7 +2437,7 @@ body {
 }
 .container .purchase .user-info form .address .select-wrapper select {
   margin: 5px;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   color: #cccccc;
   flex: 1 0 0;
   border: none;
@@ -2430,7 +2450,7 @@ body {
 .container .purchase .user-info form textarea {
   border: none;
   border-radius: 12px;
-  background-color: #EEEEEE;
+  background-color: #CECECE;
   padding: 10px;
   margin: 5px;
   height: 130px;
@@ -2491,7 +2511,7 @@ body {
 .container .card-contact .mail {
   display: flex;
   flex: 4 0 0;
-  background: #EEEEEE;
+  background: #CECECE;
   border-top-left-radius: 13px;
   border-bottom-left-radius: 13px;
   padding: 20px;

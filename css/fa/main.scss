@@ -1,4 +1,4 @@
-$border: #EEEEEE;
+$border: #CECECE;
 $green: #1ECD97;
 $purple: #bd8cbf;
 $gray: #cccccc;
@@ -2750,10 +2750,14 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 }
 
 .purchase {
-  padding: 40px;
+  padding: 40px 60px;
   z-index: 6;
   display: flex;
   min-height: 100vh;
+
+  input, select, textarea{
+    outline: none;
+  }
 
   .factor {
     display: flex;
@@ -2790,6 +2794,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
     .items {
       flex-grow: 1;
+      overflow-y: scroll;
+      padding: 0 15px;
+      max-height: 60vh;
 
       .item {
         display: flex;
@@ -2806,6 +2813,22 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           height: 95px;
           object-fit: scale-down;
           border-radius: 12px;
+        }
+
+        h5.name {
+          width: 150px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        .price {
+          width: 165px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: flex;
+          justify-content: flex-end;
         }
 
         .entity {
@@ -2826,13 +2849,15 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
         .close {
           border-radius: 11px;
+          display: flex;
+          align-items: center;
 
           &::after {
             font-family: "FontAwesome", serif;
             content: "\f00d";
             display: inline-block;
             color: #00000085;
-            padding: 1px 7px;
+            padding: 2px 7px;
             vertical-align: middle;
             height: 30px;
           }
