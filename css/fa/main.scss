@@ -1,4 +1,4 @@
-$border: #CECECE;
+$border: #E8E8E8;
 $green: #1ECD97;
 $purple: #bd8cbf;
 $gray: #cccccc;
@@ -10,6 +10,36 @@ $persian: vazir, 'Roboto', sans-serif;
 $bg: #f3f8fa;
 $white: #fff;
 $black: #282936;
+
+$screen-sm-min: 480px;
+$screen-md-min: 736px;
+$screen-lg-min: 980px;
+$screen-xl-min: 1200px;
+
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
 
 @mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
   transition: $property $duration $ease;
@@ -103,6 +133,88 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     opacity: 0.2;
   }
 
+  .responsive-menu {
+    display: none;
+    background: #242836;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    font-size: 14px;
+    border-radius: 6px;
+    margin: 1.5em;
+    @include sm {
+      display: block;
+    }
+
+    &::after {
+      font-family: "FontAwesome", serif;
+      content: "\f0c9";
+      display: inline-block;
+      color: #ffffff;
+      padding: 3px 7px;
+      vertical-align: middle;
+      font-size: 2.2rem;
+    }
+  }
+
+  .responsive-navbar {
+    position: fixed;
+    top: 0;
+    display: none;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #04011e;
+    margin: 0;
+    z-index: 9;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    .close {
+      background: #242836;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      font-size: 14px;
+      border-radius: 6px;
+      margin: 1.5em;
+
+      &::after {
+        font-family: "FontAwesome", serif;
+        content: "\f00d";
+        display: inline-block;
+        color: #ffffff;
+        padding: 3px 7px;
+        vertical-align: middle;
+        font-size: 2.2rem;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      margin: 0;
+      padding: 20px 0;
+
+      li {
+        list-style: none;
+        text-align: center;
+        padding: 10px 0;
+        width: 80%;
+        border: 2px solid #2b93be;
+        margin: 10px 0;
+        box-sizing: border-box;
+      }
+    }
+
+  }
+
   section.home {
     height: 100vh;
     width: 100%;
@@ -122,6 +234,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         width: 100px;
         height: 100px;
         transform: scale(1.5);
+        @include md {
+          display: none;
+        }
       }
     }
 
@@ -138,6 +253,15 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         position: relative;
         justify-content: center;
         margin-left: 1.2em;
+        @include lg {
+          margin-left: 4.2em;
+        }
+        @include md {
+          margin-left: 0;
+        }
+        @include sm {
+          visibility: hidden;
+        }
 
         ul {
           justify-self: center;
@@ -160,6 +284,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
             border-radius: 20px;
             font-size: 1rem;
             cursor: pointer;
+            @include md {
+              margin: 0;
+            }
 
             &:hover {
               background-color: $border;
@@ -176,10 +303,18 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       height: 150px;
       bottom: 0;
       z-index: 8;
+      justify-content: center;
+      @include sm {
+        display: flex
+      }
 
       .home-title {
         color: white;
         margin-right: 100px;
+        @include sm {
+          margin: 0;
+          text-align: center;
+        }
 
         h1 {
           width: 400px;
@@ -189,6 +324,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           margin-block-end: 0;
           font-family: $persian;
           font-weight: bolder;
+          @include sm{
+            width: unset;
+          }
         }
 
         h6 {
@@ -212,6 +350,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         bottom: 10px;
         cursor: pointer;
         transition: 0.2s ease;
+        @include sm {
+          display: none;
+        }
 
         &:hover {
           width: 55px;
@@ -1306,6 +1447,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           flex-direction: row;
           flex-wrap: wrap;
           min-width: 470px;
+          @include sm {
+            min-width: unset;
+          }
 
           .left {
           }
@@ -1503,11 +1647,17 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       width: 100%;
       display: flex;
       justify-content: flex-end;
+      @include sm {
+        justify-content: center;
+      }
 
       .icons {
         display: flex;
         justify-content: space-around;
         padding: 20px 100px;
+        @include sm {
+          padding: 20px 0;
+        }
 
         a {
           .icon {
@@ -1613,11 +1763,23 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       .text-wrapper {
         width: 50%;
         padding: 80px 0;
+        @include lg {
+          width: 90%;
+        }
+        @include sm {
+          width: 100%;
+        }
 
         h1 {
           padding: 10px 50px 10px 10px;
           font-size: 3.5rem;
           font-weight: bolder;
+          @include sm {
+            padding: 10px;
+            font-size: 3.2rem;
+            font-weight: bolder;
+            text-align: center;
+          }
         }
 
         h6 {
@@ -1625,6 +1787,10 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           line-height: 2.2;
           font-weight: 500;
           min-height: 150px;
+          @include sm {
+            padding: 40px;
+            text-align: center;
+          }
         }
 
         .learn-more {
@@ -1646,6 +1812,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
+        padding: 0;
       }
 
       li {
@@ -1790,6 +1957,12 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     background-repeat: no-repeat;
     flex-direction: column;
     border-bottom: 1px solid $gray;
+    @include lg {
+      background-position: right -440px center;
+    }
+    @include md {
+      background-position: right -340px center;
+    }
 
     * {
       margin-block-start: 0;
@@ -1804,16 +1977,38 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       .text-wrapper {
         width: 50%;
         padding: 80px 0;
+        @include md {
+          width: 72%;
+        }
+        @include sm {
+          width: 100%;
+        }
 
         h1 {
           padding: 10px 80px;
           font-size: 3.5rem;
           font-weight: bolder;
+          @include md {
+            padding: 6px 20px;
+            font-size: 5rem;
+          }
+          @include sm {
+            padding: 6px 20px;
+            font-size: 4.2rem;
+            text-align: center;
+          }
         }
 
         h6 {
           padding: 0 100px;
           line-height: 1.8;
+          @include md {
+            padding: 0 10px 0 49px;
+          }
+          @include sm {
+            padding: 10px 50px;
+            text-align: center;
+          }
         }
 
         .learn-more {
@@ -1827,10 +2022,25 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .features {
     display: flex;
     padding: 120px 20px;
+    @include md {
+      display: flex;
+      padding: 75px 20px;
+      flex-direction: column;
+    }
 
     .picture {
       flex: 3 0 0;
       position: relative;
+      @include md {
+        background: cyan;
+        width: 100%;
+        height: 214px;
+        display: flex;
+        margin: 81px 0;
+        justify-content: center;
+        align-items: center;
+        flex: none;
+      }
 
       div {
         position: absolute;
@@ -1842,6 +2052,14 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         right: 0;
         left: 0;
         border-radius: 40px;
+        @include xl {
+          width: 290px;
+          height: 290px;
+        }
+        @include sm {
+          width: 220px;
+          height: 220px;
+        }
       }
 
       #one {
@@ -1849,6 +2067,14 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         transform: rotate(20deg);
         width: 300px !important;
         height: 300px !important;
+        @include xl {
+          width: 280px !important;
+          height: 280px !important;
+        }
+        @include sm {
+          width: 200px !important;
+          height: 200px !important;
+        }
       }
 
       #two {
@@ -1872,18 +2098,43 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 
     .description {
       flex: 5 0 0;
+      min-height: 480px;
+      @include sm {
+        min-height: unset;
+      }
 
       ul {
         display: flex;
+        @include md {
+          justify-content: space-between;
+          padding: 0;
+        }
+        @include sm {
+          padding: 0;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
 
         li {
           list-style: none;
           margin-right: 100px;
+          @include xl {
+            margin-right: 70px;
+            font-weight: 400;
+            font-size: 20px;
+          }
+          @include md {
+            margin-right: 0;
+          }
+          @include sm {
+            font-size: 30px;
+          }
 
           a {
             text-decoration: none;
             padding: 3px 0;
             color: $purple;
+            position: relative;
 
             &:hover {
               border-bottom: 4px solid #9f89c2;
@@ -1897,6 +2148,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         margin-block-end: 0.5em;
         line-height: 1.5;
         min-height: 110px;
+        @include sm {
+          text-align: center;
+        }
       }
 
       h5.off {
@@ -1924,11 +2178,17 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       text-align: center;
       margin-block-end: 1rem;
       color: white;
+      @include md {
+        font-size: 3.5rem;
+      }
     }
 
     .logos {
       display: flex;
       justify-content: center;
+      @include md {
+        flex-wrap: wrap;
+      }
 
       .item {
         margin: 30px;
@@ -2755,7 +3015,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   display: flex;
   min-height: 100vh;
 
-  input, select, textarea{
+  input, select, textarea {
     outline: none;
   }
 
@@ -3759,960 +4019,960 @@ svg {
   }
 }
 
-@media all and (max-width: 1280px) {
-  .container {
-
-    .gooddesign {
-      .description {
-        .text-wrapper {
-          width: 60%;
-          padding: 15px 0;
-
-          h1 {
-            font-size: 3.4rem;
-
-          }
-
-          h6 {
-            padding: 10px 50px;
-            font-size: 1rem;
-          }
-
-          .readmore {
-            padding: 10px 50px;
-
-            img {
-              padding: 20px;
-              width: 20px;
-            }
-
-            h4 {
-              font-size: 1.6rem;
-            }
-          }
-        }
-      }
-
-      .titles {
-        width: 60%;
-        margin: auto;
-      }
-    }
-
-    .portrait, .portrait2 {
-      h2 {
-        font-size: 4rem;
-        overflow: hidden;
-
-      }
-
-      img {
-        width: 40vw;
-      }
-    }
-
-    .half-slider {
-      .hstext-wrapper {
-        flex: 2 1 50%;
-
-        h1 {
-          font-size: 4rem;
-        }
-
-        h6 {
-          font-size: 1.2rem;
-        }
-      }
-
-      .hs-wrapper {
-        flex: 2 1 50%;
-      }
-    }
-
-    .collection {
-      background-size: 600px;
-
-      .description {
-        .text-wrapper {
-          h6 {
-            padding: 0 30px;
-          }
-        }
-      }
-    }
-
-    .features {
-      .picture {
-        #one {
-          width: 270px !important;
-          height: 270px !important;
-        }
-
-        div {
-          width: 280px;
-          height: 280px;
-        }
-      }
-    }
-
-  }
-
-}
-
-@media all and (max-width: 980px) {
-  .container {
-    section.home {
-      .logo {
-        img {
-          width: 90px;
-        }
-      }
-
-      .navbar {
-        .nav {
-          margin-top: 1em;
-          margin-left: 0;
-
-          ul {
-            margin: 1em;
-            font-size: 0.8rem;
-          }
-        }
-      }
-
-      .description {
-        .home-title {
-          margin-left: 80px;
-
-          h1 {
-            width: 350px;
-            font-size: 2.2rem;
-          }
-
-          h6 {
-            font-size: 1rem;
-          }
-        }
-
-        .scroll {
-          width: 40px;
-          height: 40px;
-        }
-      }
-
-    }
-
-    .collection {
-      background-size: 600px;
-
-      .description {
-        .text-wrapper {
-          h1 {
-            font-size: 4.5rem;
-          }
-
-          .readmore {
-            padding: 50px 70px;
-          }
-        }
-      }
-    }
-
-    .fsymbol {
-      font-size: 20rem;
-    }
-
-    .header {
-
-      ul {
-        li {
-          font-size: 1.1rem;
-          margin: 0 15px !important;
-        }
-      }
-
-      .lang {
-        font-size: 0.8rem;
-
-        img {
-          width: 30px;
-        }
-      }
-    }
-
-    .portrait, .portrait2 {
-      h2 {
-        font-size: 3rem;
-      }
-
-      img {
-        width: 30vw;
-      }
-    }
-
-    .artboard {
-      .title-wrapper {
-        h1 {
-          font-size: 4.5rem;
-        }
-
-        h6 {
-          font-size: 1rem;
-        }
-      }
-    }
-
-    .services {
-      h2 {
-        font-size: 2.5rem;
-      }
-    }
-
-    .half-slider {
-      text-align: center;
-
-      .hstext-wrapper {
-        flex: 1 1 auto;
-
-        h1 {
-          font-size: 4rem;
-        }
-
-        h6 {
-          font-size: 1.2rem;
-        }
-      }
-
-      .hs-wrapper {
-        flex: 1 1 auto;
-        background-position-y: -100px;
-        height: 500px;
-      }
-    }
-
-    .info {
-      .map-wrapper {
-        width: 100%;
-      }
-    }
-
-    .gooddesign {
-      .description {
-        .text-wrapper {
-          width: 60%;
-
-          h1 {
-            font-size: 2.4rem;
-          }
-
-          h6 {
-            padding: 10px 50px;
-            font-size: 0.8rem;
-          }
-
-          .readmore {
-            img {
-              padding: 12px;
-              width: 12px;
-            }
-
-            h4 {
-              font-size: 1rem;
-            }
-          }
-        }
-      }
-
-      .titles {
-        width: 100%;
-        margin: auto;
-
-        ul {
-          li {
-            font-size: 1.2rem;
-            padding: 20px 5px;
-          }
-        }
-      }
-    }
-
-    .features {
-      padding: 50px 10px;
-
-      .picture {
-        margin: 20px;
-
-        #one {
-          width: 200px !important;
-          height: 200px !important;
-        }
-
-        div {
-          border-radius: 20px;
-          width: 210px;
-          height: 210px;
-        }
-      }
-
-      .description {
-        h5 {
-          font-size: 1rem;
-        }
-
-        ul {
-          li {
-            margin-right: 20px;
-
-            a {
-              font-size: 1.5rem;
-            }
-          }
-        }
-
-        .readmore {
-          img {
-            width: 10px;
-            padding: 8px;
-          }
-        }
-      }
-    }
-
-  }
-  .lang {
-    .select-menu {
-      margin-top: 2.4em;
-
-      .button {
-        em {
-          margin-top: 8px;
-
-          &::before, &::after {
-            width: 5px;
-            height: 5px;
-          }
-        }
-      }
-
-      select {
-        padding: 8px 9px 8px 9px;
-        line-height: 15px;
-      }
-
-      ul {
-        li {
-          font-size: 0.5rem;
-          padding: 3px 12px 0px 10px;
-        }
-      }
-    }
-  }
-}
-
-@media all and (max-width: 736px) {
-  .container {
-
-    section.home {
-      .logo {
-        margin: 15px 25px;
-
-        img {
-          width: 80px;
-        }
-      }
-
-      .navbar {
-        .nav {
-          margin-top: 1em;
-          width: 60%;
-
-          ul {
-            margin: 1em;
-            font-size: 0.6rem;
-          }
-        }
-      }
-
-      .description {
-        height: 100px;
-
-        .home-title {
-          margin-left: 20px;
-
-          h1 {
-            width: 300px;
-            font-size: 1.5rem;
-          }
-
-          h6 {
-            font-size: 0.6rem;
-          }
-        }
-
-        .scroll {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-
-    section.collection-home {
-      .shadow-text {
-        font-size: 12vh;
-      }
-    }
-
-    .fsymbol {
-      font-size: 15rem;
-    }
-
-    .header {
-      justify-content: flex-end !important;
-
-      ul {
-        li {
-          margin: 0 5px !important;
-          color: #ce79d3;
-        }
-      }
-
-      .lang {
-        img {
-          width: 20px;
-        }
-      }
-    }
-
-    .portrait, .portrait2 {
-      height: 80vh;
-
-      h2 {
-        font-size: 2rem;
-      }
-    }
-
-    .portrait2 {
-      background-size: cover;
-    }
-
-    .artboard {
-      .title-wrapper {
-        margin: 0;
-
-        h1 {
-          font-size: 4rem;
-        }
-
-        h6 {
-          font-size: 0.8rem;
-        }
-      }
-    }
-
-    .half-slider {
-      .hs-wrapper {
-        height: 400px;
-      }
-    }
-
-    .sponsorship {
-      .row {
-        flex-direction: column-reverse;
-      }
-    }
-
-    .collection {
-      background-size: 350px;
-      background-position: right -160px center;
-
-      .description {
-        .text-wrapper {
-          padding: 20px 0;
-
-          h1 {
-            padding: 10px 30px 0 30px;
-            font-size: 3.5rem;
-          }
-
-          h6 {
-            padding: 0 0 0 35px;
-            font-size: 0.6rem;
-          }
-
-          .readmore {
-            padding: 50px 0 50px 30px;
-
-            img {
-              width: 10px;
-              padding: 12px;
-            }
-
-            h4 {
-              font-size: 1rem;
-            }
-          }
-        }
-      }
-    }
-
-    .gooddesign {
-      .description {
-        .text-wrapper {
-          width: 75%;
-          padding: 60px 0;
-
-          h1 {
-            font-size: 2rem;
-          }
-
-          h6 {
-            font-size: 0.5rem;
-          }
-
-          .readmore {
-            img {
-              width: 8px;
-              height: 8px;
-              padding: 8px;
-            }
-
-            h4 {
-              font-size: 0.8rem;
-            }
-          }
-        }
-      }
-    }
-
-    .gooddesign-slide {
-      .image-object {
-        width: 230px;
-        filter: drop-shadow(-5px 0 6px #444444aa);
-
-        &:hover {
-          width: 240px;
-          filter: drop-shadow(-10px 0 10px #444444aa);
-        }
-      }
-
-      .description {
-        .text-wrapper {
-          h1 {
-            padding: 5px 25px;
-            font-size: 1.5rem;
-          }
-
-          h6 {
-            padding: 10px 30px;
-            line-height: 1.5;
-          }
-
-          .readmore {
-            padding: 10px 25px;
-
-            h4 {
-              font-size: 1.5rem;
-              padding: 0 10px;
-            }
-
-            img {
-              padding: 10px;
-              width: 10px;
-            }
-          }
-        }
-      }
-    }
-
-    .gallery {
-      .description {
-        .play {
-          .button {
-            padding: 5px 17px;
-
-            h2 {
-              padding: 2px;
-              font-size: 1rem;
-            }
-
-            img {
-              padding: 8px;
-              width: 12px;
-              height: 12px;
-            }
-          }
-        }
-      }
-    }
-
-    .tiles-wrapper {
-      .tile {
-        .hover {
-          h3 {
-            font-size: 0.6rem;
-          }
-
-          .button {
-            div {
-              width: 17px;
-              height: 17px;
-              margin: 7px;
-            }
-          }
-        }
-      }
-    }
-
-    .features {
-      padding: 50px 10px;
-
-      .picture {
-        margin: 0;
-
-        #one {
-          width: 140px !important;
-          height: 140px !important;
-        }
-
-        div {
-          background-position: center;
-          border-radius: 18px;
-          width: 150px;
-          height: 150px;
-        }
-      }
-
-      .description {
-        h5 {
-          font-size: 0.8rem;
-        }
-
-        ul {
-          li {
-            margin-right: 18px;
-
-            a {
-              font-size: 1.2rem;
-            }
-          }
-        }
-
-        .readmore {
-          img {
-            width: 10px;
-            padding: 8px;
-          }
-
-          h4 {
-            font-size: 0.8rem;
-          }
-        }
-      }
-    }
-  }
-  .lang {
-    .select-menu {
-      margin: 2.4em 0 0 6em;
-    }
-  }
-}
-
-@media all and (max-width: 480px) {
-  .container {
-
-    section.home {
-      .logo {
-        margin: 5px 15px;
-
-        img {
-          width: 40px;
-        }
-      }
-
-      .navbar {
-        .nav {
-          margin-top: 0.5em;
-          width: 60%;
-
-          ul {
-            margin: 0.8em;
-            font-size: 0.3rem;
-
-            li {
-              padding: 0 8px;
-            }
-          }
-        }
-      }
-
-      .description {
-        height: 50px;
-
-        .home-title {
-          margin-left: 15px;
-
-          h1 {
-            width: 150px;
-            font-size: 1rem;
-          }
-
-          h6 {
-            font-size: 0.3rem;
-          }
-        }
-
-        .scroll {
-          width: 10px;
-          height: 10px;
-        }
-      }
-    }
-
-    .fsymbol {
-      display: none;
-    }
-
-    .header {
-      justify-content: center !important;
-      flex-direction: column;
-      text-align: center;
-
-      .lang {
-        display: block;
-        position: relative;
-      }
-    }
-
-    .portrait, .portrait2 {
-      height: 60vh;
-
-      h2 {
-        padding: 20px;
-        font-size: 1.5rem;
-      }
-    }
-
-    .customers {
-      h2 {
-        font-size: 2.5rem;
-        text-align: center;
-        padding: 5px;
-      }
-    }
-
-    .half-slider {
-      .hs-wrapper {
-        height: 200px;
-      }
-    }
-
-    .gooddesign {
-      .description {
-        .text-wrapper {
-          width: 75%;
-          padding: 30px 0;
-
-          h1 {
-            font-size: 0.8rem;
-            padding: 0 0 0 48px;
-          }
-
-          h6 {
-            padding: 0 10px 0 48px;
-            font-size: 0.3rem;
-          }
-
-          .readmore {
-            img {
-              width: 5px;
-              height: 5px;
-              padding: 4px;
-            }
-
-            h4 {
-              font-size: 0.5rem;
-              padding: 0 10px;
-            }
-          }
-        }
-      }
-
-      .titles {
-        ul {
-          li {
-            font-size: 0.8rem;
-          }
-        }
-      }
-    }
-
-    .collection {
-      background-size: 180px;
-      background-position: right -100px center;
-
-      .description {
-        .text-wrapper {
-          padding: 20px 0;
-
-          h1 {
-            padding: 10px 30px 0 30px;
-            font-size: 1.5rem;
-          }
-
-          h6 {
-            padding: 0 0 0 35px;
-            font-size: 0.3rem;
-          }
-
-          .readmore {
-            padding: 20px 0 20px 30px;
-
-            img {
-              width: 5px;
-              padding: 4px;
-            }
-
-            h4 {
-              padding: 0 10px;
-              font-size: 0.4rem;
-            }
-          }
-        }
-      }
-    }
-
-    .features {
-      padding: 5px 5px;
-
-      .picture {
-        margin: 10px;
-
-        #one {
-          width: 90px !important;
-          height: 90px !important;
-        }
-
-        div {
-          border-radius: 12px;
-          width: 100px;
-          height: 100px;
-        }
-      }
-
-      .description {
-        h5 {
-          font-size: 0.5rem;
-        }
-
-        ul {
-          li {
-            margin-right: 15px;
-
-            a {
-              font-size: 0.5rem;
-            }
-          }
-        }
-
-        .readmore {
-          img {
-            width: 8px;
-            padding: 5px;
-          }
-
-          h4 {
-            font-size: 0.5rem;
-          }
-        }
-      }
-    }
-
-    .ourcustomers {
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .logos .item {
-        margin: 20px;
-        width: 100px;
-      }
-    }
-
-    .footer {
-      .details {
-        .logo div {
-          width: 190px !important;
-          height: 190px !important;
-        }
-
-        .site-map .wrapper {
-          min-width: auto;
-
-          .right, .left {
-            ul li {
-              font-size: 0rem;
-
-              .item {
-                a {
-                  font-size: 0.8rem;
-                }
-
-                .arrow {
-                  padding: 8px;
-
-                  img {
-                    width: 11px;
-                  }
-
-                }
-
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .lang {
-    .select-menu {
-      margin: 1.5em 0 0 5em;
-      line-height: 15px;
-
-      .button {
-        em {
-          margin-top: 4px;
-          left: 7px;
-
-          &::before, &::after {
-            width: 3px;
-            height: 3px;
-          }
-
-          &::before {
-            border-left: 1px solid var(--icon);
-            border-top: 1px solid var(--icon);
-          }
-
-          &::after {
-            border-right: 1px solid var(--icon);
-            border-bottom: 1px solid var(--icon);
-          }
-        }
-      }
-
-      select {
-        padding: 0 5px 0 5px;
-        line-height: 15px;
-        font-size: 8px;
-      }
-
-      ul {
-        li {
-          font-size: 0.3rem;
-          padding: 0 5px 0 5px;
-        }
-      }
-    }
-  }
-}
+//@media all and (max-width: 1280px) {
+//  .container {
+//
+//    .gooddesign {
+//      .description {
+//        .text-wrapper {
+//          width: 60%;
+//          padding: 15px 0;
+//
+//          h1 {
+//            font-size: 3.4rem;
+//
+//          }
+//
+//          h6 {
+//            padding: 10px 50px;
+//            font-size: 1rem;
+//          }
+//
+//          .readmore {
+//            padding: 10px 50px;
+//
+//            img {
+//              padding: 20px;
+//              width: 20px;
+//            }
+//
+//            h4 {
+//              font-size: 1.6rem;
+//            }
+//          }
+//        }
+//      }
+//
+//      .titles {
+//        width: 60%;
+//        margin: auto;
+//      }
+//    }
+//
+//    .portrait, .portrait2 {
+//      h2 {
+//        font-size: 4rem;
+//        overflow: hidden;
+//
+//      }
+//
+//      img {
+//        width: 40vw;
+//      }
+//    }
+//
+//    .half-slider {
+//      .hstext-wrapper {
+//        flex: 2 1 50%;
+//
+//        h1 {
+//          font-size: 4rem;
+//        }
+//
+//        h6 {
+//          font-size: 1.2rem;
+//        }
+//      }
+//
+//      .hs-wrapper {
+//        flex: 2 1 50%;
+//      }
+//    }
+//
+//    .collection {
+//      background-size: 600px;
+//
+//      .description {
+//        .text-wrapper {
+//          h6 {
+//            padding: 0 30px;
+//          }
+//        }
+//      }
+//    }
+//
+//    .features {
+//      .picture {
+//        #one {
+//          width: 270px !important;
+//          height: 270px !important;
+//        }
+//
+//        div {
+//          width: 280px;
+//          height: 280px;
+//        }
+//      }
+//    }
+//
+//  }
+//
+//}
+//
+//@media all and (max-width: 980px) {
+//  .container {
+//    section.home {
+//      .logo {
+//        img {
+//          width: 90px;
+//        }
+//      }
+//
+//      .navbar {
+//        .nav {
+//          margin-top: 1em;
+//          margin-left: 0;
+//
+//          ul {
+//            margin: 1em;
+//            font-size: 0.8rem;
+//          }
+//        }
+//      }
+//
+//      .description {
+//        .home-title {
+//          margin-left: 80px;
+//
+//          h1 {
+//            width: 350px;
+//            font-size: 2.2rem;
+//          }
+//
+//          h6 {
+//            font-size: 1rem;
+//          }
+//        }
+//
+//        .scroll {
+//          width: 40px;
+//          height: 40px;
+//        }
+//      }
+//
+//    }
+//
+//    .collection {
+//      background-size: 600px;
+//
+//      .description {
+//        .text-wrapper {
+//          h1 {
+//            font-size: 4.5rem;
+//          }
+//
+//          .readmore {
+//            padding: 50px 70px;
+//          }
+//        }
+//      }
+//    }
+//
+//    .fsymbol {
+//      font-size: 20rem;
+//    }
+//
+//    .header {
+//
+//      ul {
+//        li {
+//          font-size: 1.1rem;
+//          margin: 0 15px !important;
+//        }
+//      }
+//
+//      .lang {
+//        font-size: 0.8rem;
+//
+//        img {
+//          width: 30px;
+//        }
+//      }
+//    }
+//
+//    .portrait, .portrait2 {
+//      h2 {
+//        font-size: 3rem;
+//      }
+//
+//      img {
+//        width: 30vw;
+//      }
+//    }
+//
+//    .artboard {
+//      .title-wrapper {
+//        h1 {
+//          font-size: 4.5rem;
+//        }
+//
+//        h6 {
+//          font-size: 1rem;
+//        }
+//      }
+//    }
+//
+//    .services {
+//      h2 {
+//        font-size: 2.5rem;
+//      }
+//    }
+//
+//    .half-slider {
+//      text-align: center;
+//
+//      .hstext-wrapper {
+//        flex: 1 1 auto;
+//
+//        h1 {
+//          font-size: 4rem;
+//        }
+//
+//        h6 {
+//          font-size: 1.2rem;
+//        }
+//      }
+//
+//      .hs-wrapper {
+//        flex: 1 1 auto;
+//        background-position-y: -100px;
+//        height: 500px;
+//      }
+//    }
+//
+//    .info {
+//      .map-wrapper {
+//        width: 100%;
+//      }
+//    }
+//
+//    .gooddesign {
+//      .description {
+//        .text-wrapper {
+//          width: 60%;
+//
+//          h1 {
+//            font-size: 2.4rem;
+//          }
+//
+//          h6 {
+//            padding: 10px 50px;
+//            font-size: 0.8rem;
+//          }
+//
+//          .readmore {
+//            img {
+//              padding: 12px;
+//              width: 12px;
+//            }
+//
+//            h4 {
+//              font-size: 1rem;
+//            }
+//          }
+//        }
+//      }
+//
+//      .titles {
+//        width: 100%;
+//        margin: auto;
+//
+//        ul {
+//          li {
+//            font-size: 1.2rem;
+//            padding: 20px 5px;
+//          }
+//        }
+//      }
+//    }
+//
+//    .features {
+//      padding: 50px 10px;
+//
+//      .picture {
+//        margin: 20px;
+//
+//        #one {
+//          width: 200px !important;
+//          height: 200px !important;
+//        }
+//
+//        div {
+//          border-radius: 20px;
+//          width: 210px;
+//          height: 210px;
+//        }
+//      }
+//
+//      .description {
+//        h5 {
+//          font-size: 1rem;
+//        }
+//
+//        ul {
+//          li {
+//            margin-right: 20px;
+//
+//            a {
+//              font-size: 1.5rem;
+//            }
+//          }
+//        }
+//
+//        .readmore {
+//          img {
+//            width: 10px;
+//            padding: 8px;
+//          }
+//        }
+//      }
+//    }
+//
+//  }
+//  .lang {
+//    .select-menu {
+//      margin-top: 2.4em;
+//
+//      .button {
+//        em {
+//          margin-top: 8px;
+//
+//          &::before, &::after {
+//            width: 5px;
+//            height: 5px;
+//          }
+//        }
+//      }
+//
+//      select {
+//        padding: 8px 9px 8px 9px;
+//        line-height: 15px;
+//      }
+//
+//      ul {
+//        li {
+//          font-size: 0.5rem;
+//          padding: 3px 12px 0px 10px;
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//@media all and (max-width: 736px) {
+//  .container {
+//
+//    section.home {
+//      .logo {
+//        margin: 15px 25px;
+//
+//        img {
+//          width: 80px;
+//        }
+//      }
+//
+//      .navbar {
+//        .nav {
+//          margin-top: 1em;
+//          width: 60%;
+//
+//          ul {
+//            margin: 1em;
+//            font-size: 0.6rem;
+//          }
+//        }
+//      }
+//
+//      .description {
+//        height: 100px;
+//
+//        .home-title {
+//          margin-left: 20px;
+//
+//          h1 {
+//            width: 300px;
+//            font-size: 1.5rem;
+//          }
+//
+//          h6 {
+//            font-size: 0.6rem;
+//          }
+//        }
+//
+//        .scroll {
+//          width: 30px;
+//          height: 30px;
+//        }
+//      }
+//    }
+//
+//    section.collection-home {
+//      .shadow-text {
+//        font-size: 12vh;
+//      }
+//    }
+//
+//    .fsymbol {
+//      font-size: 15rem;
+//    }
+//
+//    .header {
+//      justify-content: flex-end !important;
+//
+//      ul {
+//        li {
+//          margin: 0 5px !important;
+//          color: #ce79d3;
+//        }
+//      }
+//
+//      .lang {
+//        img {
+//          width: 20px;
+//        }
+//      }
+//    }
+//
+//    .portrait, .portrait2 {
+//      height: 80vh;
+//
+//      h2 {
+//        font-size: 2rem;
+//      }
+//    }
+//
+//    .portrait2 {
+//      background-size: cover;
+//    }
+//
+//    .artboard {
+//      .title-wrapper {
+//        margin: 0;
+//
+//        h1 {
+//          font-size: 4rem;
+//        }
+//
+//        h6 {
+//          font-size: 0.8rem;
+//        }
+//      }
+//    }
+//
+//    .half-slider {
+//      .hs-wrapper {
+//        height: 400px;
+//      }
+//    }
+//
+//    .sponsorship {
+//      .row {
+//        flex-direction: column-reverse;
+//      }
+//    }
+//
+//    .collection {
+//      background-size: 350px;
+//      background-position: right -160px center;
+//
+//      .description {
+//        .text-wrapper {
+//          padding: 20px 0;
+//
+//          h1 {
+//            padding: 10px 30px 0 30px;
+//            font-size: 3.5rem;
+//          }
+//
+//          h6 {
+//            padding: 0 0 0 35px;
+//            font-size: 0.6rem;
+//          }
+//
+//          .readmore {
+//            padding: 50px 0 50px 30px;
+//
+//            img {
+//              width: 10px;
+//              padding: 12px;
+//            }
+//
+//            h4 {
+//              font-size: 1rem;
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+//    .gooddesign {
+//      .description {
+//        .text-wrapper {
+//          width: 75%;
+//          padding: 60px 0;
+//
+//          h1 {
+//            font-size: 2rem;
+//          }
+//
+//          h6 {
+//            font-size: 0.5rem;
+//          }
+//
+//          .readmore {
+//            img {
+//              width: 8px;
+//              height: 8px;
+//              padding: 8px;
+//            }
+//
+//            h4 {
+//              font-size: 0.8rem;
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+//    .gooddesign-slide {
+//      .image-object {
+//        width: 230px;
+//        filter: drop-shadow(-5px 0 6px #444444aa);
+//
+//        &:hover {
+//          width: 240px;
+//          filter: drop-shadow(-10px 0 10px #444444aa);
+//        }
+//      }
+//
+//      .description {
+//        .text-wrapper {
+//          h1 {
+//            padding: 5px 25px;
+//            font-size: 1.5rem;
+//          }
+//
+//          h6 {
+//            padding: 10px 30px;
+//            line-height: 1.5;
+//          }
+//
+//          .readmore {
+//            padding: 10px 25px;
+//
+//            h4 {
+//              font-size: 1.5rem;
+//              padding: 0 10px;
+//            }
+//
+//            img {
+//              padding: 10px;
+//              width: 10px;
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+//    .gallery {
+//      .description {
+//        .play {
+//          .button {
+//            padding: 5px 17px;
+//
+//            h2 {
+//              padding: 2px;
+//              font-size: 1rem;
+//            }
+//
+//            img {
+//              padding: 8px;
+//              width: 12px;
+//              height: 12px;
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+//    .tiles-wrapper {
+//      .tile {
+//        .hover {
+//          h3 {
+//            font-size: 0.6rem;
+//          }
+//
+//          .button {
+//            div {
+//              width: 17px;
+//              height: 17px;
+//              margin: 7px;
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+//    .features {
+//      padding: 50px 10px;
+//
+//      .picture {
+//        margin: 0;
+//
+//        #one {
+//          width: 140px !important;
+//          height: 140px !important;
+//        }
+//
+//        div {
+//          background-position: center;
+//          border-radius: 18px;
+//          width: 150px;
+//          height: 150px;
+//        }
+//      }
+//
+//      .description {
+//        h5 {
+//          font-size: 0.8rem;
+//        }
+//
+//        ul {
+//          li {
+//            margin-right: 18px;
+//
+//            a {
+//              font-size: 1.2rem;
+//            }
+//          }
+//        }
+//
+//        .readmore {
+//          img {
+//            width: 10px;
+//            padding: 8px;
+//          }
+//
+//          h4 {
+//            font-size: 0.8rem;
+//          }
+//        }
+//      }
+//    }
+//  }
+//  .lang {
+//    .select-menu {
+//      margin: 2.4em 0 0 6em;
+//    }
+//  }
+//}
+//
+//@media all and (max-width: 480px) {
+//  .container {
+//
+//    section.home {
+//      .logo {
+//        margin: 5px 15px;
+//
+//        img {
+//          width: 40px;
+//        }
+//      }
+//
+//      .navbar {
+//        .nav {
+//          margin-top: 0.5em;
+//          width: 60%;
+//
+//          ul {
+//            margin: 0.8em;
+//            font-size: 0.3rem;
+//
+//            li {
+//              padding: 0 8px;
+//            }
+//          }
+//        }
+//      }
+//
+//      .description {
+//        height: 50px;
+//
+//        .home-title {
+//          margin-left: 15px;
+//
+//          h1 {
+//            width: 150px;
+//            font-size: 1rem;
+//          }
+//
+//          h6 {
+//            font-size: 0.3rem;
+//          }
+//        }
+//
+//        .scroll {
+//          width: 10px;
+//          height: 10px;
+//        }
+//      }
+//    }
+//
+//    .fsymbol {
+//      display: none;
+//    }
+//
+//    .header {
+//      justify-content: center !important;
+//      flex-direction: column;
+//      text-align: center;
+//
+//      .lang {
+//        display: block;
+//        position: relative;
+//      }
+//    }
+//
+//    .portrait, .portrait2 {
+//      height: 60vh;
+//
+//      h2 {
+//        padding: 20px;
+//        font-size: 1.5rem;
+//      }
+//    }
+//
+//    .customers {
+//      h2 {
+//        font-size: 2.5rem;
+//        text-align: center;
+//        padding: 5px;
+//      }
+//    }
+//
+//    .half-slider {
+//      .hs-wrapper {
+//        height: 200px;
+//      }
+//    }
+//
+//    .gooddesign {
+//      .description {
+//        .text-wrapper {
+//          width: 75%;
+//          padding: 30px 0;
+//
+//          h1 {
+//            font-size: 0.8rem;
+//            padding: 0 0 0 48px;
+//          }
+//
+//          h6 {
+//            padding: 0 10px 0 48px;
+//            font-size: 0.3rem;
+//          }
+//
+//          .readmore {
+//            img {
+//              width: 5px;
+//              height: 5px;
+//              padding: 4px;
+//            }
+//
+//            h4 {
+//              font-size: 0.5rem;
+//              padding: 0 10px;
+//            }
+//          }
+//        }
+//      }
+//
+//      .titles {
+//        ul {
+//          li {
+//            font-size: 0.8rem;
+//          }
+//        }
+//      }
+//    }
+//
+//    .collection {
+//      background-size: 180px;
+//      background-position: right -100px center;
+//
+//      .description {
+//        .text-wrapper {
+//          padding: 20px 0;
+//
+//          h1 {
+//            padding: 10px 30px 0 30px;
+//            font-size: 1.5rem;
+//          }
+//
+//          h6 {
+//            padding: 0 0 0 35px;
+//            font-size: 0.3rem;
+//          }
+//
+//          .readmore {
+//            padding: 20px 0 20px 30px;
+//
+//            img {
+//              width: 5px;
+//              padding: 4px;
+//            }
+//
+//            h4 {
+//              padding: 0 10px;
+//              font-size: 0.4rem;
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+//    .features {
+//      padding: 5px 5px;
+//
+//      .picture {
+//        margin: 10px;
+//
+//        #one {
+//          width: 90px !important;
+//          height: 90px !important;
+//        }
+//
+//        div {
+//          border-radius: 12px;
+//          width: 100px;
+//          height: 100px;
+//        }
+//      }
+//
+//      .description {
+//        h5 {
+//          font-size: 0.5rem;
+//        }
+//
+//        ul {
+//          li {
+//            margin-right: 15px;
+//
+//            a {
+//              font-size: 0.5rem;
+//            }
+//          }
+//        }
+//
+//        .readmore {
+//          img {
+//            width: 8px;
+//            padding: 5px;
+//          }
+//
+//          h4 {
+//            font-size: 0.5rem;
+//          }
+//        }
+//      }
+//    }
+//
+//    .ourcustomers {
+//      h1 {
+//        font-size: 1.8rem;
+//      }
+//
+//      .logos .item {
+//        margin: 20px;
+//        width: 100px;
+//      }
+//    }
+//
+//    .footer {
+//      .details {
+//        .logo div {
+//          width: 190px !important;
+//          height: 190px !important;
+//        }
+//
+//        .site-map .wrapper {
+//          min-width: auto;
+//
+//          .right, .left {
+//            ul li {
+//              font-size: 0rem;
+//
+//              .item {
+//                a {
+//                  font-size: 0.8rem;
+//                }
+//
+//                .arrow {
+//                  padding: 8px;
+//
+//                  img {
+//                    width: 11px;
+//                  }
+//
+//                }
+//
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//  .lang {
+//    .select-menu {
+//      margin: 1.5em 0 0 5em;
+//      line-height: 15px;
+//
+//      .button {
+//        em {
+//          margin-top: 4px;
+//          left: 7px;
+//
+//          &::before, &::after {
+//            width: 3px;
+//            height: 3px;
+//          }
+//
+//          &::before {
+//            border-left: 1px solid var(--icon);
+//            border-top: 1px solid var(--icon);
+//          }
+//
+//          &::after {
+//            border-right: 1px solid var(--icon);
+//            border-bottom: 1px solid var(--icon);
+//          }
+//        }
+//      }
+//
+//      select {
+//        padding: 0 5px 0 5px;
+//        line-height: 15px;
+//        font-size: 8px;
+//      }
+//
+//      ul {
+//        li {
+//          font-size: 0.3rem;
+//          padding: 0 5px 0 5px;
+//        }
+//      }
+//    }
+//  }
+//}
 

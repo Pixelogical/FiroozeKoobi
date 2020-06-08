@@ -308,6 +308,19 @@ $(document).ready(function () {
     changeSlides();
   });
 
-
 });
+//**************************************************
+//#responsive navbar menu close
+function rpmenu(e) {
+  $(e).hide()
+  $("#responsive-close").slideToggle(200, function () {
+    $(this).css('display', 'flex');
+  });
+}
+
+function rpclose(e) {
+  $("#responsive-menu").show()
+  $("#responsive-close").slideToggle(200)
+}
+
 
