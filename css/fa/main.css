@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   font-family: "Mf Queen Leela", serif;
   position: absolute;
   color: #cccccc;
-  z-index: 5;
+  z-index: -1;
   left: -0.2em;
   top: -50px;
   user-select: none;
@@ -361,6 +361,11 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   border-bottom: solid #E8E8E8 2px;
   height: 80px;
 }
+@media (max-width: 480px) {
+  .container .header {
+    justify-content: flex-end;
+  }
+}
 .container .header .lang {
   position: absolute;
   left: 1vw;
@@ -384,6 +389,12 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   display: flex;
   position: relative;
   justify-content: center;
+  align-items: center;
+}
+@media (max-width: 980px) {
+  .container .header .nav {
+    font-size: 1.1rem;
+  }
 }
 .container .header .nav ul {
   justify-self: center;
@@ -396,6 +407,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   flex-wrap: wrap;
   text-align: center;
   list-style: none;
+  align-items: center;
 }
 .container .header .nav ul li {
   font-size: 1.1rem;
@@ -417,7 +429,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   display: flex;
   background-color: #E8E8E8;
   border-radius: 10px;
-  height: 1.8em;
+  height: 1.2em;
+  padding: 5px 0;
+  align-items: center;
 }
 .container .header .nav ul .shop img {
   height: 1.2em;
@@ -502,7 +516,6 @@ h1, h2, h3, h4, h5, h6, span, a, li {
 .container .portrait {
   width: 100%;
   height: calc(100vh - 80px);
-  z-index: 6;
   background: url(../../img/tree.png) no-repeat left -20vw bottom -10vh;
   background-size: calc(100vh - 80px);
   background-color: #f8f8f8;
@@ -511,14 +524,57 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   align-items: center;
   justify-content: space-around;
 }
+@media (max-width: 480px) {
+  .container .portrait {
+    flex-direction: column;
+  }
+}
 .container .portrait img {
   margin: 15vw 10vw;
   vertical-align: middle;
+}
+@media (max-width: 1200px) {
+  .container .portrait img {
+    margin: 4vw;
+  }
+}
+@media (max-width: 980px) {
+  .container .portrait img {
+    margin: 2vw;
+    width: 350px;
+  }
+}
+@media (max-width: 736px) {
+  .container .portrait img {
+    width: 280px;
+  }
+}
+@media (max-width: 480px) {
+  .container .portrait img {
+    width: 200px;
+  }
 }
 .container .portrait h2 {
   font-size: 7rem;
   padding: 40px;
   font-family: IRANSansWeb, "Mf Queen Leela", serif;
+}
+@media (max-width: 980px) {
+  .container .portrait h2 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 736px) {
+  .container .portrait h2 {
+    font-size: 2.5rem;
+    padding: 25px;
+  }
+}
+@media (max-width: 480px) {
+  .container .portrait h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 .container .portrait2 {
   width: 100%;
@@ -531,14 +587,37 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   justify-content: space-around;
   align-items: center;
 }
+@media (max-width: 736px) {
+  .container .portrait2 {
+    flex-direction: column;
+  }
+}
 .container .portrait2 img {
   padding: 15vw;
   vertical-align: middle;
+}
+@media (max-width: 980px) {
+  .container .portrait2 img {
+    padding: 1vw;
+    width: 320px;
+  }
 }
 .container .portrait2 h2 {
   font-size: 7rem;
   padding: 40px;
   font-family: IRANSansWeb, "Mf Queen Leela", serif;
+}
+@media (max-width: 980px) {
+  .container .portrait2 h2 {
+    font-size: 5rem;
+    padding: 20px;
+  }
+}
+@media (max-width: 736px) {
+  .container .portrait2 h2 {
+    padding: 0;
+    margin: 0;
+  }
 }
 .container .artboard {
   background-image: url("../../img/1.jpg");
@@ -802,21 +881,42 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   width: 60vw;
   margin: auto;
 }
+@media (max-width: 980px) {
+  .container .categories-noback .cats-title {
+    width: 90vw;
+  }
+}
 .container .categories-noback .cats-title ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding-inline-start: 0;
 }
+@media (max-width: 480px) {
+  .container .categories-noback .cats-title ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .container .categories-noback .cats-title ul li {
   list-style: none;
   padding: 20px;
+}
+@media (max-width: 980px) {
+  .container .categories-noback .cats-title ul li {
+    padding: 10px;
+  }
 }
 .container .categories-noback .cats-title ul a {
   color: #3e3e46;
   font-size: 1.7rem;
   font-family: IRANSansWeb, "Mf Queen Leela", serif;
   text-decoration: none;
+}
+@media (max-width: 736px) {
+  .container .categories-noback .cats-title ul a {
+    font-size: 1.3rem;
+  }
 }
 .container .categories-noback .cats-title ul a:hover {
   color: #bd8cbf;
@@ -839,6 +939,11 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   align-items: center;
   margin: 25px;
 }
+@media (max-width: 980px) {
+  .container .categories-noback .items-wrapper .item {
+    width: 220px;
+  }
+}
 .container .categories-noback .items-wrapper .item a {
   text-align: center;
 }
@@ -849,10 +954,20 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   border-bottom: solid 3px #EEEEEE;
   padding: 5px;
 }
+@media (max-width: 980px) {
+  .container .categories-noback .items-wrapper .item img {
+    height: 280px;
+  }
+}
 .container .categories-noback .items-wrapper .item span {
   padding: 5px 10px;
   text-align: center;
   cursor: pointer;
+}
+@media (max-width: 980px) {
+  .container .categories-noback .items-wrapper .item span {
+    font-size: 1.7rem;
+  }
 }
 .container .categories-noback .items-wrapper .item .seemore {
   width: 100%;

@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     font-family: "Mf Queen Leela", serif;
     position: absolute;
     color: #cccccc;
-    z-index: 5;
+    z-index: -1;
     left: -.2em;
     top: -50px;
     user-select: none;
@@ -324,7 +324,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           margin-block-end: 0;
           font-family: $persian;
           font-weight: bolder;
-          @include sm{
+          @include sm {
             width: unset;
           }
         }
@@ -433,6 +433,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     justify-content: center;
     border-bottom: solid $border 2px;
     height: 80px;
+    @include sm {
+      justify-content: flex-end;
+    }
 
     .lang {
       position: absolute;
@@ -460,6 +463,10 @@ h1, h2, h3, h4, h5, h6, span, a, li {
       display: flex;
       position: relative;
       justify-content: center;
+      align-items: center;
+      @include lg {
+        font-size: 1.1rem;
+      }
 
       ul {
         justify-self: center;
@@ -472,6 +479,7 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         flex-wrap: wrap;
         text-align: center;
         list-style: none;
+        align-items: center;
 
         li {
           font-size: 1.1rem;
@@ -496,7 +504,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           display: flex;
           background-color: $border;
           border-radius: 10px;
-          height: 1.8em;
+          height: 1.2em;
+          padding: 5px 0;
+          align-items: center;
 
           img {
             height: 1.2em;
@@ -602,7 +612,6 @@ h1, h2, h3, h4, h5, h6, span, a, li {
   .portrait {
     width: 100%;
     height: calc(100vh - 80px);
-    z-index: 6;
     background: url(../../img/tree.png) no-repeat left -20vw bottom -10vh;
     background-size: calc(100vh - 80px);
     background-color: #f8f8f8;
@@ -610,16 +619,43 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    @include sm {
+      flex-direction: column;
+    }
 
     img {
       margin: 15vw 10vw;
       vertical-align: middle;
+      @include xl {
+        margin: 4vw;
+      }
+      @include lg {
+        margin: 2vw;
+        width: 350px;
+      }
+      @include md {
+        width: 280px;
+      }
+      @include sm {
+        width: 200px;
+      }
     }
 
     h2 {
       font-size: 7rem;
       padding: 40px;
       font-family: IRANSansWeb, "Mf Queen Leela", serif;
+      @include lg {
+        font-size: 3rem;
+      }
+      @include md {
+        font-size: 2.5rem;
+        padding: 25px;
+      }
+      @include sm {
+        font-size: 1.5rem;
+        text-align: center
+      }
     }
   }
 
@@ -633,16 +669,31 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @include md {
+      flex-direction: column;
+    }
 
     img {
       padding: 15vw;
       vertical-align: middle;
+      @include lg {
+        padding: 1vw;
+        width: 320px;
+      }
     }
 
     h2 {
       font-size: 7rem;
       padding: 40px;
       font-family: IRANSansWeb, "Mf Queen Leela", serif;
+      @include lg {
+        font-size: 5rem;
+        padding: 20px;
+      }
+      @include md {
+        padding: 0;
+        margin: 0;
+      }
     }
   }
 
@@ -957,23 +1008,37 @@ h1, h2, h3, h4, h5, h6, span, a, li {
     .cats-title {
       width: 60vw;
       margin: auto;
+      @include lg {
+        width: 90vw;
+      }
 
       ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         padding-inline-start: 0;
+        @include sm {
+          flex-direction: column;
+          align-items: center;
+        }
 
         li {
           list-style: none;
           padding: 20px;
+          @include lg {
+            padding: 10px;
+          }
         }
+
 
         a {
           color: #3e3e46;
           font-size: 1.7rem;
           font-family: IRANSansWeb, "Mf Queen Leela", serif;
           text-decoration: none;
+          @include md {
+            font-size: 1.3rem;
+          }
 
           &:hover {
             color: $purple;
@@ -1001,6 +1066,9 @@ h1, h2, h3, h4, h5, h6, span, a, li {
         width: 300px;
         align-items: center;
         margin: 25px;
+        @include lg {
+          width: 220px;
+        }
 
         a {
           text-align: center;
@@ -1012,12 +1080,18 @@ h1, h2, h3, h4, h5, h6, span, a, li {
           object-fit: contain;
           border-bottom: solid 3px #EEEEEE;
           padding: 5px;
+          @include lg {
+            height: 280px;
+          }
         }
 
         span {
           padding: 5px 10px;
           text-align: center;
           cursor: pointer;
+          @include lg {
+            font-size: 1.7rem;
+          }
         }
 
         .seemore {
